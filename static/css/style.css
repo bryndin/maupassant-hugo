@@ -599,13 +599,21 @@ textarea.textarea {
     margin:5px 0;
     line-height:1.5;
 }
-
 .widget .tagcloud {
     margin-top: 10px;
 }
 .widget .tagcloud a {
     line-height: 1.5;
     padding: 5px; 
+}
+.socials {
+    list-style:none;
+    padding:0;
+    margin: 0;
+}
+.socials li {
+    display: inline-block;
+    margin-right: 10px;
 }
 #footer {
     padding:.8em 0 3.6em;
