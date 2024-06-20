@@ -853,7 +853,6 @@ img.alignright {
     display: block;
 }
 
-/* for archive page starts*/
 .post-archive {
     font-size: 15px;
     line-height: 2;
@@ -866,7 +865,6 @@ img.alignright {
 .post-archive .date {
       padding-right: .7em; 
 }
-/* for archive page ends*/
 
 /* back-to-top rocket*/
 @media print, screen and (min-width: 48em) {
@@ -941,7 +939,6 @@ img.alignright {
     background: #F8F8F8;
     border-bottom-color: #D26911; 
 }
-/* 版权声明 */
 .post-copyright {
     margin: 2em 0 0;
     padding: 0.5em 1em;
@@ -953,7 +950,6 @@ img.alignright {
     border-bottom: 1px solid #999;
 }
 
-/* table*/
 table {
     margin: auto auto 15px;
     width: 100%;
@@ -1068,6 +1064,7 @@ table tbody tr td:nth-of-type(1) pre {
   background-color: #9f9f9f !important; 
 }
 
+/* Controls coloring for Ads title and text entries */
 .ad {
-    color: red;
+    color: inherit;
 }
