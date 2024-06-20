@@ -1,6 +1,5 @@
 ---
 title: "About Maupassant"
-date: '2023-10-27T15:25:43-04:00'
 description: 'About Maupassant, the free open-source Hugo theme.'
 toc: false
 ---
