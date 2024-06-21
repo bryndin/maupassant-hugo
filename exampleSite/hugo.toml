@@ -98,12 +98,6 @@ hasCJKLanguage = true #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Ko
   limit = 5 # Max number of entries to show
   type = "posts" # Only show entries from this type. See https://gohugo.io/methods/page/type/
 
-### Copyright statement for posts
-[params.cc]
-    name = "Creative Commons Attribution-Noncommercial-NoDerivs 4.0 International License"
-    link = "https://creativecommons.org/licenses/by-nc-nd/4.0/"
-
-
 ##### Alternative comments services ##########################################
 
 ## utteranc, see https://utteranc.es/

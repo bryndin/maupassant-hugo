@@ -73,22 +73,6 @@ other = "Archives"
 [menu_About]
 other = "About"
 
-##### Copyright ##############################################################
-[Copyright_author]
-other = "Author: "
-
-[Copyright_link]
-other = "Link: "
-
-[Copyright_license]
-other = "License: "
-
-[Copyright_license_workUnder]
-other = "This work is under a "
-
-[Copyright_license_note]
-other = "Kindly fulfill the requirements of the aforementioned License when adapting or creating a derivative of this work."
-
 ##### Page 404 ###############################################################
 [Page404_button]
 other = "Homepage"
