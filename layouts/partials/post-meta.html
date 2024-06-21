@@ -1,14 +1,18 @@
-{{- $datetime_format := i18n "Datetime_format" -}}
-{{ if not .PublishDate.IsZero }}
-  <time datetime="{{ .PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="post-meta meta-date dt-published">
-    {{ time.Format $datetime_format .PublishDate }}
-  </time>
-{{ end }}
-{{ with .Params.Categories }}
-<div class="post-meta meta-category">
-  <span>&nbsp;|</span>
-  {{ range . }}
-    <a href='{{ "categories/" | relURL }}{{ . | urlize }}'>{{ . }}</a>
+<div class="post-meta">
+  {{ if not .PublishDate.IsZero }}
+  {{- $datetime_format := i18n "Datetime_format" -}}
+    <time pubdate datetime="{{ .PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="meta-date dt-published">
+      {{ time.Format $datetime_format .PublishDate }}
+    </time>
+  {{ end }}
+  {{ with .Params.Author }}
+    <span class="meta-author">{{ i18n "by" }} by {{ . }}</span>
+  {{ end }}
+  {{ with .Params.Categories }}
+    <ul class="meta-category">
+      {{ range . }}
+        <li><a href='{{ "categories/" | relURL }}{{ . | urlize }}'>{{ . }}</a></li>
+      {{ end }}
+    </ul>
   {{ end }}
 </div>
-{{ end }}

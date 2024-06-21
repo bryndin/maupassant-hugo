@@ -51,6 +51,9 @@ other = "友情链接"
 [meta]
 other = "其它"
 
+[by]  # e.g. by Guy de Maupassant
+other = "作者："
+
 [tagsNone]
 other = "没有标签"
 

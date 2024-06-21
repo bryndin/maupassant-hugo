@@ -2,7 +2,8 @@
 title: "Exploring Minimalism in Web Design"
 date: 2023-10-28T10:15:22-04:00
 tags: []
-categories: [Features]
+categories: [Features, Blog Intro]
+author: Joe Schmoe
 # toc: true
 # hiddenFromHomePage: false
 

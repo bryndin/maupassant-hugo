@@ -235,12 +235,35 @@ textarea {
     margin:9px 0 0;
     color:#999;
     text-align:left;
-    display: inline-block;
+    /* display: inline-block; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+.meta-category {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.meta-category::before {
+    content: '|';
+}
+.meta-category li::after {
+    content: ', ';
+}
+.meta-category li:last-child::after {
+    content: '';
 }
 .meta-category a {
-    position: relative;
+    color: inherit;
 }
-
 .meta-tags {
     display: inline-block;
 }

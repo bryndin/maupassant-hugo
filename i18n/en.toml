@@ -51,6 +51,9 @@ other = "Links"
 [meta]
 other = "Meta"
 
+[by]  # e.g. by Guy de Maupassant
+other = "by"
+
 [tagsNone]
 other = "No tags"
 

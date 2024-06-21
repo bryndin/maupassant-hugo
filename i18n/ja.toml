@@ -51,6 +51,9 @@ other = "リンク"
 [meta]
 other = "メタ"
 
+[by]  # e.g. by Guy de Maupassant
+other = "작성자:"
+
 [tagsNone]
 other = "タグなし"
 

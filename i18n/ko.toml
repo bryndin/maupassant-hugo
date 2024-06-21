@@ -51,6 +51,9 @@ other = "링크입니다."
 [meta]
 other = "메타"
 
+[by]  # e.g. by Guy de Maupassant
+other = ""
+
 [tagsNone]
 other = "태그 없음"
 
