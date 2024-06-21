@@ -35,7 +35,7 @@ hasCJKLanguage = true #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Ko
 
   # Global table of contents switch. For non-blog posts pages, consider turning it off in `front matter`
   # ToC is currently broken, keep it off for now
-  toc = false
+  toc = true
 
 ### Google Tag Manager (GTM)
 [params.googletagmanager]
