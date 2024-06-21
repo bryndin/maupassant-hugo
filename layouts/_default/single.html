@@ -18,7 +18,10 @@
         </div>
 
         {{ partial "tags" . }}
-        {{ partial "related" . }}
+
+        {{ if eq .Type .Site.Params.BlogType}}
+            {{ partial "related" . }}
+        {{ end }}
     </article>
     {{ partial "comments" . }}
 </div>
