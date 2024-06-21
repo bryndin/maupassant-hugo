@@ -18,20 +18,8 @@
         </div>
 
         {{ partial "copyright" .}}
-
+        {{ partial "tags" . }}
         {{ partial "related" . }}
-
-        <div class="post-meta meta-tags">
-            {{ if and (isset .Params "tags") .Params.tags }}
-            <ul class="clearfix">
-                {{ range .Params.Tags }}
-                <li><a href='{{ "tags/" | relURL }}{{ . | urlize }}'>{{ . }}</a></li>
-                {{ end }}
-            </ul>
-            {{ else }}
-            {{ i18n "tagsNone" }}
-            {{ end }}
-        </div>
     </article>
     {{ partial "comments" . }}
 </div>
