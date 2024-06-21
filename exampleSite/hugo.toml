@@ -24,6 +24,10 @@ hasCJKLanguage = true #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Ko
 ##### Site Params ############################################################
 
 [params]
+  # (required) Directory name of your blog content (typically is `posts`)
+  # To mark any page outside of that directy as a blog post, set e.g. `type: posts` in front matter
+  blogType = "posts"
+
   author = "bryndin"
   subtitle = "Elegant & simple blog theme inspired by Guy de Maupassant"
   keywords = "maupassant, hugo, theme, free, open-source, blog, blogger, light, website, simple, minimal, responsive, SEO friendly, fast, demo, demosight, i18n, en, ja, ko, zh"

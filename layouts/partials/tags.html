@@ -6,6 +6,8 @@
         {{ end }}
     </ul>
     {{ else }}
-    {{ i18n "tagsNone" }}
+        {{ if eq .Type .Site.Params.BlogType}}
+        {{ i18n "tagsNone" }}
+        {{ end }}
     {{ end }}
 </div>
