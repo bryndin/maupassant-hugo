@@ -130,6 +130,8 @@ Fork the repository, create a new branch, and submit a pull request with your ch
 
 ## Credits
 
-The Maupassant theme was originally created by [Cho](https://github.com/pagecho/maupassant) for the [Typecho](https://github.com/typecho/typecho) PHP blogging platform. It has been ported to multiple platforms, including Hugo. The initial Hugo port was created by [JokerQyou](https://github.com/JokerQyou) and further improved by [Flysnow-org](https://github.com/flysnow-org). These versions are primarily targeted at an oriental audience and offer good integrations with Chinese services.
+**The Maupassant theme** was originally created by [Cho](https://github.com/pagecho/maupassant) for the [Typecho](https://github.com/typecho/typecho) PHP blogging platform. It has been ported to multiple platforms, including Hugo. The initial Hugo port was created by [JokerQyou](https://github.com/JokerQyou) and further improved by [Flysnow-org](https://github.com/flysnow-org). These versions are primarily targeted at an oriental audience and offer good integrations with Chinese services.
 
 "Maupassant IC" is an enhanced version tailored for an international audience.
+
+**SVG Icons** from [Bootstrap Icons](https://icons.getbootstrap.com/).
