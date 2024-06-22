@@ -48,9 +48,6 @@ other = "文章 RSS"
 [links]
 other = "友情链接"
 
-[meta]
-other = "其它"
-
 [by]  # e.g. by Guy de Maupassant
 other = "作者："
 

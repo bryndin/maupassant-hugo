@@ -48,9 +48,6 @@ other = "RSS 피드"
 [links]
 other = "링크입니다."
 
-[meta]
-other = "메타"
-
 [by]  # e.g. by Guy de Maupassant
 other = ""
 
