@@ -87,9 +87,52 @@ hasCJKLanguage = true # see: https://gohugo.io/getting-started/configuration/#ha
   title = "Hugo"
   url = "https://gohugo.io/"
 
-### Socials Widget
-[params.wSocials]
-  disable = false # Disables and hides the widget
+### Socials Networks Icons Widget.  Removing all entries disables the widget.
+# Supported socials: `github`, `x`, `twitter`, `threads`, `facebook`, `instagram`, `discord`, `youtube`, `rss`
+[[params.wSocials]]
+  title="GitHub"
+  url="https://bryndin.github.io/maupassant-hugo"
+  img="images/socials/github.svg"
+
+[[params.wSocials]]
+  title="X"
+  url="https://x.com"
+  img="images/socials/x.svg"
+
+[[params.wSocials]]
+  title="Twitter"
+  url="https://twitter.com"
+  img="images/socials/twitter.svg"
+
+[[params.wSocials]]
+  title="Threads"
+  url="https://threads.net"
+  img="images/socials/threads.svg"
+
+[[params.wSocials]]
+  title="Facebook"
+  url="https://facebook.com"
+  img="images/socials/facebook.svg"
+
+[[params.wSocials]]
+  title="Instagram"
+  url="https://instagram.com"
+  img="images/socials/instagram.svg"
+
+[[params.wSocials]]
+  title="Discord"
+  url="https://discord.com"
+  img="images/socials/discord.svg"
+
+[[params.wSocials]]
+  title="Youtube"
+  url="https://youtube.com"
+  img="images/socials/youtube.svg"
+
+[[params.wSocials]]
+  title="RSS"
+  url="index.xml"
+  img="images/socials/rss.svg"
 
 #---- Page Features ----------------------------------------------------------
 
