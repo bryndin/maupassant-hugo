@@ -1,4 +1,4 @@
-##### Default parameters #####################################################
+##### Global parameters #####################################################
 
 # (required) The base URL of your site. This will be prepended to all relative URLs
 baseURL = 'https://github.com/bryndin/maupassant-hugo/'
@@ -7,21 +7,19 @@ title = "Maupassant: A Hugo Blog Theme"
 # Theme name
 theme = 'maupassant'
 
-# project's default language
+# Project's default language
 defaultContentLanguage = 'en'
+# Language code to declare in HTML metadata
 languageCode = "en-us"
 # Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
 timeZone = "America/Los_Angeles"
-# post excerpt, content summary length for post list
+# Post excerpt, content summary length for post list
 summaryLength = 140   # see https://gohugo.io/content-management/excerpts/
-hasCJKLanguage = true #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Korean Languages in the content. see: https://gohugo.io/getting-started/configuration/#hascjklanguage
 
-##### Services ###############################################################
+# Auto-detect Chinese/Japanese/Korean Languages in the content, for word counts and summaries to work correctly.
+hasCJKLanguage = true # see: https://gohugo.io/getting-started/configuration/#hascjklanguage
 
-[services.disqus]
-  shortname = '' # Disqus comments. See https://gohugo.io/templates/embedded/?search-input=disqusShortname#configure-disqus
-
-##### Site Params ############################################################
+##### Site Specific Params ###################################################
 
 [params]
   # (required) Directory name of your blog content (typically is `posts`)
@@ -39,13 +37,13 @@ hasCJKLanguage = true #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Ko
 
   # Global table of contents switch. For non-blog posts pages, consider turning it off in `front matter`
   # ToC is currently broken, keep it off for now
-  toc = true
+  toc = false
 
-### Google Tag Manager (GTM)
+# Google Tag Manager (GTM)
 [params.googletagmanager]
   gtmid = "" # Google Tag Manager ID
 
-##### Side Column Widgets ####################################################
+#---- Side Column Widgets ----------------------------------------------------
 
 ### Site Search Widget
 [params.search]
@@ -93,7 +91,7 @@ hasCJKLanguage = true #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Ko
 [params.wSocials]
   disable = false # Disables and hides the widget
 
-##### Page Features ##########################################################
+#---- Page Features ----------------------------------------------------------
 
 ### Related Posts.  At the bottom of the post page, show links to related posts.
 # See https://gohugo.io/content-management/related/
@@ -102,7 +100,9 @@ hasCJKLanguage = true #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Ko
   limit = 5 # Max number of entries to show
   type = "posts" # Only show entries from this type. See https://gohugo.io/methods/page/type/
 
-##### Alternative comments services ##########################################
+#---- Alternative comments services ------------------------------------------
+
+# Hugo natively supports Disqus (configured below), but we have other options as well
 
 ## utteranc, see https://utteranc.es/
 [params.utteranc]
@@ -117,13 +117,14 @@ hasCJKLanguage = true #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Ko
   placeholder = ""  # Default text of comment box
   serverURL = "Your waline serverURL" # Change to your serverURL
 
-##### Markup settings ########################################################
+##### Services ###############################################################
 
-[markup]
-  [markup.highlight]
-    style = "github"
+[services]
+  # Enable comments via Disqus
+  [services.disqus]
+    shortname = '' # see https://gohugo.io/templates/embedded/?search-input=disqusShortname#configure-disqus
 
-##### Menu ###################################################################
+##### Main Menu ##############################################################
 
 # See https://gohugo.io/content-management/menus/#define-in-site-configuration
 [menus]
@@ -131,10 +132,18 @@ hasCJKLanguage = true #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Ko
     identifier = "archives"
     name = "menu_Archives"  # i18n key, see files in `i18n` folder
     pageRef = "/archives/"  # keep the trainling slashes
-    weight = 3
+    weight = 3              # sorting order
 
   [[menu.main]]
     identifier = "about"
-    name = "menu_About" # i18n key, see files in `i18n` folder
-    pageRef = "/about/" # keep the trainling slashes
-    weight = 4
+    name = "menu_About"     # i18n key, see files in `i18n` folder
+    pageRef = "/about/"     # keep the trainling slashes
+    weight = 4              # sorting order
+
+##### Markup settings ########################################################
+
+# see https://gohugo.io/getting-started/configuration-markup/
+[markup]
+  # Code Block Highlighting, see https://gohugo.io/getting-started/configuration-markup/#highlight
+  [markup.highlight]
+    style = "github"
