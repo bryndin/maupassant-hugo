@@ -1,9 +1,9 @@
 {{ define "content"}}
 <header>
     {{ if eq .Data.Singular "category" }}
-    <h1>{{ i18n "categories" }}: {{ len .Data.Terms }}</h1>
+    <h1>{{ i18n "categories" 10 }}: {{ len .Data.Terms }}</h1>
     {{ else if eq .Data.Singular "tag" }}
-    <h1>{{ i18n "tags" }}: {{ len .Data.Terms }}</h1>
+    <h1>{{ i18n "tags" 10 }}: {{ len .Data.Terms }}</h1>
     {{ end }}
 </header>
 <div class="post-archive">

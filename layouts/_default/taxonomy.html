@@ -2,15 +2,15 @@
 <div class="res-cons">
     {{ if eq .Data.Singular "category" }}
     <h3 class="archive-title">
-        {{ i18n "categories" }}
+        {{ i18n "categories" 1 }}
         <span class="keyword">{{ .Data.Term }}</span>
-        {{ i18n "articles" }}
+        {{ i18n "articles" 1 }}
     </h3>
     {{ else if eq .Data.Singular "tag" }}
     <h3 class="archive-title">
-        {{ i18n "tags" }}
+        {{ i18n "tags" 1}}
         <span class="keyword">{{ .Data.Term }}</span>
-        {{ i18n "articles" }}
+        {{ i18n "articles" 1 }}
     </h3>
     {{ end }}
 
