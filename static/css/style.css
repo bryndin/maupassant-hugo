@@ -235,7 +235,6 @@ textarea {
     margin:9px 0 0;
     color:#999;
     text-align:left;
-    /* display: inline-block; */
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -264,61 +263,31 @@ textarea {
 .meta-category a {
     color: inherit;
 }
-.meta-tags {
-    display: inline-block;
-}
+
 .meta-tags ul {
+    display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap;
+    gap: 10px;
 }
-.meta-tags ul li, .meta-tags ul a {
-    float: left;
-    height: 24px;
-    line-height: 24px;
-    font-size: 14px;
+.meta-tags ul li {
     position: relative;
-    padding: .3em 0;
 }
-.meta-tags ul a {
-    margin-left: 24px;
-    padding: 0 10px 0 14px;
-    background: #0089e0;
-    color: #fff;
+.meta-tags ul li::before {
+    content: "#";
+}
+.meta-tags ul li a {
     text-decoration: none;
-    border-radius: 2px;
+    color: inherit;
 }
-.meta-tags ul a:before {
-    content: '';
-    float: left;
-    position: absolute;
-    top: 0;
-    left: -7px;
-    width: 0;
-    height: 0;
-    border-color: transparent #0089e0 transparent transparent;
-    border-style: solid;
-    border-width: 12px 12px 12px 0;
-    transition: all .1s ease-in;
+.meta-tags ul li:hover::before,
+.meta-tags ul li:hover a {
+    color: black;
+    text-decoration: underline;
 }
-.meta-tags ul a:after {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 0;
-    float: left;
-    width: 4px;
-    height: 4px;
-    border-radius: 2px;
-    background: #fff;
-    box-shadow: -1px -1px 2px #004977;
-}
-.meta-tags ul a:hover {
-    background: #555;
-}
-.meta-tags ul a:hover:before {
-    border-color: transparent #555 transparent transparent;
-}
+
 .post-content {
     font-size: 1em;
     line-height: 1.7;

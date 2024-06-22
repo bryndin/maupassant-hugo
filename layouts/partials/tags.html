@@ -1,6 +1,6 @@
 <div class="post-meta meta-tags">
     {{ if and (isset .Params "tags") .Params.tags }}
-    <ul class="clearfix">
+    <ul>
         {{ range .Params.Tags }}
         <li><a href='{{ "tags/" | relURL }}{{ . | urlize }}'>{{ . }}</a></li>
         {{ end }}
