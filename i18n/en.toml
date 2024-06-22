@@ -17,6 +17,9 @@ other = "Categories"
 one = "Tag"
 other = "Tags"
 
+[articles] # Eng translation is empty on purpose
+other = ""
+
 [continueReading]
 other = "Continue reading"
 
@@ -32,9 +35,6 @@ other = "Table of Contents"
 ##### Theme ##################################################################
 [ads]
 other = "Ads"
-
-[Articles]
-other = "articles"
 
 [latest_posts]
 other = "Latest posts"
@@ -58,13 +58,13 @@ other = "by"
 other = "No tags"
 
 [Search]
-other = "Searching: "
+other = "Searching"
 
 [Search_keyword]
 other = "Keyword"
 
-[Search_results]
-other = ""
+[Search_results] # Eng translation is empty on purpose
+other = "" 
 
 ##### Menu ###################################################################
 [menu_Archives]

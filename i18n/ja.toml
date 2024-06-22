@@ -17,6 +17,9 @@ other = "カテゴリ"
 one = "タグ"
 other = "タグ"
 
+[articles]
+other = "記事です"
+
 [continueReading]
 other = "詳細はこちら"
 
@@ -32,9 +35,6 @@ other = "目次"
 ##### Theme ##################################################################
 [ads]
 other = "広告です"
-
-[Articles]
-other = "記事です"
 
 [latest_posts]
 other = "最新の投稿"

@@ -17,6 +17,9 @@ other = "분류"
 one = "태그입니다."
 other = "태그입니다."
 
+[articles]
+other = "기사들"
+
 [continueReading]
 other = "더 읽기"
 
@@ -32,9 +35,6 @@ other = "목차."
 ##### Theme ##################################################################
 [ads]
 other = "광고"
-
-[Articles]
-other = "기사들"
 
 [latest_posts]
 other = "최근 게시물"

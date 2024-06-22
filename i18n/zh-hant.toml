@@ -16,6 +16,9 @@ other = "分類"
 one = "標籤"
 other = "標籤"
 
+[articles]
+other = "中的文章"
+
 [continueReading]
 other = "閱讀全文"
 
@@ -31,9 +34,6 @@ other = "文章目錄"
 ##### Theme ##################################################################
 [ads]
 other = "福利派送"
-
-[Articles]
-other = "中的文章"
 
 [latest_posts]
 other = "最新貼文"
