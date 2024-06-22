@@ -116,6 +116,12 @@ textarea {
 .post-meta a:hover, .post-content a:hover, .widget a:hover, .comment-content a {
     border-bottom-color:transparent;
 }
+
+#logo:hover, #nav-menu a:hover, .widget a:hover, .post-title a:hover,
+.meta-category a:hover, .meta-tags a:hover::before, .meta-tags a:hover {
+    color: #000;
+}
+
 #header {
     padding:58px 0 0;
     text-align:left;
@@ -136,9 +142,6 @@ textarea {
     color:#555;
 }
 #logo span {
-    color:#777;
-}
-#logo:hover {
     color:#777;
 }
 .description {
@@ -231,17 +234,17 @@ textarea {
     color:#555;
 }
 .post-meta {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 9px;
     padding:0;
     margin:9px 0 0;
     color:#999;
     text-align:left;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 9px;
 }
-.meta-category {
+
+.meta-category ul {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -251,7 +254,7 @@ textarea {
     padding: 0;
     margin: 0;
 }
-.meta-category::before {
+.meta-category ul::before {
     content: '|';
 }
 .meta-category li::after {
@@ -266,26 +269,20 @@ textarea {
 
 .meta-tags ul {
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     list-style: none;
     padding: 0;
     margin: 0;
-    flex-wrap: wrap;
-    gap: 10px;
 }
 .meta-tags ul li {
     position: relative;
 }
-.meta-tags ul li::before {
+.meta-tags ul li a::before {
     content: "#";
 }
 .meta-tags ul li a {
-    text-decoration: none;
     color: inherit;
-}
-.meta-tags ul li:hover::before,
-.meta-tags ul li:hover a {
-    color: black;
-    text-decoration: underline;
 }
 
 .post-content {
@@ -538,15 +535,15 @@ textarea.textarea {
     line-height: 1.5;
     padding: 5px; 
 }
-.socials {
-    list-style:none;
-    padding:0;
+.widget-socials ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
     margin: 0;
+    gap: 10px;
 }
-.socials li {
-    display: inline-block;
-    margin-right: 10px;
-}
+
 #footer {
     padding:.8em 0 3.6em;
     color:#999;

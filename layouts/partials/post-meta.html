@@ -9,10 +9,12 @@
     <span class="meta-author">{{ i18n "by" }} by {{ . }}</span>
   {{ end }}
   {{ with .Params.Categories }}
-    <ul class="meta-category">
-      {{ range . }}
-        <li><a href='{{ "categories/" | relURL }}{{ . | urlize }}'>{{ . }}</a></li>
-      {{ end }}
-    </ul>
+    <div class="meta-category">
+      <ul>
+        {{ range . }}
+          <li><a href='{{ "categories/" | relURL }}{{ . | urlize }}'>{{ . }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
   {{ end }}
 </div>
