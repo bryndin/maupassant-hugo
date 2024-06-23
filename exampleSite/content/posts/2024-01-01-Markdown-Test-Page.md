@@ -1,9 +1,9 @@
 ---
-title: 'Demo of Markdown'
+title: 'Markdown Test Page'
 description: "This is a test page to check Markdown rendering."
 date: 2024-01-01T12:00:00+00:00
-tags: [markdown]
-categories: [Markdown demo]
+tags: [markdown, post]
+categories: [Design]
 # toc: true
 # hiddenFromHomePage: false
 
