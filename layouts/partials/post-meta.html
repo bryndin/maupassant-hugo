@@ -6,7 +6,7 @@
     </time>
   {{ end }}
   {{ with .Params.Author }}
-    <span class="meta-author">{{ i18n "by" }} by {{ . }}</span>
+    <span class="meta-author">{{ i18n "by" }} {{ . }}</span>
   {{ end }}
   {{ with .Params.Categories }}
     <div class="meta-category">
