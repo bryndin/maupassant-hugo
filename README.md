@@ -1,6 +1,6 @@
 # "Maupassant IC" Hugo Theme (International Collection)
 
-Maupassant is a free, minimalistic, light, and responsive Hugo theme designed for bloggers. It offers a clean design focused on readability and simplicity, ensuring your content stands out on desktops, laptops, tablets and phones.
+Maupassant IC is a free, minimalistic, light, and responsive Hugo theme designed for bloggers. It offers a clean design focused on readability and simplicity, ensuring your content stands out on desktops, laptops, tablets and phones.
 
 ## → [Demo Site](https://bryndin.github.io/maupassant-hugo/)
 
