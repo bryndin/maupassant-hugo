@@ -849,10 +849,17 @@ img.alignright {
 }
 .post-archive h2 {
       margin: 0;
-      font: bold 25px / 1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; 
+      font-weight: bold;
+      /* font: bold 25px / 1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif;  */
 }
 .post-archive .date {
       padding-right: .7em; 
+}
+
+.related-posts {
+    margin-top: 45px;
+    border-top: rgb(221, 221, 221) 1px solid;
+    padding-bottom: .8em; 
 }
 
 /* back-to-top rocket*/
