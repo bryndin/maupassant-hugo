@@ -23,7 +23,7 @@ hasCJKLanguage = true # see: https://gohugo.io/getting-started/configuration/#ha
 
 [params]
   # (required) Directory name of your blog content (typically is `posts`)
-  # To mark any page outside of that directy as a blog post, set e.g. `type: posts` in front matter
+  # To mark any page outside of that directory as a blog post, set e.g. `type: posts` in front matter
   blogType = "posts"
 
   author = "bryndin"
@@ -34,6 +34,9 @@ hasCJKLanguage = true # see: https://gohugo.io/getting-started/configuration/#ha
   # Here you can put list of custom JS/CSS files you want to be loaded
   customCSS = []
   customJS = []
+
+  # Enables comments. After enabling, you have to configure one of the comment systems below.
+  comments = false
 
   # Global table of contents switch. For non-blog posts pages, consider turning it off in `front matter`
   # ToC is currently broken, keep it off for now

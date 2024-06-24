@@ -1,4 +1,8 @@
-{{ if and .IsPage (ne .Params.comment false) }}
+{{/* Check if either comments are enabled for the specific page in front matter,
+    or if the page is a blog post AND if comments are enabled site-wide */}}
+{{ if or (eq .Params.comments true)
+         (and (eq .Type .Site.Params.BlogType) (eq .Site.Params.comments true))
+}}
     {{ template "_internal/disqus.html" . }}
 
     <!-- utteranc -->

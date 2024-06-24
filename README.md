@@ -50,6 +50,14 @@ The theme was developed and tested with v0.127.0. If this version is not availab
     cp themes/maupassant/exampleSite/hugo.toml .
     ```
 
+3. Copy "about.md", "archives.md" and "search.md" content files. Modify "about" page for your needs.
+
+  ```sh
+  cp themes/maupassant/exampleSite/content/about.md content/
+  cp themes/maupassant/exampleSite/content/archives.md content/
+  cp themes/maupassant/exampleSite/content/search.md content/
+  ```
+
 ### Updating the Theme
 
 To update the theme, navigate to the theme directory and pull the latest changes:
@@ -62,6 +70,19 @@ git pull
 ## Configuration
 
 Follow the comments in sample [`hugo.toml`](https://github.com/bryndin/maupassant-hugo/blob/master/exampleSite/hugo.toml)
+
+### Declaring "blog post" pages
+
+Most of the theme features, e.g. comments, categories, tags, etc. by default only apply to the *blog post* pages. What page is *blog post* is configured via required `blogType` parameter in the `[params]` section of `hugo.toml`.
+
+`blogType` is a directory name of your blog content (e.g. `posts`, for `content/posts` directory). To mark any other page a *blog post*, set e.g. `type: posts` in front matter.
+
+### Enabling comments
+
+**Prerequisite**: Pick one of the supported comments systems: [Disqus](https://disqus.com/), [Utterances](https://utteranc.es/), or [Waline](https://waline.js.org/en/), and configure it in your `hugo.toml`.
+
+- **(Override)** Force comments on a page by setting `comments: true` in the front matter.
+- Globally enable comments for blog posts by setting `comments = true` in `[params]` section of `hugo.toml`.
 
 ### Setting up GihHub CI/CD
 
