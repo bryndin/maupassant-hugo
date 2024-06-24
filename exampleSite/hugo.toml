@@ -95,6 +95,11 @@ hasCJKLanguage = true # see: https://gohugo.io/getting-started/configuration/#ha
   img="images/socials/github.svg"
 
 [[params.wSocials]]
+  title="LinkedIn"
+  url="https://linkedin.com"
+  img="images/socials/linkedin.svg"
+
+[[params.wSocials]]
   title="X"
   url="https://x.com"
   img="images/socials/x.svg"
