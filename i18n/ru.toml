@@ -1,0 +1,79 @@
+# Lang: Russian
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+##### Date and Time Format ###################################################
+[Datetime_format]
+other = "2006-01-02"
+
+##### Base ###################################################################
+[home]
+other = "Главная"
+
+[categories]
+one = "Категория"
+other = "Категории"
+
+[tags]
+one = "Тег"
+other = "Теги"
+
+[articles] # Eng translation is empty on purpose
+other = ""
+
+[continueReading]
+other = "Далее"
+
+[next]
+other = "Следующая"
+
+[previous]
+other = "Предыдущая"
+
+[toc]
+other = "Содержание"
+
+##### Theme ##################################################################
+[ads]
+other = "Реклама"
+
+[latest_posts]
+other = "Последние публикации"
+
+[related_posts]
+other = "Похожие публикации"
+
+[Feed_rss]
+other = "RSS"
+
+[links]
+other = "Ссылки"
+
+[by]  # e.g. by Guy de Maupassant
+other = "от"
+
+[tagsNone]
+other = "Без тегов"
+
+[Search]
+other = "Поиск"
+
+[Search_keyword]
+other = "Ключевое слово"
+
+[Search_results] # Eng translation is empty on purpose
+other = ""
+
+##### Menu ###################################################################
+[menu_Archives]
+other = "Архивы"
+
+[menu_About]
+other = "О сайте"
+
+##### Page 404 ###############################################################
+[Page404_button]
+other = "Главная страница"
+
+[Page404_message]
+other = "Страница не найдена"
+##############################################################################

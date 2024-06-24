@@ -1,0 +1,79 @@
+# Lang: French
+# https://gohugo.io/content-management/multilingual/#translation-of-strings
+
+##### Date and Time Format ###################################################
+[Datetime_format]
+other = "2006-01-02"
+
+##### Base ###################################################################
+[home]
+other = "Accueil"
+
+[categories]
+one = "Catégorie"
+other = "Catégories"
+
+[tags]
+one = "Étiquette"
+other = "Étiquettes"
+
+[articles] # Eng translation is empty on purpose
+other = ""
+
+[continueReading]
+other = "Continuer à lire"
+
+[next]
+other = "Suivant"
+
+[previous]
+other = "Précédent"
+
+[toc]
+other = "Table des matières"
+
+##### Theme ##################################################################
+[ads]
+other = "Publicités"
+
+[latest_posts]
+other = "Derniers articles"
+
+[related_posts]
+other = "Articles similaires"
+
+[Feed_rss]
+other = "RSS"
+
+[links]
+other = "Liens"
+
+[by]  # e.g. by Guy de Maupassant
+other = "par"
+
+[tagsNone]
+other = "Aucune étiquette"
+
+[Search]
+other = "Recherche"
+
+[Search_keyword]
+other = "Mot-clé"
+
+[Search_results] # Eng translation is empty on purpose
+other = ""
+
+##### Menu ###################################################################
+[menu_Archives]
+other = "Archives"
+
+[menu_About]
+other = "À propos"
+
+##### Page 404 ###############################################################
+[Page404_button]
+other = "Page d'accueil"
+
+[Page404_message]
+other = "Page non trouvée"
+##############################################################################
