@@ -16,7 +16,7 @@ Maupassant IC is a free, minimalistic, light, and responsive Hugo theme designed
 
 ### Comprehensive Feature List
 
-- **Multiple Languages (i18n)**: Supports English, Japanese, Korean, Chinese (simplified & traditional).
+- **Multiple Languages (i18n)**: Supports English, French, German, Spanish, Japanese, Korean, Chinese (simplified & traditional).
 - **Google Tag Manager (GTM)**: Integrates seamlessly with Google Analytics, Ads, Optimize, and many other services without requiring code changes.
 - **Comments**: Compatible with [Disqus](https://disqus.com/), [Utterances](https://utteranc.es/), and [Waline](https://waline.js.org/en/) comment systems.
 - **Categories & Tags**: Includes dedicated pages and sidebar list widgets.
@@ -33,6 +33,8 @@ Maupassant IC is a free, minimalistic, light, and responsive Hugo theme designed
 ## Requirements
 
 - Hugo >= 0.127.0
+
+The theme was developed and tested with v0.127.0. If this version is not available for your default package manager, try one from [Snap](https://snapcraft.io/hugo).
 
 ## Installation
 
