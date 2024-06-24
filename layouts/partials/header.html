@@ -18,10 +18,10 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="{{ if or (.IsHome) (eq .Type "post") (eq .Type "posts") }}current{{ end }}" href="{{ .Site.BaseURL | absURL }}">{{ i18n "home" }}</a>
+                    <a {{ if or (.IsHome) (eq .Section .Site.Params.BlogType) }}class="current"{{ end }} href="{{ .Site.BaseURL | absURL }}">{{ i18n "home" }}</a>
                     {{ range .Site.Menus.main }}
-                    {{ $name := i18n .Name | default .Name }}
-                    <a {{ if eq .URL $.RelPermalink }}class="current"{{ end }} href="{{ .URL }}" title="{{ $name }}">{{ $name }}</a>
+                        {{ $name := i18n .Name | default .Name }}
+                        <a {{ if eq .URL $.RelPermalink }}class="current"{{ end }} href="{{ .URL }}" title="{{ $name }}">{{ $name }}</a>
                     {{ end }}
                 </nav>
             </div>
