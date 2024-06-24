@@ -173,13 +173,13 @@ hasCJKLanguage = true # see: https://gohugo.io/getting-started/configuration/#ha
 [menus]
   [[menu.main]]
     identifier = "archives"
-    name = "menu_Archives"  # i18n key, see files in `i18n` folder
+    name = "menu_Archives"  # i18n key (see files in `i18n` folder), or static string
     pageRef = "/archives/"  # keep the trainling slashes
     weight = 3              # sorting order
 
   [[menu.main]]
     identifier = "about"
-    name = "menu_About"     # i18n key, see files in `i18n` folder
+    name = "menu_About"     # i18n key (see files in `i18n` folder), or static string
     pageRef = "/about/"     # keep the trainling slashes
     weight = 4              # sorting order
 
