@@ -21,6 +21,16 @@ In Maupassant IC, code blocks are beautifully formatted with syntax highlighting
 
 Here are some sample code blocks in different programming languages:
 
+### Inline code span
+
+`Inline code span`
+
+### Untagged Code Block (no syntax highlighting)
+
+```
+This code block has no language specified.
+```
+
 ### Go
 
 ```go
@@ -33,21 +43,21 @@ func main() {
 }
 ```
 
-### Python
+### Python (snippet with line numbers)
 
-```python
+```python {linenos=true}
 print("Hello, World!")
 ```
 
-### JavaScript
+### JavaScript (snippet with table line numbers)
 
-```javascript
+```javascript {linenos=table}
 console.log("Hello, World!");
 ```
 
-### Java
+### Java (snippet with line numbers, highlighting lines 2-4)
 
-```java
+```java {linenos=true,hl_lines=["2-4"]}
 public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
@@ -55,9 +65,9 @@ public class HelloWorld {
 }
 ```
 
-### Bash
+### Bash (snippet with inline line numbers and anchor lines)
 
-```bash
+```bash {linenos=inline,anchorlinenos=true}
 #!/bin/bash
 echo "Hello, World!"
 ```

@@ -96,7 +96,7 @@
         })();
         </script>
     {{- end -}}
-    
+
     <script type="text/javascript">
         window.MathJax = {
             tex2jax: {
@@ -106,7 +106,7 @@
             };
     </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-    
+
     {{- if .Site.Params.fancybox -}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     {{- end -}}
@@ -114,7 +114,11 @@
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='{{ "js/totop.js?v=0.0.0" | relURL }}' async=""></script>
-{{ partial "copy_button" . }}
+
+{{ if findRE "<pre" .Content 1 }}
+{{- /* Only load code copy logic if the content contains code */ -}}
+    {{ partial "code-copy" . }}
+{{ end }}
 
 <!-- custom js -->
 {{ range .Site.Params.customJS }}
