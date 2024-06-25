@@ -545,10 +545,18 @@ textarea.textarea {
 }
 
 #footer {
+    display: flex;
     padding:.8em 0 3.6em;
     color:#999;
     text-align: center;
 }
+#footer a {
+    color:inherit;
+}
+.copyright {
+    font-size: small;
+}
+
 .error-page {
     margin-top:100px;
     margin-bottom:100px;
