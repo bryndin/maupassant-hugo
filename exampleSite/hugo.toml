@@ -23,6 +23,7 @@ hasCJKLanguage = true # see: https://gohugo.io/getting-started/configuration/#ha
 # See https://gohugo.io/methods/page/title/
 capitalizeListTitles = false
 pluralizeListTitles = false
+titleCaseStyle = "none" # See https://gohugo.io/getting-started/configuration/#configure-title-case
 
 ##### Site Specific Params ###################################################
 
