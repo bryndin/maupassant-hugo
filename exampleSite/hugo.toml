@@ -19,6 +19,11 @@ summaryLength = 140   # see https://gohugo.io/content-management/excerpts/
 # Auto-detect Chinese/Japanese/Korean Languages in the content, for word counts and summaries to work correctly.
 hasCJKLanguage = true # see: https://gohugo.io/getting-started/configuration/#hascjklanguage
 
+# Capitalize and pluralize titles, e.g. tags lists
+# See https://gohugo.io/methods/page/title/
+capitalizeListTitles = false
+pluralizeListTitles = false
+
 ##### Site Specific Params ###################################################
 
 [params]
