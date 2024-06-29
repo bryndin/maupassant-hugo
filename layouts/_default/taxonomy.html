@@ -23,9 +23,11 @@
         </header>
         {{ partial "post-meta.html" . }}
         <div class="post-content">
-            {{ .Summary }}……
-            <p class="readmore"><a href="{{ .Permalink }}">{{ i18n "continueReading" }}</a></p>
+            {{ .Summary }}{{ if .Truncated }}……{{ end }}
         </div>
+        {{ if .Truncated }}
+            <p class="readmore"><a href="{{ .Permalink }}">{{ i18n "continueReading" }}</a></p>
+        {{ end }}
     </article>
     {{ end }}
 
