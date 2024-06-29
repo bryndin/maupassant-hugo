@@ -6,7 +6,7 @@
         <h2>{{ i18n "related_posts" }}</h2>
         <ul class="listing">
             {{ range . }}
-            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            <li><a class="title" href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a></li>
             {{ end }}
         </ul>
     </div>

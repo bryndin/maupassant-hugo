@@ -7,7 +7,7 @@
  */
 body {
     background-color:#FFF;
-    color:#444;
+    color:#6E7173;
     font-size: 15px;
     /**
     font-family:"TIBch", "Classic Grotesque W01", "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
@@ -31,7 +31,7 @@ a, button.submit {
     transition:all .1s ease-in;
 }
 a:hover, a:active {
-    color:#6E7173;
+    color:#000;
 }
 mark {
     padding: 3px 3px 3px 5px;
@@ -115,11 +115,6 @@ textarea {
 }
 .post-meta a:hover, .post-content a:hover, .widget a:hover, .comment-content a {
     border-bottom-color:transparent;
-}
-
-#logo:hover, #nav-menu a:hover, .widget a:hover, .post-title a:hover,
-.meta-category a:hover, .meta-tags a:hover::before, .meta-tags a:hover {
-    color: #000;
 }
 
 #header {
@@ -862,6 +857,9 @@ img.alignright {
 }
 .post-archive .date {
       padding-right: .7em; 
+}
+.post-archive .title {
+    color: #444;
 }
 
 .related-posts {
