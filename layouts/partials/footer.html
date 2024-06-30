@@ -146,15 +146,12 @@
   {{- end -}}
 {{ end }}
 
-
-<a id="rocket" href="#top"></a>
-<script src="{{ "js/totop.js?v=0.0.0" | relURL }}" async=""></script>
+{{ partial "rocket" }}
 
 {{ if findRE "<pre" $page.Content 1 }}
   {{- /* Only load code copy logic if the content contains code */ -}}
   {{ partial "code-copy" $page }}
 {{ end }}
-
 
 <!-- custom js -->
 {{ range $file := $page.Site.Params.customJS }}
