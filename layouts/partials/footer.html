@@ -1,12 +1,13 @@
+{{ $page := . }}
 <footer id="footer">
-  <span class="copyright"
-    >&copy; {{ now.Format "2006" }} {{ .Site.Params.author }}</span
-  >
+  <span class="copyright">
+    &copy; {{ now.Format "2006" }} {{ $page.Site.Params.author }}
+  </span>
 </footer>
 
-{{ if .IsPage }}
+{{ if $page.IsPage }}
   <!-- graphviz -->
-  {{- if and (or .Params.graphviz.enable (and .Site.Params.graphviz.enable (ne .Params.graphviz.enable false))) (or .IsPage .IsHome) -}}
+  {{- if and (or $page.Params.graphviz.enable (and $page.Site.Params.graphviz.enable (ne $page.Params.graphviz.enable false))) (or $page.IsPage $page.IsHome) -}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.1/viz.js"></script>
     <script>
       (function () {
@@ -43,7 +44,7 @@
 
 
   <!-- flowchart -->
-  {{- if and (or .Params.flowchartDiagrams.enable (and .Site.Params.flowchartDiagrams.enable (ne .Params.flowchartDiagrams.enable false))) (or .IsPage .IsHome) -}}
+  {{- if and (or $page.Params.flowchartDiagrams.enable (and $page.Site.Params.flowchartDiagrams.enable (ne $page.Params.flowchartDiagrams.enable false))) (or $page.IsPage $page.IsHome) -}}
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js"
       crossorigin="anonymous"
@@ -53,10 +54,10 @@
       crossorigin="anonymous"
     ></script>
         <script>
-            {{- if .Params.flowchartDiagrams.options -}}
-                window.flowchartDiagramsOptions = {{ .Params.flowchartDiagrams.options | safeJS }};
-            {{- else if .Site.Params.flowchartDiagrams.options -}}
-                window.flowchartDiagramsOptions = {{ .Site.Params.flowchartDiagrams.options | safeJS }};
+            {{- if $page.Params.flowchartDiagrams.options -}}
+                window.flowchartDiagramsOptions = {{ $page.Params.flowchartDiagrams.options | safeJS }};
+            {{- else if $page.Site.Params.flowchartDiagrams.options -}}
+                window.flowchartDiagramsOptions = {{ $page.Site.Params.flowchartDiagrams.options | safeJS }};
             {{- end -}}
             (function () {
                 if (!window.flowchart) return;
@@ -80,7 +81,7 @@
 
   <!-- The sequence must be loaded after the flow, otherwise the sequence rendering will not be successful. The reason needs to be analyzed. -->
   <!-- js-sequence-diagrams -->
-  {{- if and (or .Params.sequenceDiagrams.enable (and .Site.Params.sequenceDiagrams.enable (ne .Params.sequenceDiagrams.enable false))) (or .IsPage .IsHome) -}}
+  {{- if and (or $page.Params.sequenceDiagrams.enable (and $page.Site.Params.sequenceDiagrams.enable (ne $page.Params.sequenceDiagrams.enable false))) (or $page.IsPage $page.IsHome) -}}
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"
       crossorigin="anonymous"
@@ -98,10 +99,10 @@
       crossorigin="anonymous"
     ></script>
         <script>
-        {{- if .Params.sequenceDiagrams.options -}}
-            window.sequenceDiagramsOptions = {{ .Params.sequenceDiagrams.options | safeJS }};
-        {{- else if .Site.Params.sequenceDiagrams.options -}}
-            window.sequenceDiagramsOptions = {{ .Site.Params.sequenceDiagrams.options | safeJS }};
+        {{- if $page.Params.sequenceDiagrams.options -}}
+            window.sequenceDiagramsOptions = {{ $page.Params.sequenceDiagrams.options | safeJS }};
+        {{- else if $page.Site.Params.sequenceDiagrams.options -}}
+            window.sequenceDiagramsOptions = {{ $page.Site.Params.sequenceDiagrams.options | safeJS }};
         {{- end -}}
         (function () {
             if (!window.Diagram) return;
@@ -140,7 +141,7 @@
     async
   ></script>
 
-  {{- if .Site.Params.fancybox -}}
+  {{- if $page.Site.Params.fancybox -}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
   {{- end -}}
 {{ end }}
@@ -149,13 +150,13 @@
 <a id="rocket" href="#top"></a>
 <script src="{{ "js/totop.js?v=0.0.0" | relURL }}" async=""></script>
 
-{{ if findRE "<pre" .Content 1 }}
+{{ if findRE "<pre" $page.Content 1 }}
   {{- /* Only load code copy logic if the content contains code */ -}}
-  {{ partial "code-copy" . }}
+  {{ partial "code-copy" $page }}
 {{ end }}
 
 
 <!-- custom js -->
-{{ range .Site.Params.customJS }}
-  <script src="{{ "/js/" | relURL }}{{ . }}"></script>
+{{ range $file := $page.Site.Params.customJS }}
+  <script src="{{ "/js/" | relURL }}{{ $file }}"></script>
 {{ end }}
