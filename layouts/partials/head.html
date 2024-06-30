@@ -1,33 +1,37 @@
+{{ $page := . }}
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  {{ if .IsHome -}}
-    {{ if .Site.Params.subtitle -}}
-      <title>{{ .Site.Title }} | {{ .Site.Params.subtitle }}</title>
+  {{ if $page.IsHome -}}
+    {{ if $page.Site.Params.subtitle -}}
+      <title>{{ $page.Site.Title }} | {{ $page.Site.Params.subtitle }}</title>
       <meta
         property="og:title"
-        content="{{ .Site.Title }} | {{ .Site.Params.subtitle }}"
+        content="{{ $page.Site.Title }} | {{ $page.Site.Params.subtitle }}"
       />
     {{ else -}}
-      <title>{{ .Site.Title }}</title>
-      <meta property="og:title" content="{{ .Site.Title }}" />
+      <title>{{ $page.Site.Title }}</title>
+      <meta property="og:title" content="{{ $page.Site.Title }}" />
     {{ end -}}
     <meta property="og:type" content="website" />
-    <meta name="Keywords" content="{{ .Site.Params.keywords }}" />
-    <meta name="description" content="{{ .Site.Params.description }}" />
+    <meta name="Keywords" content="{{ $page.Site.Params.keywords }}" />
+    <meta name="description" content="{{ $page.Site.Params.description }}" />
   {{- else -}}
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
-    <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
+    <title>{{ $page.Title }} | {{ $page.Site.Title }}</title>
+    <meta
+      property="og:title"
+      content="{{ $page.Title }} - {{ $page.Site.Title }}"
+    />
     <meta property="og:type" content="article" />
-    {{ with .Params.date }}
+    {{ with $page.Params.date }}
       <meta
         property="article:published_time"
         content="{{ .Format "2006-01-02T15:04:05+08:00" }}"
       />
     {{ end }}
-    {{ with .Params.lastmod }}
+    {{ with $page.Params.lastmod }}
       <meta
         property="article:modified_time"
         content="{{ .Format "2006-01-02T15:04:05+08:00" }}"
@@ -35,27 +39,27 @@
     {{ end }}
     <meta
       name="Keywords"
-      content="{{ if .Keywords }}
-        {{ .Keywords }}
+      content="{{ if $page.Keywords }}
+        {{ $page.Keywords }}
       {{ else }}
-        {{ .Site.Params.keywords }}
+        {{ $page.Site.Params.keywords }}
       {{ end }}"
     />
     <meta
       name="description"
-      content="{{ if .Description }}
-        {{ .Description }}
+      content="{{ if $page.Description }}
+        {{ $page.Description }}
       {{ else }}
-        {{ .Title }}
+        {{ $page.Title }}
       {{ end }}"
     />
-    {{ if .Params.author -}}
-      <meta name="author" content="{{ .Params.author }}" />
+    {{ if $page.Params.author -}}
+      <meta name="author" content="{{ $page.Params.author }}" />
     {{ else }}
-      <meta name="author" content="{{ .Site.Params.author }}" />
+      <meta name="author" content="{{ $page.Site.Params.author }}" />
     {{- end }}
   {{- end }}
-  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:url" content="{{ $page.Permalink }}" />
   <link
     rel="shortcut icon"
     href="{{ "favicon.ico" | relURL }}"
@@ -67,12 +71,12 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
   />
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
-  {{ range .AlternativeOutputFormats -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ range $page.AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $page.Site.Title | safeHTML }}
   {{ end -}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  {{ partial "gtm/head" . }}
-  {{ if .Site.Params.fancybox }}
+  {{ partial "gtm/head" $page }}
+  {{ if $page.Site.Params.fancybox }}
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"
       rel="stylesheet"
@@ -81,7 +85,7 @@
 
 
   <!-- custom css -->
-  {{ range .Site.Params.customCSS }}
-    <link rel="stylesheet" href="{{ "/css/" | relURL }}{{ . }}" />
+  {{ range $file := $page.Site.Params.customCSS }}
+    <link rel="stylesheet" href="{{ "/css/" | relURL }}{{ $file }}" />
   {{ end }}
 </head>
