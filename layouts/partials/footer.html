@@ -5,8 +5,8 @@
 {{ if .IsPage }}
     <!-- graphviz -->
     {{- if and (or .Params.graphviz.enable (and .Site.Params.graphviz.enable (ne .Params.graphviz.enable false))) (or .IsPage .IsHome) -}}
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.1/viz.js"></script>
-        <script type="text/javascript">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.1/viz.js"></script>
+        <script>
             (function () {
                 if (!window.Viz) return;
                 var vizPrefix = "language-viz-";
@@ -58,7 +58,7 @@
             })();
         </script>
     {{- end -}}
-    
+
     <!-- The sequence must be loaded after the flow, otherwise the sequence rendering will not be successful. The reason needs to be analyzed. -->
     <!-- js-sequence-diagrams -->
     {{- if and (or .Params.sequenceDiagrams.enable (and .Site.Params.sequenceDiagrams.enable (ne .Params.sequenceDiagrams.enable false))) (or .IsPage .IsHome) -}}
@@ -95,7 +95,7 @@
         </script>
     {{- end -}}
 
-    <script type="text/javascript">
+    <script>
         window.MathJax = {
             tex2jax: {
                 inlineMath: [['$', '$']],
@@ -111,7 +111,7 @@
 {{ end }}
 
 <a id="rocket" href="#top"></a>
-<script type="text/javascript" src='{{ "js/totop.js?v=0.0.0" | relURL }}' async=""></script>
+<script src='{{ "js/totop.js?v=0.0.0" | relURL }}' async=""></script>
 
 {{ if findRE "<pre" .Content 1 }}
 {{- /* Only load code copy logic if the content contains code */ -}}

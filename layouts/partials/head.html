@@ -40,12 +40,12 @@
     {{ range .AlternativeOutputFormats -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     {{ partial "gtm/head" . }}
     {{if .Site.Params.fancybox }}
         <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" rel="stylesheet">
     {{ end }}
-    
+
     <!-- custom css -->
     {{ range .Site.Params.customCSS }}
         <link rel="stylesheet" href='{{ "/css/" | relURL }}{{ . }}'>
