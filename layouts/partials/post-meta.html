@@ -1,7 +1,10 @@
 <div class="post-meta">
   {{ if not .PublishDate.IsZero }}
-  {{- $datetime_format := i18n "Datetime_format" -}}
-    <time pubdate datetime="{{ .PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="meta-date dt-published">
+    {{- $datetime_format := i18n "Datetime_format" -}}
+    <time
+      datetime="{{ .PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}"
+      class="meta-date dt-published"
+    >
       {{ time.Format $datetime_format .PublishDate }}
     </time>
   {{ end }}
@@ -12,7 +15,9 @@
     <div class="meta-category">
       <ul>
         {{ range . }}
-          <li><a href='{{ "categories/" | relURL }}{{ . | urlize }}'>{{ . }}</a></li>
+          <li>
+            <a href="{{ "categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+          </li>
         {{ end }}
       </ul>
     </div>

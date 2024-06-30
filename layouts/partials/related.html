@@ -1,14 +1,18 @@
 {{ if not .Site.Params.relatedPosts.disable }}
-    {{ $related := .Site.RegularPages.Related . | first .Site.Params.relatedPosts.Limit }}
-    {{ $relatedPosts := where $related "Type" .Site.Params.relatedPosts.type }}
-    {{ with $relatedPosts }}
+  {{ $related := .Site.RegularPages.Related . | first .Site.Params.relatedPosts.Limit }}
+  {{ $relatedPosts := where $related "Type" .Site.Params.relatedPosts.type }}
+  {{ with $relatedPosts }}
     <div class="related-posts">
-        <h2>{{ i18n "related_posts" }}</h2>
-        <ul class="listing">
-            {{ range . }}
-            <li><a class="title" href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a></li>
-            {{ end }}
-        </ul>
+      <h2>{{ i18n "related_posts" }}</h2>
+      <ul class="listing">
+        {{ range . }}
+          <li>
+            <a class="title" href="{{ .RelPermalink }}" title="{{ .Title }}"
+              >{{ .Title }}</a
+            >
+          </li>
+        {{ end }}
+      </ul>
     </div>
-    {{ end }}
+  {{ end }}
 {{ end }}

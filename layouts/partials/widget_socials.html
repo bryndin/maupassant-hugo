@@ -1,16 +1,16 @@
 {{ with .Site.Params.wSocials }}
-<section class="widget widget-socials">
+  <section class="widget widget-socials">
     <h3 class="widget-title"><!-- Social Networks --></h3>
     <!-- SVG Icons from https://icons.getbootstrap.com/ -->
     <ul>
-        {{ range . }}
+      {{ range . }}
         <li>
-            <a title="{{ .title }}" href="{{ .url }}">
-                {{ $svg := printf "static/%s" .img | readFile }}
-                {{ $svg | safeHTML }}
-            </a>
+          <a title="{{ .title }}" href="{{ .url }}">
+            {{ $svg := printf "static/%s" .img | readFile }}
+            {{ $svg | safeHTML }}
+          </a>
         </li>
-        {{ end }}
+      {{ end }}
     </ul>
-</section>
+  </section>
 {{ end }}

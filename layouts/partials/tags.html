@@ -1,13 +1,13 @@
 <div class="post-meta meta-tags">
-    {{ if and (isset .Params "tags") .Params.tags }}
+  {{ if and (isset .Params "tags") .Params.tags }}
     <ul>
-        {{ range .Params.Tags }}
-        <li><a href='{{ "tags/" | relURL }}{{ . | urlize }}'>{{ . }}</a></li>
-        {{ end }}
+      {{ range .Params.Tags }}
+        <li><a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
+      {{ end }}
     </ul>
-    {{ else }}
-        {{ if eq .Type .Site.Params.BlogType}}
-        {{ i18n "tagsNone" }}
-        {{ end }}
+  {{ else }}
+    {{ if eq .Type .Site.Params.BlogType }}
+      {{ i18n "tagsNone" }}
     {{ end }}
+  {{ end }}
 </div>

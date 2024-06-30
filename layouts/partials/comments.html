@@ -1,24 +1,27 @@
 {{/* Check if either comments are enabled for the specific page in front matter,
-    or if the page is a blog post AND if comments are enabled site-wide */}}
+  or if the page is a blog post AND if comments are enabled site-wide
+*/}}
 {{ if or (eq .Params.comments true)
-         (and (eq .Type .Site.Params.BlogType) (eq .Site.Params.comments true))
+  (and (eq .Type .Site.Params.BlogType) (eq .Site.Params.comments true))
 }}
-    {{ template "_internal/disqus.html" . }}
+  {{ template "_internal/disqus.html" . }}
 
-    <!-- utteranc -->
-    {{ if .Site.Params.utteranc.enable }}
+
+  <!-- utteranc -->
+  {{ if .Site.Params.utteranc.enable }}
     <div class="post bg-white">
-      <script src="https://utteranc.es/client.js"
-            repo="{{ .Site.Params.utteranc.repo }}"
-            issue-term="{{ .Site.Params.utteranc.issueTerm }}"
-            theme="{{ .Site.Params.utteranc.theme }}"
-            crossorigin="anonymous"
-            async>
-      </script>
+      <script
+        src="https://utteranc.es/client.js"
+        repo="{{ .Site.Params.utteranc.repo }}"
+        issue-term="{{ .Site.Params.utteranc.issueTerm }}"
+        theme="{{ .Site.Params.utteranc.theme }}"
+        crossorigin="anonymous"
+        async
+      ></script>
     </div>
-    {{ end }}
-    <!--waline-->
-    {{ if .Site.Params.waline.enable }}
+  {{ end }}
+  <!--waline-->
+  {{ if .Site.Params.waline.enable }}
     <div id="waline"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waline/3.2.2/waline.js"></script>
     <script>
@@ -28,5 +31,5 @@
             placeholder: '{{ .Site.Params.waline.placeholder }}',
         });
     </script>
-    {{ end }}
+  {{ end }}
 {{- end }}

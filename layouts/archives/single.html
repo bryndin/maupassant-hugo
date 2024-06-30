@@ -1,15 +1,17 @@
-{{ define "content"}}
-<div class="post-archive">
+{{ define "content" }}
+  <div class="post-archive">
     {{ range (where .Site.RegularPages "Type" .Site.Params.BlogType).GroupByDate "2006" }}
-    <h2>{{ .Key }}</h2>
-    <ul class="listing">
+      <h2>{{ .Key }}</h2>
+      <ul class="listing">
         {{ range .Pages }}
-        <li>
+          <li>
             <span class="date">{{ .Date.Format "2006/01/02" }}</span>
-            <a class="title" href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
-        </li>
+            <a class="title" href="{{ .Permalink }}" title="{{ .Title }}"
+              >{{ .Title }}</a
+            >
+          </li>
         {{ end }}
-    </ul>
+      </ul>
     {{ end }}
-</div>
+  </div>
 {{ end }}
