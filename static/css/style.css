@@ -846,7 +846,10 @@ img.alignright {
 .related-posts {
     margin-top: 45px;
     border-top: rgb(221, 221, 221) 1px solid;
-    padding-bottom: .8em; 
+    padding-bottom: .8em;
+}
+.related-posts li {
+    line-height: 1.5;
 }
 
 /* back-to-top rocket*/
