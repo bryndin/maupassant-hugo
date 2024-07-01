@@ -1,17 +1,17 @@
+{{ $page := . }}
 <!DOCTYPE html>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en{{ end }}">
-  {{ partial "head" . }}
+<html lang="{{ with $page.Site.LanguageCode }}{{ . }}{{ else }}en{{ end }}">
+  {{ partial "head" $page }}
   <body>
-    {{ partial "header" . }}
+    {{ partial "header" $page }}
     <div id="body">
       <div class="container">
         <div class="col-group">
           <div class="col-8" id="main">
-            {{ block "content" . }}{{ end }}
-            {{ partial "footer" . }}
+            {{ block "content" $page }}{{ end }}
+            {{ partial "footer" $page }}
           </div>
-
-          {{ partial "sidebar" . }}
+          {{ partial "sidebar" $page }}
         </div>
       </div>
     </div>
