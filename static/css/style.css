@@ -810,41 +810,6 @@ img.alignright {
   width: 100%;
 }
 
-/** Donation block **/
-.hidden {
-  display: none;
-}
-#post-donation {
-  text-align: center;
-  margin: 20px auto;
-}
-#post-donation-button {
-  border: 1px solid #272727;
-  line-height: 100%;
-  outline: none;
-  background: #fff;
-  padding: 0.6em 1em;
-  margin: 1px;
-}
-#post-donation-button:hover {
-  border: 2px solid #0474bb;
-  color: #0474bb;
-  margin: 0;
-}
-#post-donation-qrcodes {
-  margin-top: 0.8em;
-}
-.post-donation-qrcode {
-  display: inline-block;
-}
-.post-donation-qrcode img {
-  width: 200px;
-  max-width: 100%;
-}
-.post-donation-qrcode p {
-  margin: 0 auto auto auto;
-  font-size: 85%;
-}
 /** Comment extra **/
 #comment-submitted {
   border-top: 1px solid #ddd;
