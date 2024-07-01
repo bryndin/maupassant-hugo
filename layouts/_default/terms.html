@@ -6,7 +6,7 @@
       <h1>{{ i18n "tags" 10 }}: {{ len .Data.Terms }}</h1>
     {{ end }}
   </header>
-  <div class="post-archive">
+  <div class="post-archive res-cons">
     {{ range .Data.Terms.ByCount }}
       <h2>
         <a href="{{ path.Join $.Data.Plural .Term | urlize | absLangURL }}"
