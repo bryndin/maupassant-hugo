@@ -5,7 +5,7 @@
  * @version 1.3
  * @link http://pickcho.com
 
-# Stepped responsive design 
+# Stepped responsive design
 
 ## Breakpoint	Behavior
 > 1290px	Fixed 1150px container
@@ -98,6 +98,10 @@ textarea {
   resize: vertical;
 }
 
+.clear {
+  clear: both;
+}
+
 .clearfix,
 .col-group {
   zoom: 1;
@@ -139,9 +143,6 @@ textarea {
 }
 
 #logo {
-  /**
-    font:bold 42px/1.12 "Times New Roman", Georgia, Times, sans-serif;
-    **/
   font-size: 37.5px;
   font-weight: bold;
   color: #555;
@@ -737,7 +738,6 @@ img.alignright {
 .body404 {
   height: 100%;
   width: 100%;
-  /*background:#fff url(img/404.jpg) no-repeat center top;*/
   background: #fff;
   background-size: cover;
   margin: 4em 0 6em 0;
@@ -1073,7 +1073,6 @@ table tbody tr td:nth-of-type(1) pre {
 }
 
 .github-badge img {
-  /*height: "calc(%s * 1.25)" % $fontsize-footnote*/
   height: 1.25em;
   vertical-align: top;
 }
