@@ -8,7 +8,7 @@
 {{ if $page.IsPage }}
   <!-- graphviz -->
   {{- if and (or $page.Params.graphviz.enable (and $page.Site.Params.graphviz.enable (ne $page.Params.graphviz.enable false))) (or $page.IsPage $page.IsHome) -}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.7.1/viz.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/viz.js"></script>
     <script>
       (function () {
         if (!window.Viz) return;
@@ -46,11 +46,11 @@
   <!-- flowchart -->
   {{- if and (or $page.Params.flowchartDiagrams.enable (and $page.Site.Params.flowchartDiagrams.enable (ne $page.Params.flowchartDiagrams.enable false))) (or $page.IsPage $page.IsHome) -}}
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js"
+      src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.12.2/flowchart.min.js"
+      src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.18.0/flowchart.min.js"
       crossorigin="anonymous"
     ></script>
         <script>
@@ -91,11 +91,11 @@
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"
+      src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.7/underscore-min.js"
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"
+      src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/2.0.0/sequence-diagram-min.js"
       crossorigin="anonymous"
     ></script>
         <script>
