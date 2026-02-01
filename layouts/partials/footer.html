@@ -33,7 +33,7 @@
             );
             const container = document.createElement("div");
             container.className = "align-center";
-            container.setAttribute("style", "overFlow-x:auto");
+            container.setAttribute("style", "overflow-x:auto");
             container.appendChild(image.documentElement);
             rootElement.parentNode.replaceChild(container, rootElement);
           },
@@ -69,7 +69,7 @@
                     const id = `js-flowchart-diagrams-${i}`;
                     container.id = id;
                     container.className = 'align-center';
-                    container.setAttribute("style", "overFlow-x:auto");
+                    container.setAttribute("style", "overflow-x:auto");
                     rootElement.parentNode.replaceChild(container, rootElement);
                     const diagram = flowchart.parse(block.childNodes[0].nodeValue);
                     diagram.drawSVG(id, window.flowchartDiagramsOptions ? window.flowchartDiagramsOptions : {});
@@ -115,7 +115,7 @@
                 const id = `js-sequence-diag-${i}`;
                 container.id = id;
                 container.className = 'align-center';
-                container.setAttribute("style", "overFlow-x:auto");
+                container.setAttribute("style", "overflow-x:auto");
                 rootElement.parentNode.replaceChild(container, rootElement);
 
                 const diagram = Diagram.parse(block.childNodes[0].nodeValue);
