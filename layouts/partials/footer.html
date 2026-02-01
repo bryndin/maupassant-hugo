@@ -146,8 +146,6 @@
   {{- end -}}
 {{ end }}
 
-{{ partial "rocket" }}
-
 {{ if findRE "<pre" $page.Content 1 }}
   {{- /* Only load code copy logic if the content contains code */ -}}
   {{ partial "code-copy" $page }}
