@@ -2,6 +2,7 @@
     This is the custom 404 error page template.
 */}}
 {{ define "content" }}
+  {{ "<!-- starting of 404.html -->" | safeHTML }}
   <div class="body404">
     <div class="info404">
       <header id="header404" class="clearfix">
@@ -17,4 +18,5 @@
       </section>
     </div>
   </div>
+  {{ "<!-- ending of 404.html -->" | safeHTML }}
 {{ end }}

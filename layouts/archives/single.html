@@ -3,6 +3,7 @@
     It groups all regular pages (blog posts) by year and lists them chronologically.
 */}}
 {{ define "content" }}
+  {{ "<!-- starting of archives/single.html -->" | safeHTML }}
   <div class="post-archive res-cons">
     {{ range (where .Site.RegularPages "Type" .Site.Params.BlogType).GroupByDate "2006" }}
       <h2>{{ .Key }}</h2>
@@ -18,4 +19,5 @@
       </ul>
     {{ end }}
   </div>
+  {{ "<!-- ending of archives/single.html -->" | safeHTML }}
 {{ end }}

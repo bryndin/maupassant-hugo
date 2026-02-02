@@ -3,6 +3,7 @@
     It displays the count of terms and lists them with their post counts.
 */}}
 {{ define "content" }}
+  {{ "<!-- starting of terms.html -->" | safeHTML }}
   <header>
     {{ if eq .Data.Singular "category" }}
       <h1>{{ i18n "categories" 10 }}: {{ len .Data.Terms }}</h1>
@@ -30,4 +31,5 @@
       </ul>
     {{ end }}
   </div>
+  {{ "<!-- ending of terms.html -->" | safeHTML }}
 {{ end }}

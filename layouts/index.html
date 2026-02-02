@@ -5,6 +5,7 @@
     displays a summary of each post.
 */}}
 {{ define "content" }}
+  {{ "<!-- starting of index.html -->" | safeHTML }}
   <div class="res-cons">
     {{- $paginator := .Paginate (where .Site.RegularPages "Type" .Site.Params.BlogType) }}
     {{ range $index,$data := $paginator.Pages }}
@@ -29,4 +30,5 @@
     {{ end }}
     {{ partial "paginator" . }}
   </div>
+  {{ "<!-- ending of index.html -->" | safeHTML }}
 {{ end }}

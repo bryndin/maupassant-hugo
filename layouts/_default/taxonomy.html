@@ -3,6 +3,7 @@
     It displays the term name and a list of pages associated with that term.
 */}}
 {{ define "content" }}
+  {{ "<!-- starting of taxonomy.html -->" | safeHTML }}
   <div class="res-cons">
     {{ if eq .Data.Singular "category" }}
       <h3 class="archive-title">
@@ -36,7 +37,7 @@
         {{ end }}
       </article>
     {{ end }}
-
     {{ partial "paginator" . }}
   </div>
+  {{ "<!-- ending of taxonomy.html -->" | safeHTML }}
 {{ end }}

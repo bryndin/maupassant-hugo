@@ -5,6 +5,7 @@
 */}}
 {{ define "content" }}
   {{ $page := . }}
+  {{ "<!-- starting of single.html -->" | safeHTML }}
   <div class="res-cons">
     {{ partial "toc" $page }}
     <article class="post">
@@ -29,4 +30,5 @@
     {{- /* Only load code copy logic if the content contains code */ -}}
     {{ partial "code-copy" $page }}
   {{ end }}
+  {{ "<!-- ending of single.html -->" | safeHTML }}
 {{ end }}
