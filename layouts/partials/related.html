@@ -2,21 +2,19 @@
     This partial displays related posts.
     It uses Hugo's related content feature to show relevant articles.
 */}}
-{{ if not .Site.Params.relatedPosts.disable }}
-  {{ $related := .Site.RegularPages.Related . | first .Site.Params.relatedPosts.Limit }}
-  {{ $relatedPosts := where $related "Type" .Site.Params.relatedPosts.type }}
-  {{ with $relatedPosts }}
+{{ if not .Site.Params.relatedPosts.disable -}}
+  {{- $related := .Site.RegularPages.Related . | first .Site.Params.relatedPosts.Limit -}}
+  {{- $relatedPosts := where $related "Type" .Site.Params.relatedPosts.type -}}
+  {{- with $relatedPosts }}
     <div class="related-posts">
       <h2>{{ i18n "related_posts" }}</h2>
       <ul class="listing">
-        {{ range . }}
+        {{- range . }}
           <li>
-            <a class="title" href="{{ .RelPermalink }}" title="{{ .Title }}"
-              >{{ .Title }}</a
-            >
+            <a class="title" href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
           </li>
-        {{ end }}
+        {{- end }}
       </ul>
     </div>
-  {{ end }}
-{{ end }}
+  {{- end -}}
+{{- end }}
