@@ -8,9 +8,9 @@
       <a href="{{ "tags/" | relURL }}">{{ i18n "tags" 10 }}</a>
     </h3>
     <div class="tagcloud">
-      {{ range .Site.Taxonomies.tags }}
+      {{- range .Site.Taxonomies.tags }}
         <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-      {{ end }}
+      {{- end }}
     </div>
   </section>
-{{ end -}}
+{{ end }}
