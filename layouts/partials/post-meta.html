@@ -2,29 +2,24 @@
     This partial displays metadata for a post.
     It includes the publication date, author, and categories.
 */}}
-{{ $page := . }}
+{{ $page := . -}}
 <div class="post-meta">
-  {{ if not $page.PublishDate.IsZero }}
+  {{ if not $page.PublishDate.IsZero -}}
     {{- $datetime_format := i18n "Datetime_format" -}}
-    <time
-      datetime="{{ $page.PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}"
-      class="meta-date dt-published"
-    >
-      {{ time.Format $datetime_format $page.PublishDate }}
-    </time>
-  {{ end }}
-  {{ with $author := $page.Params.Author }}
+    <time datetime="{{ $page.PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="meta-date dt-published">{{ time.Format $datetime_format $page.PublishDate }}</time>
+  {{ end -}}
+  {{ with $author := $page.Params.Author -}}
     <span class="meta-author">{{ i18n "by" }} {{ $author }}</span>
-  {{ end }}
+  {{ end -}}
   {{ with $categories := $page.Params.Categories }}
     <div class="meta-category">
       <ul>
-        {{ range $category:= $categories }}
+        {{- range $category:= $categories }}
           <li>
             <a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
           </li>
-        {{ end }}
+        {{- end }}
       </ul>
     </div>
-  {{ end }}
+  {{- end }}
 </div>
