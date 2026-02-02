@@ -1,20 +1,20 @@
-{{/*
+{{- /*
     This partial generates the Social Media widget.
     It displays icons with links to social profiles.
-*/}}
+*/ -}}
 {{ with .Site.Params.wSocials }}
   <section class="widget widget-socials">
     <h3 class="widget-title"><!-- Social Networks --></h3>
-    <!-- SVG Icons from https://icons.getbootstrap.com/ -->
+    {{- /* SVG Icons from https://icons.getbootstrap.com/ */}}
     <ul>
-      {{ range . }}
+      {{- range . }}
         <li>
           <a title="{{ .title }}" href="{{ .url }}">
-            {{ $svg := printf "static/%s" .img | readFile }}
+            {{ $svg := printf "static/%s" .img | readFile -}}
             {{ $svg | safeHTML }}
           </a>
         </li>
-      {{ end }}
+      {{- end }}
     </ul>
   </section>
-{{ end }}
+{{- end }}
