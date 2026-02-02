@@ -5,19 +5,17 @@
 {{ define "content" }}
   {{ "<!-- starting of archives/single.html -->" | safeHTML }}
   <div class="post-archive res-cons">
-    {{ range (where .Site.RegularPages "Type" .Site.Params.BlogType).GroupByDate "2006" }}
+    {{- range (where .Site.RegularPages "Type" .Site.Params.BlogType).GroupByDate "2006" }}
       <h2>{{ .Key }}</h2>
       <ul class="listing">
-        {{ range .Pages }}
+        {{- range .Pages }}
           <li>
             <span class="date">{{ .Date.Format "2006/01/02" }}</span>
-            <a class="title" href="{{ .Permalink }}" title="{{ .Title }}"
-              >{{ .Title }}</a
-            >
+            <a class="title" href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
           </li>
-        {{ end }}
+        {{- end }}
       </ul>
-    {{ end }}
+    {{- end }}
   </div>
   {{ "<!-- ending of archives/single.html -->" | safeHTML }}
 {{ end }}
