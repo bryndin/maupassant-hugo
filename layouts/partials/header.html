@@ -2,51 +2,35 @@
     This partial generates the site header.
     It contains the logo/site title and the navigation menu.
 */}}
-{{ $page := . }}
+{{- $page := . -}}
 {{ partial "gtm/body" $page }}
 <header id="header" class="clearfix">
   <div class="container">
     <div class="col-group">
       <div class="site-name ">
-        <a id="logo" href="{{ $page.Site.BaseURL | absURL }}">
-          {{ $page.Site.Title }}
-        </a>
-        {{ with $page.Site.Params.subtitle }}
+        <a id="logo" href="{{ $page.Site.BaseURL | absURL }}">{{ $page.Site.Title }}</a>
+        {{ with $page.Site.Params.subtitle -}}
           <p class="description">{{ . }}</p>
+        {{- end }}
+      </div>
+      <nav id="nav-menu" class="clearfix">
+        {{- /* Check if page is one of the menu pages */ -}}
+        {{- $found := false -}}
+        {{- range $item := $page.Site.Menus.main -}}
+          {{- if eq $item.URL $page.RelPermalink -}}
+            {{- $found = true -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{/* Home link */}}
+        <a {{ if not $found -}} class="current" {{ end -}} href="{{ $page.Site.BaseURL | absURL }}" title="{{ i18n "home" }}">{{ i18n "home" }}</a>
+        
+        {{/* Rest of menu links */}}
+        {{- range $item := $page.Site.Menus.main }}
+          {{- $name := i18n $item.Name | default $item.Name -}}
+          <a {{ if eq $item.URL $page.RelPermalink -}} class="current" {{ end -}} href="{{ $item.URL }}" title="{{ $name }}">{{ $name }}</a>
         {{ end }}
-      </div>
-      <div>
-        <nav id="nav-menu" class="clearfix">
-          <!-- Check if page is one of the menu pages -->
-          {{ $found := false }}
-          {{ range $item := $page.Site.Menus.main }}
-            {{ if eq $item.URL $page.RelPermalink }}
-              {{ $found = true }}
-            {{ end }}
-          {{ end }}
-          <!-- Home link -->
-          <a
-            {{ if not $found }}class="current"{{ end }}
-            href="{{ $page.Site.BaseURL | absURL }}"
-            title="{{ i18n "home" }}"
-          >
-            {{ i18n "home" }}
-          </a>
-          <!-- Rest of menu links -->
-          {{ range $item := $page.Site.Menus.main }}
-            {{ $name := i18n $item.Name | default $item.Name }}
-            <a
-              {{ if eq $item.URL $page.RelPermalink }}
-                class="current"
-              {{ end }}
-              href="{{ $item.URL }}"
-              title="{{ $name }}"
-            >
-              {{ $name }}
-            </a>
-          {{ end }}
-        </nav>
-      </div>
+      </nav>
     </div>
   </div>
 </header>
