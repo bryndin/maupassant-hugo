@@ -4,7 +4,7 @@
     common partials like head, header, sidebar, and footer.
     It defines the main "content" block that other templates override.
 */}}
-{{ $page := . }}
+{{- $page := . -}}
 <!DOCTYPE html>
 <html lang="{{ with $page.Site.LanguageCode }}{{ . }}{{ else }}en{{ end }}">
   {{ partial "head" $page }}
@@ -23,7 +23,7 @@
 
     {{ partial "footer" $page }}
 
-    <!-- Load custom js provided in the config.toml -->
+    {{- /* Load custom js provided in the config.toml */ -}}
     {{ range $file := $page.Site.Params.customJS }}
       <script src="{{ "/js/" | relURL }}{{ $file }}"></script>
     {{ end }}
