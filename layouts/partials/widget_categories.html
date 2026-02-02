@@ -8,11 +8,9 @@
       <a href="{{ "categories/" | relURL }}">{{ i18n "categories" 10 }}</a>
     </h3>
     <ul class="widget-list">
-      {{ range .Site.Taxonomies.categories }}
-        <li>
-          <a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a>
-        </li>
-      {{ end }}
+      {{- range .Site.Taxonomies.categories }}
+        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a></li>
+      {{- end }}
     </ul>
   </section>
-{{ end -}}
+{{ end }}
