@@ -1,3 +1,7 @@
+{{/*
+    This is the list template for all terms in a taxonomy (e.g., /tags/ or /categories/).
+    It displays the count of terms and lists them with their post counts.
+*/}}
 {{ define "content" }}
   <header>
     {{ if eq .Data.Singular "category" }}

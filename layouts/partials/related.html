@@ -1,3 +1,7 @@
+{{/*
+    This partial displays related posts.
+    It uses Hugo's related content feature to show relevant articles.
+*/}}
 {{ if not .Site.Params.relatedPosts.disable }}
   {{ $related := .Site.RegularPages.Related . | first .Site.Params.relatedPosts.Limit }}
   {{ $relatedPosts := where $related "Type" .Site.Params.relatedPosts.type }}

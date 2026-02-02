@@ -1,3 +1,6 @@
+{{/*
+    This partial injects the Google Tag Manager script into the <head>.
+*/}}
 {{ if not hugo.IsServer }}
   {{ with .Site.Params.GoogleTagManager.GTMID }}
     <!-- Google Tag Manager -->

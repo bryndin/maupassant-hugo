@@ -1,3 +1,9 @@
+{{/*
+    This partial generates the Table of Contents (TOC).
+    It includes CSS and JS for the floating TOC behavior.
+
+    TODO(DB): TBD if we need this.
+*/}}
 {{ if or .Params.toc (and .Site.Params.toc (ne .Params.toc false)) -}}
   <style type="text/css">
     .post-toc {

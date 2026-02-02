@@ -1,3 +1,7 @@
+{{/*
+    This partial generates the pagination controls.
+    It displays links to previous, next, and specific pages.
+*/}}
 {{ with .Paginator }}
   {{ if gt .TotalPages 10 }}
     <ol class="page-navigator">

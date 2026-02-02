@@ -1,3 +1,7 @@
+{{/*
+    This is the archives template.
+    It groups all regular pages (blog posts) by year and lists them chronologically.
+*/}}
 {{ define "content" }}
   <div class="post-archive res-cons">
     {{ range (where .Site.RegularPages "Type" .Site.Params.BlogType).GroupByDate "2006" }}

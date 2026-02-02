@@ -1,3 +1,7 @@
+{{/*
+    This is the list template for regular sections (e.g., /posts/).
+    It paginates the pages in the section and displays a list of summaries.
+*/}}
 {{ define "content" }}
   {{- $paginator := .Paginate .Data.Pages.ByDate.Reverse 10 }}
   <div class="res-cons">

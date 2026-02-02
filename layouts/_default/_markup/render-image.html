@@ -1,3 +1,7 @@
+{{/*
+    This is a render hook for images in Markdown.
+    It overrides the default image rendering to support image processing, CDNs, and Fancybox.
+*/}}
 {{- $img_destination := .Destination -}}
 {{- if (and .Page.Site.Params.image_cdn.enable (not .Page.Site.IsServer)) -}}
     {{if hasPrefix .Destination "/" }}

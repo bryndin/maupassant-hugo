@@ -1,3 +1,9 @@
+{{/*
+    This is the base layout template that all other templates inherit from.
+    It defines the basic HTML structure (<html>, <head>, <body>) and includes
+    common partials like head, header, sidebar, and footer.
+    It defines the main "content" block that other templates override.
+*/}}
 {{ $page := . }}
 <!DOCTYPE html>
 <html lang="{{ with $page.Site.LanguageCode }}{{ . }}{{ else }}en{{ end }}">

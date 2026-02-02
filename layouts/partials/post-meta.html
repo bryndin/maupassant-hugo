@@ -1,3 +1,7 @@
+{{/*
+    This partial displays metadata for a post.
+    It includes the publication date, author, and categories.
+*/}}
 {{ $page := . }}
 <div class="post-meta">
   {{ if not $page.PublishDate.IsZero }}
