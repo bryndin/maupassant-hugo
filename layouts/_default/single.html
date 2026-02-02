@@ -4,7 +4,7 @@
     related posts, and comments.
 */}}
 {{ define "content" }}
-  {{ $page := . }}
+  {{- $page := . }}
   {{ "<!-- starting of single.html -->" | safeHTML }}
   <div class="res-cons">
     {{ partial "toc" $page }}
@@ -17,11 +17,11 @@
         {{ $page.Content }}
       </div>
 
-      {{ partial "tags" $page }}
+      {{- partial "tags" $page -}}
 
-      {{ if eq $page.Type .Site.Params.BlogType }}
+      {{ if eq $page.Type .Site.Params.BlogType -}}
         {{ partial "related" $page }}
-      {{ end }}
+      {{- end }}
     </article>
     {{ partial "comments" $page }}
   </div>
@@ -30,5 +30,5 @@
     {{- /* Only load code copy logic if the content contains code */ -}}
     {{ partial "code-copy" $page }}
   {{ end }}
-  {{ "<!-- ending of single.html -->" | safeHTML }}
-{{ end }}
+  {{ "<!-- ending of single.html -->  " | safeHTML }}
+{{- end }}
