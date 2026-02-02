@@ -2,15 +2,15 @@
     This partial displays the tags for a specific post.
 */}}
 <div class="post-meta meta-tags">
-  {{ if and (isset .Params "tags") .Params.tags }}
+  {{- if and (isset .Params "tags") .Params.tags }}
     <ul>
-      {{ range .Params.Tags }}
+      {{- range .Params.Tags }}
         <li><a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
-      {{ end }}
+      {{- end }}
     </ul>
-  {{ else }}
-    {{ if eq .Type .Site.Params.BlogType }}
+  {{- else -}}
+    {{- if eq .Type .Site.Params.BlogType -}}
       {{ i18n "tagsNone" }}
-    {{ end }}
-  {{ end }}
+    {{- end }}
+  {{- end }}
 </div>
