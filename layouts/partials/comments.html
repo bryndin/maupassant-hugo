@@ -2,14 +2,13 @@
     This partial handles comment systems (Disqus, Utterances, Waline).
     It checks if comments are enabled and renders the appropriate comment widget.
 */}}
-{{/* Check if either comments are enabled for the specific page in front matter,
+{{- /* Check if either comments are enabled for the specific page in front matter,
   or if the page is a blog post AND if comments are enabled site-wide
-*/}}
+*/ -}}
 {{ if or (eq .Params.comments true)
   (and (eq .Type .Site.Params.BlogType) (eq .Site.Params.comments true))
 }}
   {{ template "_internal/disqus.html" . }}
-
 
   <!-- utteranc -->
   {{ if .Site.Params.utteranc.enable }}
