@@ -23,11 +23,6 @@
 
     {{ partial "footer" $page }}
 
-    {{ if findRE "<pre" $page.Content 1 }}
-      {{- /* Only load code copy logic if the content contains code */ -}}
-      {{ partial "code-copy" $page }}
-    {{ end }}
-
     <!-- Load custom js provided in the config.toml -->
     {{ range $file := $page.Site.Params.customJS }}
       <script src="{{ "/js/" | relURL }}{{ $file }}"></script>
