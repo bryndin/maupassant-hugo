@@ -2,7 +2,7 @@
     This partial generates the site footer.
     It contains copyright information.
 */}}
-{{ $page := . }}
+{{- $page := . -}}
 <footer id="footer" class="res-cons">
   <span class="copyright">
     &copy; {{ now.Format "2006" }} {{ $page.Site.Params.author }}
