@@ -30,3 +30,13 @@
   --font-size-base: 1rem;
   --line-height-base: 1.5;
 }
+
+.theme-dark {
+    --color-bg: #212529;
+    --color-text-main: #f8f9fa;
+    --color-text-muted: #adb5bd;
+    --color-primary: #375a7f;
+    --color-primary-hover: #2b4764;
+    --color-border: #495057;
+    --color-white: #343a40;
+}
