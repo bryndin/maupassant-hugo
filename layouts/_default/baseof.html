@@ -20,12 +20,7 @@
         </div>
       </div>
     </div>
-
     {{ partial "footer" $page }}
-
-    {{- /* Load custom js provided in the config.toml */ -}}
-    {{ range $file := $page.Site.Params.customJS }}
-      <script src="{{ "/js/" | relURL }}{{ $file }}"></script>
-    {{ end }}
+    {{ partial "custom-js" $page }}
   </body>
 </html>

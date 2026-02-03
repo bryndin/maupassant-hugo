@@ -1,0 +1,7 @@
+{{/*
+    This partial loads custom JS files provided in the config.toml.
+*/}}
+{{- $page := . -}}
+{{ range $file := $page.Site.Params.customJS }}
+    <script src="{{ "/js/" | relURL }}{{ $file }}"></script>
+{{ end }}
