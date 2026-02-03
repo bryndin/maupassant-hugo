@@ -2,6 +2,7 @@
     This is the archives template.
     It groups all regular pages (blog posts) by year and lists them chronologically.
 */}}
+{{/* TODO(DB): add $page, to follow the pattern of the baseof.html */}}
 {{ define "content" }}
   {{- $page := . -}}
   {{ "<!-- starting of archives/single.html -->" | safeHTML }}

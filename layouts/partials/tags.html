@@ -1,6 +1,7 @@
 {{/*
     This partial displays the tags for a specific post.
 */}}
+{{/* TODO(DB): add $page, to follow the pattern of the baseof.html */}}
 <div class="post-meta meta-tags">
   {{- $page := . -}}
   {{- if and (isset $page.Params "tags") $page.Params.tags }}
