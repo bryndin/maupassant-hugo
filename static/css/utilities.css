@@ -1,3 +1,11 @@
+/*
+Utilities describe mechanics, not aesthetics:
+  - No colors
+  - No fonts
+  - No borders
+  - No shadows
+*/
+
 .container {
   width: 100%;
   max-width: var(--width-container);

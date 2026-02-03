@@ -1,3 +1,7 @@
+/*
+  If Markdown renders without classes, it should still be readable.
+*/
+
 *,
 *::before,
 *::after {

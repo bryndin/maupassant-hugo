@@ -1,3 +1,7 @@
+/*
+    If a file isn’t imported here, it doesn’t exist.
+*/
+
 @layer tokens, base, utilities, components, overrides;
 
 @import "tokens.css" layer(tokens);

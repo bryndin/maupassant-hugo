@@ -1,3 +1,8 @@
+/*
+  No selectors beyond roots.
+  This is the design system, not styling.
+*/
+
 :root {
   /* Colors */
   --color-bg: #f8f9fa;
