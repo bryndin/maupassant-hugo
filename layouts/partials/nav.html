@@ -1,0 +1,22 @@
+{{/*
+    This partial generates the navigation menu.
+*/}}
+{{- $page := . -}}
+<nav id="nav-menu" class="clearfix">
+  {{- /* Check if page is one of the menu pages */ -}}
+  {{- $found := false -}}
+  {{- range $item := $page.Site.Menus.main -}}
+    {{- if eq $item.URL $page.RelPermalink -}}
+      {{- $found = true -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{/* Home link */}}
+  <a {{ if not $found -}} class="current" {{ end -}} href="{{ $page.Site.BaseURL | absURL }}" title="{{ i18n "home" }}">{{ i18n "home" }}</a>
+  
+  {{/* Rest of menu links */}}
+  {{- range $item := $page.Site.Menus.main }}
+    {{- $name := i18n $item.Name | default $item.Name -}}
+    <a {{ if eq $item.URL $page.RelPermalink -}} class="current" {{ end -}} href="{{ $item.URL }}" title="{{ $name }}">{{ $name }}</a>
+  {{ end }}
+</nav>
