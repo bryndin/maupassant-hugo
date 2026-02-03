@@ -1,0 +1,27 @@
+:root {
+  /* Colors */
+  --color-bg: #f8f9fa;
+  --color-text-main: #343a40;
+  --color-text-muted: #6c757d;
+  --color-primary: #007bff;
+  --color-primary-hover: #0056b3;
+  --color-border: #dee2e6;
+  --color-white: #ffffff;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 3rem;
+
+  /* Layout */
+  --width-container: 1140px;
+  --width-sidebar: 320px;
+  --gap-grid: 2rem;
+
+  /* Typography */
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-size-base: 1rem;
+  --line-height-base: 1.5;
+}

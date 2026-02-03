@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  max-width: var(--width-container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+.grid-main {
+  display: grid;
+  grid-template-columns: 1fr var(--width-sidebar);
+  gap: var(--gap-grid);
+}
+
+@media (max-width: 768px) {
+  .grid-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}

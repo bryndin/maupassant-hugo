@@ -9,16 +9,16 @@
 <html lang="{{ with $page.Site.LanguageCode }}{{ . }}{{ else }}en{{ end }}">
   {{ partial "head" $page }}
   <body>
-    {{ partial "header" $page }}
-    <div id="body">
-      <div class="container">
-        <div class="col-group">
-          <div class="col-8" id="main">
-            {{ block "content" $page }}{{ end }}
-          </div>
-          {{ partial "sidebar" $page }}
-        </div>
-      </div>
+    <header class="container app-header">
+      {{ partial "header" $page }}
+    </header>
+    <div class="container grid-main">
+      <main>
+        {{ block "content" $page }}{{ end }}
+      </main>
+      <aside class="sidebar">
+        {{ partial "sidebar" $page }}
+      </aside>
     </div>
     {{ partial "footer" $page }}
     {{ partial "custom-js" $page }}

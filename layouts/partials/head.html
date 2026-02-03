@@ -42,7 +42,7 @@
   <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/x-icon"/>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
-  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}"/>
+  <link rel="stylesheet" href="{{ "css/main.css" | relURL }}"/>
   <link rel="stylesheet" href="{{ "css/comments.css" | relURL }}"/>
   {{ range $page.AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $page.Site.Title | safeHTML }}

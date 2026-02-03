@@ -6,7 +6,6 @@
 {{ define "content" }}
   {{- $page := . }}
   {{ "<!-- starting of single.html -->" | safeHTML }}
-  <div class="res-cons">
     {{ partial "toc" $page }}
     <article class="post">
       <header>
@@ -24,7 +23,6 @@
       {{- end }}
     </article>
     {{ partial "comments" $page }}
-  </div>
 
   {{ if findRE "<pre" $page.Content 1 }}
     {{- /* Only load code copy logic if the content contains code */ -}}

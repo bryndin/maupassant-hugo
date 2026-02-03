@@ -2,7 +2,7 @@
     This partial generates the navigation menu.
 */}}
 {{- $page := . -}}
-<nav id="nav-menu" class="clearfix">
+<nav class="nav-menu clearfix">
   {{- /* Check if page is one of the menu pages */ -}}
   {{- $found := false -}}
   {{- range $item := $page.Site.Menus.main -}}

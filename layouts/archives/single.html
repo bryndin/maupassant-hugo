@@ -5,7 +5,7 @@
 {{ define "content" }}
   {{- $page := . -}}
   {{ "<!-- starting of archives/single.html -->" | safeHTML }}
-  <div class="post-archive res-cons">
+  <div class="post-archive">
     {{- range (where $page.Site.RegularPages "Type" $page.Site.Params.BlogType).GroupByDate "2006" }}
       <h2>{{ .Key }}</h2>
       <ul class="listing">
