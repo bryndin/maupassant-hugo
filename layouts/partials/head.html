@@ -55,8 +55,5 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet"/>
   {{ end -}}
 
-  <!-- custom css -->
-  {{- range $file := $page.Site.Params.customCSS }}
-    <link rel="stylesheet" href="{{ "/css/" | relURL }}{{ $file }}"/>
-  {{ end -}}
+  {{ partial "custom-css" $page }}
 </head>

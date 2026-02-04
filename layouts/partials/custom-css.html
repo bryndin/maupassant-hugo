@@ -1,0 +1,7 @@
+{{/*
+    This partial loads custom CSS files provided in the config.toml.
+*/}}
+{{- $page := . -}}
+{{- range $file := $page.Site.Params.customCSS }}
+    <link rel="stylesheet" href="{{ "/css/" | relURL }}{{ $file }}"/>
+{{ end -}}
