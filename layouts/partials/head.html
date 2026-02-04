@@ -3,57 +3,55 @@
     It includes meta tags, title, CSS links, and scripts.
 */}}
 {{- $page := . -}}
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  {{ if $page.IsHome -}}
-    {{- if $page.Site.Params.subtitle -}}
-      <title>{{ $page.Site.Title }} | {{ $page.Site.Params.subtitle }}</title>
-      <meta property="og:title" content="{{ $page.Site.Title }} | {{ $page.Site.Params.subtitle }}" />
-    {{- else -}}
-      <title>{{ $page.Site.Title }}</title>
-      <meta property="og:title" content="{{ $page.Site.Title }}" />
-    {{ end -}}
-    <meta property="og:type" content="website" />
-    <meta name="Keywords" content="{{ $page.Site.Params.keywords }}" />
-    <meta name="description" content="{{ $page.Site.Params.description }}" />
+{{ if $page.IsHome -}}
+  {{- if $page.Site.Params.subtitle -}}
+    <title>{{ $page.Site.Title }} | {{ $page.Site.Params.subtitle }}</title>
+    <meta property="og:title" content="{{ $page.Site.Title }} | {{ $page.Site.Params.subtitle }}" />
   {{- else -}}
-    <title>{{ $page.Title }} | {{ $page.Site.Title }}</title>
-    <meta property="og:title" content="{{ $page.Title }} | {{ $page.Site.Title }}" />
-    <meta property="og:type" content="article" />
-    {{ with $page.Params.date -}}
-      <meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}" />
-    {{- end }}
-    {{ with $page.Params.lastmod -}}
-      <meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}" />
-    {{- end }}
-    <meta name="Keywords" content="{{ if $page.Keywords }}{{ $page.Keywords }}{{ else }}{{ $page.Site.Params.keywords }}{{ end }}" />
-    <meta name="description" content="{{ if $page.Description }}{{ $page.Description }}{{ else }}{{ $page.Title }}{{ end }}" />
-    {{ if $page.Params.author -}}
-      <meta name="author" content="{{ $page.Params.author }}" />
-    {{- else -}}
-      <meta name="author" content="{{ $page.Site.Params.author }}" />
-    {{- end }}
+    <title>{{ $page.Site.Title }}</title>
+    <meta property="og:title" content="{{ $page.Site.Title }}" />
+  {{ end -}}
+  <meta property="og:type" content="website" />
+  <meta name="Keywords" content="{{ $page.Site.Params.keywords }}" />
+  <meta name="description" content="{{ $page.Site.Params.description }}" />
+{{- else -}}
+  <title>{{ $page.Title }} | {{ $page.Site.Title }}</title>
+  <meta property="og:title" content="{{ $page.Title }} | {{ $page.Site.Title }}" />
+  <meta property="og:type" content="article" />
+  {{ with $page.Params.date -}}
+    <meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}" />
   {{- end }}
-  <meta property="og:url" content="{{ $page.Permalink }}" />
+  {{ with $page.Params.lastmod -}}
+    <meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}" />
+  {{- end }}
+  <meta name="Keywords" content="{{ if $page.Keywords }}{{ $page.Keywords }}{{ else }}{{ $page.Site.Params.keywords }}{{ end }}" />
+  <meta name="description" content="{{ if $page.Description }}{{ $page.Description }}{{ else }}{{ $page.Title }}{{ end }}" />
+  {{ if $page.Params.author -}}
+    <meta name="author" content="{{ $page.Params.author }}" />
+  {{- else -}}
+    <meta name="author" content="{{ $page.Site.Params.author }}" />
+  {{- end }}
+{{- end }}
+<meta property="og:url" content="{{ $page.Permalink }}" />
 
-  <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/x-icon"/>
+<link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/x-icon"/>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
-  <link rel="stylesheet" href="{{ "css/main.css" | relURL }}"/>
-  <link rel="stylesheet" href="{{ "css/comments.css" | relURL }}"/>
-  {{ range $page.AlternativeOutputFormats -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $page.Site.Title | safeHTML }}
-  {{ end -}}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+<link rel="stylesheet" href="{{ "css/main.css" | relURL }}"/>
+<link rel="stylesheet" href="{{ "css/comments.css" | relURL }}"/>
+{{ range $page.AlternativeOutputFormats -}}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $page.Site.Title | safeHTML }}
+{{ end -}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-  {{- partial "gtm/head" $page -}}
+{{- partial "gtm/head" $page -}}
 
-  {{- if $page.Site.Params.fancybox }}
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet"/>
-  {{ end -}}
+{{- if $page.Site.Params.fancybox }}
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet"/>
+{{ end -}}
 
-  {{ partial "custom-css" $page }}
-</head>
+{{ partial "custom-css" $page }}

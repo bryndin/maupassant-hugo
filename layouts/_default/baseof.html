@@ -7,7 +7,9 @@
 {{- $page := . -}}
 <!DOCTYPE html>
 <html lang="{{ with $page.Site.LanguageCode }}{{ . }}{{ else }}en{{ end }}">
-  {{ partial "head" $page }}
+  <head>
+    {{ partial "head" $page }}
+  </head>
   <body>
     <header class="container app-header">
       {{ partial "header" $page }}
