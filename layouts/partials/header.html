@@ -1,19 +1,11 @@
 {{/*
     This partial generates the site header.
-    It contains the logo/site title and the navigation menu.
+    It contains the site title/description and the navigation menu.
 */}}
 {{- $page := . -}}
 {{ partial "gtm/body" $page }}
-<header id="header" class="clearfix">
-  <div class="container">
-    <div class="col-group">
-      <div class="site-name ">
-        <a id="logo" href="{{ $page.Site.BaseURL | absURL }}">{{ $page.Site.Title }}</a>
-        {{ with $page.Site.Params.subtitle -}}
-          <p class="description">{{ . }}</p>
-        {{- end }}
-      </div>
-      {{ partial "nav" $page }}
-    </div>
-  </div>
-</header>
+<a class="header-sitename" href="{{ $page.Site.BaseURL | absURL }}">{{ $page.Site.Title }}</a>
+{{ with $page.Site.Params.subtitle -}}
+  <p class="header-description">{{ . }}</p>
+{{- end }}
+{{ partial "nav" $page }}
