@@ -10,11 +10,8 @@
 
 /* Widget styles */
 .widget {
-  background: var(--color-white);
-  border: var(--border);
   padding: var(--space-md);
   margin-bottom: var(--space-md);
-  /* border-radius: 4px; */
 }
 
 .widget .widget-title {
