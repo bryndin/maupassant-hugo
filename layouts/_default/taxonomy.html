@@ -33,7 +33,7 @@
           {{ .Summary }}{{ if .Truncated }}……{{ end }}
         </div>
         {{ if or .Truncated .Params.Summary }}
-          <p class="readmore">
+          <p class="post-readmore">
             <a href="{{ .Permalink }}">{{ i18n "continueReading" }}</a>
           </p>
         {{ end }}

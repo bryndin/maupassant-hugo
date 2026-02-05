@@ -11,10 +11,10 @@
     {{ partial "head" $page }}
   </head>
   <body>
-    <header class="container app-header">
+    <header class="container page-header">
       {{ partial "header" $page }}
     </header>
-    <div class="container grid-main">
+    <div class="container page-main">
       <main>
         {{ block "content" $page }}{{ end }}
       </main>
@@ -22,7 +22,7 @@
         {{ partial "sidebar" $page }}
       </aside>
     </div>
-    <footer class="container app-footer">
+    <footer class="container page-footer">
       {{ partial "footer" $page }}
     </footer>
     {{ partial "custom-js" $page }}
