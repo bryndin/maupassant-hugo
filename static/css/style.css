@@ -731,7 +731,7 @@ screen and (max-width: 500px) {
 }
 
 /* read more*/
-.readmore a {
+.post-readmore a {
   font-size: 14px;
   color: #444;
   margin: -10px 0;
@@ -741,7 +741,7 @@ screen and (max-width: 500px) {
   float: right;
 }
 
-.readmore a:hover {
+.post-readmore a:hover {
   background: #f8f8f8;
   border-bottom-color: #d26911;
 }

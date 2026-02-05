@@ -1,4 +1,55 @@
-/* --- Overrides ------
+    /* --- Overrides ------
     If this grows: refactor or accept the debt knowingly.
     No silent hacks.
 */
+
+/* Sidebar collapses */
+@container (max-width: 54rem) {
+    .page-main {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+}
+
+/* Metadata removal */
+@container (max-width: 32rem) {
+    .post-meta {
+        display: none;
+    }
+}
+
+/* TODO(DB): replace @media with some container. This centers text in header on small screens */
+@media print,
+screen and (max-width: 860px) {
+    .page-header {
+        text-align: center;
+        align-items: center;
+    }
+}
+
+/* TODO(DB): Why was this here? */
+@media screen and (max-width: var(--max-width-breakpoint-4)) {
+    .page-footer {
+        padding-top: 10px;
+    }
+}
+
+@media screen and (max-width: var(--max-width-breakpoint-3)) {
+    .nav-menu {
+        margin: 35px 0 -1px;
+        align-self: center;
+        /* Reset alignment for centered mobile header */
+    }
+}
+
+@media screen and (max-width: var(--max-width-breakpoint-4)) {
+    .nav-menu a {
+        padding: 0 15px;
+        line-height: 27px;
+        height: 27px;
+        font-size: 13px;
+    }
+}

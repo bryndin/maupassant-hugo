@@ -7,9 +7,8 @@
 *::after {
   box-sizing: border-box;
 }
-
+/*
 body {
-  margin: 0;
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
@@ -41,3 +40,4 @@ p {
   margin-top: 0;
   margin-bottom: var(--space-md);
 }
+*/

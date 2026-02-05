@@ -1,30 +1,51 @@
 .post {
-  background: var(--color-white);
+  background-color: var(--post-background-color);
   padding: var(--space-lg);
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
 }
 
 .post-title {
-  font-size: 2rem;
+  font: var(--post-font-title);
   margin-bottom: var(--space-md);
-}
-
-.post-meta {
-  color: var(--color-text-muted);
-  font-size: 0.875rem;
-  margin-bottom: var(--space-lg);
 }
 
 .post-content {
   line-height: 1.8;
 }
 
-.post-content h2,
-.post-content h3 {
-  margin-top: var(--space-lg);
+/* "read more" button */
+.post-readmore a {
+  /* TODO(DB): style "readmore" button */
+  font-size: var(--font-size-small);
+  color: var(--color-text-main);
+  margin: -10px 0;
+  padding: 5px 10px;
+  border: var(--border);
+  /* border-radius: 5px; */
+  float: right;
+}
+
+.post-readmore a:hover {
+  /* TODO(DB): adjust "readmore" button color */
+  background: #f8f8f8;
+  border-bottom-color: var(--color-accent);
 }
 
 .tags {
   margin-top: var(--space-lg);
+}
+
+@media screen and (max-width: var(--max-width-breakpoint-2)) {
+  .post-content {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: var(--max-width-breakpoint-4)) {
+  .post-title {
+    font-size: 22px;
+  }
+
+  .post {
+    padding: 12px 0;
+  }
 }

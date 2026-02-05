@@ -1,0 +1,8 @@
+.page-main {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) clamp(var(--sidebar-min), 22cqw, var(--sidebar-max));
+  gap: var(--gap-grid);
+  align-items: start;
+  container-type: inline-size;
+}

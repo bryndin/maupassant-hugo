@@ -9,9 +9,12 @@
 @import "utilities.css" layer(utilities);
 
 @import "components/header.css" layer(components);
+@import "components/main.css" layer(components);
 @import "components/footer.css" layer(components);
+@import "components/content.css" layer(components);
 @import "components/sidebar.css" layer(components);
 @import "components/post.css" layer(components);
+@import "components/post-meta.css" layer(components);
 @import "components/nav.css" layer(components);
 
 @import "overrides.css" layer(overrides);

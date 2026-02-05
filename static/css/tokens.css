@@ -4,16 +4,17 @@
 */
 
 :root {
-  /* Colors */
-  --color-bg: #f8f9fa;
-  --color-text-main: #343a40;
-  --color-text-muted: #6c757d;
+  /* Global Colors */
+  --color-bg: #fff;
+  --color-text-main: #555;
+  --color-text-muted: #999;
+  --color-accent: #d26911;
   --color-primary: #007bff;
   --color-primary-hover: #0056b3;
-  --color-border: #dee2e6;
+  --color-border: #ddd;
   --color-white: #ffffff;
 
-  /* Spacing */
+  /* Global Spacing */
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
@@ -21,22 +22,60 @@
   --space-xl: 3rem;
 
   /* Layout */
-  --width-container: 1140px;
-  --width-sidebar: 320px;
-  --gap-grid: 2rem;
+  --container-max: 1150px;
+  --sidebar-min: 175px;
+  --sidebar-max: 245px;
+  --width-container: 1150px;
+  --width-sidebar-full: 320px;
+  --width-sidebar-short: 175px;
+  --gap-grid: 0;
+  /* --gap-grid: 2rem; */
 
-  /* Typography */
-  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Breakpoints for the stepped responsive design */
+  --max-width-breakpoint-1: 1290px;
+  --max-width-breakpoint-2: 1057px;
+  --max-width-breakpoint-3: 860px;
+  --max-width-breakpoint-4: 680px;
+  --max-width-breakpoint-5: 500px;
+
+  /* Global Typography */
+  --font-family-base: "Iowan Old Style", "Ovo", "Hoefler Text", Georgia,
+    "Times New Roman", "TIBch", "Source Han Sans", "PingFangSC-Regular",
+    "Hiragino Sans GB", "STHeiti", "Microsoft Yahei", "Droid Sans Fallback",
+    "WenQuanYi Micro Hei", sans-serif;
   --font-size-base: 1rem;
+  --font-size-small: 0.875rem;
   --line-height-base: 1.5;
+
+  /* Borders */
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: var(--color-border);
+  --border: var(--border-width) var(--border-style) var(--border-color);
+
+  /* Fonts - Order: [weight] [size] [family] */
+  --text-normal: normal var(--font-size-base) var(--font-family-base);
+  --text-post-header: bold calc(var(--font-size-base) * 1.5) var(--font-family-base);
+  --sidebar-widget-title: bold var(--font-size-base) var(--font-family-base);
+  --text-menu-item: normal calc(var(--font-size-base) * 0.75) var(--font-family-base);
+  --text-sitename: bold calc(var(--font-size-base) * 2.5) var(--font-family-base);
+
+  /* Menu */
+  --menu-height: calc(var(--font-size-base) * 2);
+
+  /* Posts */
+  --post-background-color: var(--color-white);
+  --post-font-title: bold calc(var(--font-size-base) * 1.5) var(--font-family-base);
+  --post-font-meta: normal var(--font-size-base) var(--font-family-base);
+  --post-font-content: normal var(--font-size-base) var(--font-family-base);
 }
 
 .theme-dark {
-    --color-bg: #212529;
-    --color-text-main: #f8f9fa;
-    --color-text-muted: #adb5bd;
-    --color-primary: #375a7f;
-    --color-primary-hover: #2b4764;
-    --color-border: #495057;
-    --color-white: #343a40;
+  --color-bg: #212529;
+  --color-text-main: #f8f9fa;
+  --color-text-muted: #adb5bd;
+  --color-primary: #375a7f;
+  --color-primary-hover: #2b4764;
+  --color-border: #495057;
+  --color-white: #343a40;
 }

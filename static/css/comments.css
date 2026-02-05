@@ -13,7 +13,7 @@
 
 .comment-list li {
     padding: 22px 0 12px;
-    border-top: 1px solid #ddd;
+    border-top: var(--border);
 }
 
 .comment-list li.comment-level-even {
@@ -44,7 +44,7 @@
 .comment-author .avatar {
     float: left;
     margin: 1px 10px 0 0;
-    border: 1px solid #ddd;
+    border: var(--border);
     padding: 1px;
 }
 
@@ -63,7 +63,7 @@
 
 .comment-list .respond {
     margin: 15px 0;
-    border-top: 1px solid #ddd;
+    border-top: var(--border);
 }
 
 .comment-body .respond {
@@ -93,7 +93,7 @@
 #comment-form input {
     padding: 8px 6px;
     height: 36px;
-    border: solid 1px #d4d4d4;
+    border: var(--border);
     background: #fdfdfd;
     padding-left: 45px;
     color: #555;
@@ -119,7 +119,7 @@ textarea.textarea {
 
 .comment-content a {
     color: #0789e0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: var(--border);
 }
 
 .comment-content a {
@@ -139,14 +139,14 @@ textarea.textarea {
 .comment-content hr {
     margin: 2.1em auto;
     width: 200px;
-    border: 1px solid #ccc;
+    border: var(--border);
     border-width: 1px 0 0 0;
     position: relative;
 }
 
 /** Comment extra **/
 #comment-submitted {
-    border-top: 1px solid #ddd;
+    border-top: var(--border);
     background: rgba(245, 245, 245, 1);
     padding-bottom: 1px;
     text-align: center;

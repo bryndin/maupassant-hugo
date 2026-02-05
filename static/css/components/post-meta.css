@@ -1,0 +1,48 @@
+.post-meta {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 9px;
+    padding: 0;
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-lg);
+    color: var(--color-text-muted);
+    text-align: left;
+    font: var(--post-font-meta);
+}
+
+.post-meta a:hover {
+    border-bottom-color: transparent;
+}
+
+/* TODO(DB): possibly, generalize and move to utilities */
+.meta-category ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.meta-category ul::before {
+    content: "|";
+}
+.meta-category li {
+    display: flex;
+}
+
+.meta-category li::after {
+    content: ", ";
+}
+
+.meta-category li:last-child::after {
+    content: "";
+}
+
+/* TODO(DB): is it needed? It changes specifically .meta-category link color*/
+.meta-category a {
+    color: inherit;
+}
