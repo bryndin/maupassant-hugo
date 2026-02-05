@@ -21,7 +21,7 @@
           {{ $post.Summary }}{{ if $post.Truncated }}……{{ end }}
         </div>
         {{- if or $post.Truncated $post.Params.Summary }}
-          <p class="readmore">
+          <p class="post-readmore">
             <a href="{{ $post.Permalink }}">{{ i18n "continueReading" }}</a>
           </p>
         {{- end }}
