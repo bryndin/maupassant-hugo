@@ -28,7 +28,7 @@
     {{ end }}
     <div class="post-content">
       overview……
-      <p class="readmore"><a href="link">{{ i18n "continueReading" }}</a></p>
+      <p class="post-readmore"><a href="link">{{ i18n "continueReading" }}</a></p>
     </div>
   </article>
 
@@ -64,7 +64,7 @@
                           var searchItem = `<article class="post"><header><h1 class="post-title"><a href="` + url + `">` + title + `</a></h1></header>`;
                           var pubDate = new Date(item.find("pubDate").text())
                           searchItem += `<time class="post-meta meta-date">` + pubDate.getFullYear() + `-` + (pubDate.getMonth() + 1) + `-` + pubDate.getDate() + `</time>`;
-                          searchItem += `<div class="post-content">` + item.find("description").text() + `……<p class="readmore"><a href="` + url + `">` + "{{ i18n "continueReading" }}" + `</a></p></div></article>`;
+                          searchItem += `<div class="post-content">` + item.find("description").text() + `……<p class="post-readmore"><a href="` + url + `">` + "{{ i18n "continueReading" }}" + `</a></p></div></article>`;
 
                           // TODO(DB): fix, as `res-cons` is no longer used. AFAIR it was used to limit the search scope to specific divs. Should the search only happen over the posts? About page? Anything else?
                           $("div.res-cons").append(searchItem);
