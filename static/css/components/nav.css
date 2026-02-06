@@ -5,7 +5,7 @@
     align-items: flex-end;
 }
 
-/* Draws the "track" line on the left of the menu items to complete the tab row */
+/* Tab row track with border-bottom to the left of the tabs */
 .nav-menu::before {
     content: "";
     flex: 1;
@@ -17,10 +17,8 @@
     padding: 0 var(--space-md);
     height: var(--menu-height);
     line-height: var(--menu-height);
-    color: var(--color-primary);
-    text-decoration: none;
     border-bottom: var(--border);
-    /* (keep) Ensure height is consistent with active tab which has a top border */
+    /* Prevents active tab baseline shift (due to missing border-top) */
     border-top: var(--border-width) solid transparent;
 }
 

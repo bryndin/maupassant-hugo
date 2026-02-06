@@ -7,7 +7,6 @@
 
 .header-sitename {
   font: var(--text-sitename);
-  color: var(--color-main);
 }
 
 .header-description {

@@ -14,16 +14,27 @@ body {
   line-height: var(--line-height-base);
   color: var(--color-main);
   background-color: var(--color-bg);
+  margin: 0;
 }
-
+*/
+/* Global Link Style (UI links, titles, etc.) */
 a {
-  color: var(--color-primary);
+  color: var(--link-color);
   text-decoration: none;
+  transition: var(--link-transition);
 }
 
 a:hover {
-  color: var(--color-primary-hover);
+  color: var(--link-hover-color);
+  text-decoration: none; /* explicitly no underline for UI links */
+}
+
+/* Content Link Style (Markdown generated) */
+.post-content a {
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: none;
 }
 
 img {
@@ -34,10 +45,10 @@ img {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: var(--space-md);
+  color: var(--color-intense);
 }
 
 p {
   margin-top: 0;
   margin-bottom: var(--space-md);
 }
-*/

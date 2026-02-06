@@ -33,3 +33,10 @@
 .widget ul li {
   margin-bottom: var(--space-sm);
 }
+
+/* TODO(DB): Decide if I want this  */
+/* .widget a:hover { */
+  /* transform: translateX(4px); */
+  /* Required for transform on inline elements */
+  /* display: inline-block; */
+/* } */

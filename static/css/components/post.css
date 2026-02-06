@@ -14,20 +14,18 @@
 
 /* "read more" button */
 .post-readmore a {
-  /* TODO(DB): style "readmore" button */
   font-size: var(--font-size-small);
-  color: var(--color-main);
-  margin: -10px 0;
-  padding: 5px 10px;
+  padding: var(--space-xs) var(--space-md);
   border: var(--border);
-  /* border-radius: 5px; */
   float: right;
+  background-color: var(--color-bg);
 }
 
 .post-readmore a:hover {
-  /* TODO(DB): adjust "readmore" button color */
-  background: #f8f8f8;
-  border-bottom-color: var(--color-accent);
+  background-color: var(--color-primary-hover);
+  color: var(--color-white);
+  border-color: var(--color-primary-hover);
+  transform: translateY(-1px);
 }
 
 .tags {

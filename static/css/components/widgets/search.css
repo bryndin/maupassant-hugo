@@ -3,8 +3,7 @@
     display: flex;
     background-color: var(--color-bg);
     border: var(--border);
-    /* TODO(DB): refactor transition (global var?) and apply everywhere  */
-    transition: border-color 0.2s ease;
+    transition: var(--transition-base);
 }
 
 #widget-search:focus-within {
