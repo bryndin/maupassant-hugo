@@ -1,5 +1,9 @@
 .page-footer {
-  padding-top: var(--space-sm);
+  margin-top: var(--space-xl);
+  padding-block: var(--space-lg);
+  border-top: var(--border);
+  color: var(--color-muted);
+  text-align: left;
 }
 
 .footer-copyright {
