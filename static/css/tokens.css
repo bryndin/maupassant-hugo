@@ -6,8 +6,9 @@
 :root {
   /* Global Colors */
   --color-bg: #fff;
-  --color-text-main: #555;
-  --color-text-muted: #999;
+  --color-main: #555;
+  --color-muted: #999;
+  --color-intense: #000;
   --color-accent: #d26911;
   --color-primary: #007bff;
   --color-primary-hover: #0056b3;
@@ -60,6 +61,10 @@
   --text-menu-item: normal calc(var(--font-size-base) * 0.75) var(--font-family-base);
   --text-sitename: bold calc(var(--font-size-base) * 2.5) var(--font-family-base);
 
+  /* Links */
+  --link-color: var(--color-main);
+  --link-hover-color: var(--color-intense);
+
   /* Menu */
   --menu-height: calc(var(--font-size-base) * 2);
 
@@ -68,12 +73,16 @@
   --post-font-title: bold calc(var(--font-size-base) * 1.5) var(--font-family-base);
   --post-font-meta: normal var(--font-size-base) var(--font-family-base);
   --post-font-content: normal var(--font-size-base) var(--font-family-base);
+
+  /* Widgets */
+  /** Search **/
+  --search-height: calc(var(--font-size-base) * 2.5);
 }
 
 .theme-dark {
   --color-bg: #212529;
-  --color-text-main: #f8f9fa;
-  --color-text-muted: #adb5bd;
+  --color-main: #f8f9fa;
+  --color-muted: #adb5bd;
   --color-primary: #375a7f;
   --color-primary-hover: #2b4764;
   --color-border: #495057;

@@ -6,7 +6,7 @@
     padding: 0;
     margin-top: var(--space-sm);
     margin-bottom: var(--space-lg);
-    color: var(--color-text-muted);
+    color: var(--color-muted);
     text-align: left;
     font: var(--post-font-meta);
 }

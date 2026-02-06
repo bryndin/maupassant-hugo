@@ -12,7 +12,7 @@ body {
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
-  color: var(--color-text-main);
+  color: var(--color-main);
   background-color: var(--color-bg);
 }
 

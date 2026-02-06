@@ -19,7 +19,7 @@
   padding-bottom: var(--space-sm);
   border-bottom: var(--border);
   margin-bottom: var(--space-md);
-  color: var(--color-text-muted);
+  color: var(--color-muted);
   text-transform: uppercase;
   letter-spacing: 1px;
 }

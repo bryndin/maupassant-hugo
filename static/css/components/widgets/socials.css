@@ -1,0 +1,22 @@
+.widget-socials ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.widget-socials ul li {
+    margin-bottom: 0;
+}
+
+.widget-socials svg {
+    width: var(--font-size-base);
+    height: var(--font-size-base);
+    fill: currentColor;
+    /* TODO(DB): refactor transition (global var?) and apply everywhere  */
+    transition: color 0.2s ease;
+}
+
+.widget-socials a:hover svg {
+    /* TODO(DB): replace with global setting */
+    color: var(--link-hover-color);
+}

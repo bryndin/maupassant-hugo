@@ -1,0 +1,56 @@
+#widget-search {
+    position: relative;
+    display: flex;
+    background-color: var(--color-bg);
+    border: var(--border);
+    /* TODO(DB): refactor transition (global var?) and apply everywhere  */
+    transition: border-color 0.2s ease;
+}
+
+#widget-search:focus-within {
+    border-color: var(--link-hover-color);
+}
+
+#widget-search input {
+    flex: 1;
+    padding: calc(var(--search-height) / 5) var(--search-height) calc(var(--search-height) / 5) calc(var(--search-height) * 0.3);
+    height: var(--search-height);
+    font: var(--text-normal);
+    color: var(--color-main);
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+#widget-search input::placeholder {
+    color: var(--color-muted);
+    opacity: 0.8;
+}
+
+.search-submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: var(--search-height);
+    height: var(--search-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-muted);
+    /* TODO(DB): add transition to other link hovers */
+    transition: color 0.2s ease;
+}
+
+.search-submit:hover {
+    /* TODO(DB): replace with global setting */
+    color: var(--link-hover-color);
+}
+
+.search-submit svg {
+    width: var(--font-size-base);
+    height: var(--font-size-base);
+    fill: currentColor;
+}

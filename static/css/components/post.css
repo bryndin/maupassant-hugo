@@ -16,7 +16,7 @@
 .post-readmore a {
   /* TODO(DB): style "readmore" button */
   font-size: var(--font-size-small);
-  color: var(--color-text-main);
+  color: var(--color-main);
   margin: -10px 0;
   padding: 5px 10px;
   border: var(--border);
