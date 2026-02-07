@@ -1,8 +1,29 @@
+/* Mobile First: Stacked layout, Sidebar Hidden */
 .page-main {
-  display: grid;
-  grid-template-columns:
-    minmax(0, 1fr) clamp(var(--sidebar-min), 22cqw, var(--sidebar-max));
-  gap: var(--gap-grid);
-  align-items: start;
-  container-type: inline-size;
+  display: block;
+}
+
+.page-main .sidebar {
+  display: none;
+}
+
+/* Tablet / Desktop: Sidebar visible, Grid enabled */
+@media screen and (min-width: 1024px) {
+  .page-main {
+    display: grid;
+    grid-template-columns: 1fr var(--width-sidebar-medium);
+    gap: var(--gap-grid);
+    align-items: start;
+  }
+
+  .page-main .sidebar {
+    display: block;
+  }
+}
+
+/* Wide Screen: Sidebar expands */
+@media screen and (min-width: 1280px) {
+  .page-main {
+    grid-template-columns: 1fr var(--width-sidebar-full);
+  }
 }

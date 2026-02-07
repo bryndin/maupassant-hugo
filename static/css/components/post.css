@@ -31,19 +31,3 @@
 .tags {
   margin-top: var(--space-lg);
 }
-
-@media screen and (max-width: var(--max-width-breakpoint-2)) {
-  .post-content {
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width: var(--max-width-breakpoint-4)) {
-  .post-title {
-    font-size: 22px;
-  }
-
-  .post {
-    padding: 12px 0;
-  }
-}

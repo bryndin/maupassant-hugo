@@ -5,38 +5,9 @@
 .container {
   max-width: var(--container-max);
   margin-inline: auto;
-  padding-inline: var(--space-xl);
-  /* background-color: rgb(42, 165, 58); */
+  padding-inline: clamp(20px, 3vw, 40px);
 }
 
-/* 
-## Breakpoint	Behavior
-  > 1290px	Fixed 1150px container
-  ≤ 1290px	width: auto kicks in via media query
-  ≤ 1057px	Sidebar shrinks to 175px
-  ≤ 860px   Sidebar hides, single column
-  ≤ 680px   Reduced padding, smaller fonts
-  ≤ 500px   Further adjustments 
-*/
-
-/* @media screen and (max-width: var(--max-width-breakpoint-1)) {
-  .container {
-    width: auto;
-    max-width: 100%;
-  }
-}
-
-@media screen and (max-width: var(--max-width-breakpoint-2)) {
-  .page-main {
-    grid-template-columns: 1fr var(--width-sidebar-short);
-  }
-}
-
-@media screen and (max-width: var(--max-width-breakpoint-3)) {
-  .page-main {
-    grid-template-columns: 1fr;
-  }
-} */
 
 .clearfix::after {
   content: "";

@@ -23,21 +23,19 @@
   --space-xl: 3rem;
 
   /* Layout */
-  --container-max: 1150px;
+  --container-max: 1360px;
   --sidebar-min: 175px;
   --sidebar-max: 245px;
-  --width-container: 1150px;
-  --width-sidebar-full: 320px;
+  --width-container: 1360px;
+  --width-sidebar-full: 340px;
+  --width-sidebar-medium: 320px;
   --width-sidebar-short: 175px;
-  --gap-grid: 0;
-  /* --gap-grid: 2rem; */
+  --gap-grid: 40px;
 
   /* Breakpoints for the stepped responsive design */
-  --max-width-breakpoint-1: 1290px;
-  --max-width-breakpoint-2: 1057px;
-  --max-width-breakpoint-3: 860px;
-  --max-width-breakpoint-4: 680px;
-  --max-width-breakpoint-5: 500px;
+  --bp-wide: 1440px;
+  --bp-desktop: 1280px;
+  --bp-tablet: 1024px;
 
   /* Global Typography */
   --font-family-base: "Iowan Old Style", "Ovo", "Hoefler Text", Georgia,
