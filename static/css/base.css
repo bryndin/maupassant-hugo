@@ -7,6 +7,7 @@
 *::after {
   box-sizing: border-box;
 }
+
 /*
 body {
   font-family: var(--font-family-base);
@@ -17,7 +18,11 @@ body {
   margin: 0;
 }
 */
-/* Global Link Style (UI links, titles, etc.) */
+
+/*
+  Global Link Style (UI links, titles, etc.)
+  Standard behavior across the site, except for the post-content.
+*/
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -44,7 +49,12 @@ img {
   height: auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
   margin-bottom: var(--space-md);
   color: var(--color-intense);

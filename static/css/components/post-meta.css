@@ -1,44 +1,55 @@
 .post-meta {
     display: flex;
-    justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 9px;
-    padding: 0;
+    align-items: center;
+    /* Consistent gap between items */
+    gap: var(--space-sm);
     margin-top: var(--space-sm);
     margin-bottom: var(--space-lg);
     color: var(--color-muted);
-    text-align: left;
     font: var(--post-font-meta);
 }
 
-.post-meta a:hover {
-    border-bottom-color: transparent;
+.post-meta a {
+    color: inherit;
 }
 
-/* TODO(DB): possibly, generalize and move to utilities */
+.post-meta a:hover {
+    color: var(--link-hover-color);
+}
+
+/*
+   Top-level item separator: Date, Author, Categories.
+   We use flex gap for spacing, and pseudo-elements only for the symbol.
+*/
+.post-meta>*:not(:first-child) {
+    display: flex;
+    align-items: center;
+    /* Spacing between the "|" and the content */
+    gap: var(--space-sm);
+}
+
+.post-meta>*:not(:first-child)::before {
+    content: "|";
+    color: var(--color-border);
+}
+
+/* Category list formatting */
 .meta-category ul {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
     flex-wrap: wrap;
-    gap: var(--space-xs);
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.meta-category ul::before {
-    content: "|";
+    /* Logic: this provides the space AFTER the comma. 
+       If the list wraps, it also provides vertical spacing. */
+    gap: var(--space-xs);
 }
 
 .meta-category li {
     display: flex;
 }
 
-.meta-category li::after {
-    content: ", ";
-}
-
-.meta-category li:last-child::after {
-    content: "";
+.meta-category li:not(:last-child)::after {
+    content: ",";
 }
