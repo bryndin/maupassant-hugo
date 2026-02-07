@@ -18,5 +18,6 @@
 @import "components/post.css" layer(components);
 @import "components/post-meta.css" layer(components);
 @import "components/nav.css" layer(components);
+@import "components/code-copy.css" layer(components);
 
 @import "overrides.css" layer(overrides);

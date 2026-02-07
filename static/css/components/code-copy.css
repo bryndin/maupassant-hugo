@@ -1,0 +1,22 @@
+pre.parent-code-copy {
+    position: relative;
+}
+
+button.code-copy {
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    right: 4px;
+    top: 4px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #dddddd;
+    background: transparent;
+    cursor: pointer;
+    transition: color 0.15s ease-in-out;
+}
+
+button.code-copy:hover {
+    color: #000;
+}
