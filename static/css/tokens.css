@@ -62,8 +62,8 @@
   --text-sitename: bold calc(var(--font-size-base) * 2.5) var(--font-family-base);
 
   /* Links */
-  --link-color: var(--color-primary);
-  --link-hover-color: var(--color-primary-hover);
+  --link-color: var(--color-main);
+  --link-hover-color: var(--color-intense);
   --link-transition: color 0.2s ease;
 
   /* Global Transitions */
