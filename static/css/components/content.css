@@ -1,0 +1,43 @@
+/*
+    Post content generated from Markdown.
+*/
+
+.post-content {
+    line-height: 1.8;
+}
+
+/* Content Link Style (Markdown generated) */
+.post-content a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: none;
+}
+
+/* --- Code styling ----------------------------------------------------- */
+/* Inline and block code styling */
+.post-content code {
+    padding: 2px 4px;
+    /* background-color: rgba(27, 31, 35, 0.05); */
+    /* border-radius: 3px; */
+    /* font-size: 0.9em; */
+}
+
+/* Code block specifics */
+.post-content pre code {
+    display: block;
+    padding: var(--space-sm);
+    overflow-x: auto;
+    white-space: pre;
+    /* Prevent wrapping to trigger overflow */
+    /* background-color: transparent; Reset background as pre usually handles it */
+}
+
+.post-content pre {
+    /* background-color: rgba(27, 31, 35, 0.05); */
+    border: var(--border);
+    /* border-radius: 4px; */
+    margin-bottom: var(--space-md);
+    overflow: hidden;
+    /* Ensure code scrollbar is contained */
+}

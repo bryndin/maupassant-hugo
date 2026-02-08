@@ -8,10 +8,6 @@
   margin-bottom: var(--space-md);
 }
 
-.post-content {
-  line-height: 1.8;
-}
-
 /* "read more" button */
 .post-readmore a {
   font-size: var(--font-size-small);
