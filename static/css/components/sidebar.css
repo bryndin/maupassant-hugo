@@ -5,7 +5,6 @@
   /* TODO(DB): adjust 3cqw below if needed */
   padding-top: clamp(0.5rem, 3cqw, 2.5rem);
   word-break: break-word;
-  /* background-color: blueviolet; */
 }
 
 /* Widget styles */
