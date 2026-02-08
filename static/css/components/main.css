@@ -8,7 +8,7 @@
 }
 
 /* Tablet / Desktop: Sidebar visible, Grid enabled */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: var(--bp-tablet)) {
   .page-main {
     display: grid;
     grid-template-columns: 1fr var(--width-sidebar-medium);
@@ -22,7 +22,7 @@
 }
 
 /* Wide Screen: Sidebar expands */
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: var(--bp-desktop)) {
   .page-main {
     grid-template-columns: 1fr var(--width-sidebar-full);
   }
