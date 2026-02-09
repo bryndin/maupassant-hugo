@@ -11,7 +11,7 @@
 @media screen and (min-width: 1024px) { /* 1024px corresponds to --bp-tablet */
   .page-main {
     display: grid;
-    grid-template-columns: 1fr var(--width-sidebar-medium);
+    grid-template-columns: minmax(0, 1fr) var(--width-sidebar-medium);
     gap: var(--gap-grid);
     align-items: start;
   }
@@ -24,6 +24,6 @@
 /* Wide Screen: Sidebar expands */
 @media screen and (min-width: 1280px) { /* 1280px corresponds to --bp-desktop */
   .page-main {
-    grid-template-columns: 1fr var(--width-sidebar-full);
+    grid-template-columns: minmax(0, 1fr) var(--width-sidebar-full);
   }
 }

@@ -4,6 +4,7 @@
 
 .post-content {
     line-height: 1.8;
+    min-width: 0; /* Prevents grid blowout from wide content */
 }
 
 /* Content Link Style (Markdown generated) */
@@ -39,16 +40,18 @@
     border: var(--border);
     /* border-radius: 4px; */
     margin-bottom: var(--space-md);
-    /* Ensure code scrollbar is contained */
-    overflow: hidden;
+    overflow-x: auto; /* Allow horizontal scroll for long code lines */
 }
 
 /* --- Table styling ---------------------------------------------------- */
 .post-content table {
-    width: 100%;
+    width: auto;           /* Size to content, not container */
+    max-width: 100%;       /* Don't exceed container */
+    display: block;        /* Required for overflow-x to work */
+    overflow-x: auto;      /* Horizontal scroll for wide tables */
     border-collapse: collapse;
     margin-bottom: var(--space-md);
-    border: var(--border);
+    border: none;          /* No outer border - cell borders provide structure */
 }
 
 .post-content th,
