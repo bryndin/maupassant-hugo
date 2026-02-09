@@ -490,10 +490,18 @@ Markdown | Less | Pretty
 | git status   | git status     | git status    |
 | git diff     | git diff       | git diff      |
 
-| Name     | Character |
-| ---      | ---       |
-| Backtick | `         |
-| Pipe     | \|        |
+| Name        | Character |
+| ---         | ---       |
+| Backtick    | `         |
+| Pipe        | \|        |
+| Long String | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. |
+
+This is a table with lots of columns.
+
+| Column1 | Column2 | Column3 | Column4 | Column5 | Column6 | Column7 | Column8 | Column9 | Column10 | Column11 | Column12 | Column13 | Column14 | Column15 | Column16 | Column17 | Column18 | Column19 | Column20 |  
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T |
+| U | V | W | X | Y | Z | A | B | C | D | E | F | G | H | I | J | K | L | M | N |
 ```
 
 Colons can be used to align columns.
@@ -533,10 +541,18 @@ Markdown | Less | Pretty
 | git status   | git status     | git status    |
 | git diff     | git diff       | git diff      |
 
-| Name     | Character |
-| ---      | ---       |
-| Backtick | `         |
-| Pipe     | \|        |
+| Name        | Character |
+| ---         | ---       |
+| Backtick    | `         |
+| Pipe        | \|        |
+| Long String | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. |
+
+This is a table with lots of columns.
+
+| Column1 | Column2 | Column3 | Column4 | Column5 | Column6 | Column7 | Column8 | Column9 | Column10 | Column11 | Column12 | Column13 | Column14 | Column15 | Column16 | Column17 | Column18 | Column19 | Column20 |  
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T |
+| U | V | W | X | Y | Z | A | B | C | D | E | F | G | H | I | J | K | L | M | N |
 
 ------
 
