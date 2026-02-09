@@ -1,5 +1,5 @@
 ---
-title: "Code Blocks and Syntax Highlighting with Maupassant IC"
+title: "Code Blocks and Syntax Highlighting"
 date: 2023-02-01T15:23:00+07:00
 tags: [code, softwareengineering, post]
 categories: [Code, Design]
