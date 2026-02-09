@@ -2,8 +2,8 @@
 .sidebar {
   border-left: var(--border);
   padding-inline-start: var(--space-md);
-  /* TODO(DB): adjust 3cqw below if needed */
-  padding-top: clamp(0.5rem, 3cqw, 2.5rem);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-xs);
   word-break: break-word;
 }
 
