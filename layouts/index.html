@@ -9,21 +9,21 @@
   {{ "<!-- starting of index.html -->" | safeHTML }}
   <div class="res-cons">
     {{- $paginator := $page.Paginate (where $page.Site.RegularPages "Type" $page.Site.Params.BlogType) }}
-    {{- range $index,$data := $paginator.Pages }}
-      {{- if not .Params.hiddenFromHomePage }}
+    {{- range $index, $post := $paginator.Pages }}
+      {{- if not $post.Params.hiddenFromHomePage }}
         <article class="post">
           <header>
             <h1 class="post-title">
-              <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
+              <a href="{{ $post.Permalink }}" title="{{ $post.Title }}">{{ $post.Title }}</a>
             </h1>
           </header>
-          {{ partial "post-meta.html" . }}
+          {{ partial "post-meta.html" $post }}
           <div class="post-content">
-            {{ .Summary }}{{ if .Truncated }}……{{ end }}
+            {{ $post.Summary }}{{ if $post.Truncated }}……{{ end }}
           </div>
-          {{- if or .Truncated .Params.Summary }}
+          {{- if or $post.Truncated $post.Params.Summary }}
             <p class="readmore">
-              <a href="{{ .Permalink }}">{{ i18n "continueReading" }}</a>
+              <a href="{{ $post.Permalink }}">{{ i18n "continueReading" }}</a>
             </p>
           {{- end }}
         </article>

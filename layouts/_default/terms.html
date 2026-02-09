@@ -21,11 +21,11 @@
         ({{ .Count }})
       </h2>
       <ul class="listing">
-        {{ range .Pages }}
+        {{ range $post := .Pages }}
           <li>
-            <span class="date">{{ .Date.Format "2006/01/02" }}</span>
-            <a class="title" href="{{ .Permalink }}" title="{{ .Title }}"
-              >{{ .Title }}</a
+            <span class="date">{{ $post.Date.Format "2006/01/02" }}</span>
+            <a class="title" href="{{ $post.Permalink }}" title="{{ $post.Title }}"
+              >{{ $post.Title }}</a
             >
           </li>
         {{ end }}

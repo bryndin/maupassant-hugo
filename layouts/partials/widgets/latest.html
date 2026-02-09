@@ -8,8 +8,8 @@
     <h3 class="widget-title">{{ i18n "latest_posts" }}</h3>
     <ul class="widget-list">
       {{- $posts := where $page.Site.RegularPages "Type" $page.Site.Params.wLatestPosts.type -}}
-      {{- range first $page.Site.Params.wLatestPosts.limit $posts }}
-        <li><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></li>
+      {{- range $post := first $page.Site.Params.wLatestPosts.limit $posts }}
+        <li><a href="{{ $post.Permalink }}" title="{{ $post.Title }}">{{ $post.Title }}</a></li>
       {{- end }}
     </ul>
   </section>
