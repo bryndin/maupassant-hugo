@@ -2,7 +2,8 @@
     This partial generates the pagination controls.
     It displays links to previous, next, and specific pages.
 */}}
-{{ with .Paginator }}
+{{- $page := . -}}
+{{ with $page.Paginator }}
   {{ if gt .TotalPages 10 }}
     <ol class="page-navigator">
       {{ if .HasPrev }}
@@ -40,8 +41,8 @@
             <span>...</span>
           </li>
         {{ else }}
-          {{ $pager:=index $.Paginator.Pagers (sub . 1) }}
-          <li {{ if eq . $.Paginator.PageNumber }}class="current"{{ end }}>
+          {{ $pager:=index $page.Paginator.Pagers (sub . 1) }}
+          <li {{ if eq . $page.Paginator.PageNumber }}class="current"{{ end }}>
             <a href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
           </li>
         {{ end }}
@@ -64,7 +65,7 @@
 
       {{ range .Pagers }}
         <li
-          {{ if eq .PageNumber $.Paginator.PageNumber }}class="current"{{ end }}
+          {{ if eq .PageNumber $page.Paginator.PageNumber }}class="current"{{ end }}
         >
           <a href="{{ .URL | absLangURL }}">{{ .PageNumber }}</a>
         </li>

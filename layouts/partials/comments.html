@@ -5,33 +5,34 @@
 {{- /* Check if either comments are enabled for the specific page in front matter,
   or if the page is a blog post AND if comments are enabled site-wide
 */ -}}
-{{ if or (eq .Params.comments true)
-  (and (eq .Type .Site.Params.BlogType) (eq .Site.Params.comments true))
+{{- $page := . -}}
+{{ if or (eq $page.Params.comments true)
+  (and (eq $page.Type $page.Site.Params.BlogType) (eq $page.Site.Params.comments true))
 }}
-  {{ template "_internal/disqus.html" . }}
+  {{ template "_internal/disqus.html" $page }}
 
   <!-- utteranc -->
-  {{ if .Site.Params.utteranc.enable }}
+  {{ if $page.Site.Params.utteranc.enable }}
     <div class="post bg-white">
       <script
         src="https://utteranc.es/client.js"
-        repo="{{ .Site.Params.utteranc.repo }}"
-        issue-term="{{ .Site.Params.utteranc.issueTerm }}"
-        theme="{{ .Site.Params.utteranc.theme }}"
+        repo="{{ $page.Site.Params.utteranc.repo }}"
+        issue-term="{{ $page.Site.Params.utteranc.issueTerm }}"
+        theme="{{ $page.Site.Params.utteranc.theme }}"
         crossorigin="anonymous"
         async
       ></script>
     </div>
   {{ end }}
   <!--waline-->
-  {{ if .Site.Params.waline.enable }}
+  {{ if $page.Site.Params.waline.enable }}
     <div id="waline"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waline/3.6.0/waline.js"></script>
     <script>
         Waline({
             el: '#waline',
-            serverURL: '{{ .Site.Params.waline.serverURL }}',
-            placeholder: '{{ .Site.Params.waline.placeholder }}',
+            serverURL: '{{ $page.Site.Params.waline.serverURL }}',
+            placeholder: '{{ $page.Site.Params.waline.placeholder }}',
         });
     </script>
   {{ end }}

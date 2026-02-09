@@ -3,12 +3,13 @@
     It includes various widgets like search, latest posts, ads, categories, 
     tags, links, and socials.
 */}}
+{{- $page := . -}}
 <div id="secondary">
-  {{- partial "widgets/search" . }}
-  {{- partial "widgets/latest" . }}
-  {{- partial "widgets/ads" . }}
-  {{- partial "widgets/categories" . }}
-  {{- partial "widgets/tags" . }}
-  {{- partial "widgets/links" . }}
-  {{- partial "widgets/socials" . }}
+  {{- partial "widgets/search" $page }}
+  {{- partial "widgets/latest" $page }}
+  {{- partial "widgets/ads" $page }}
+  {{- partial "widgets/categories" $page }}
+  {{- partial "widgets/tags" $page }}
+  {{- partial "widgets/links" $page }}
+  {{- partial "widgets/socials" $page }}
 </div>

@@ -3,8 +3,9 @@
     It paginates the pages in the section and displays a list of summaries.
 */}}
 {{ define "content" }}
+  {{- $page := . -}}
   {{ "<!-- starting of section.html -->" | safeHTML }}
-  {{- $paginator := .Paginate .Data.Pages.ByDate.Reverse 10 }}
+  {{- $paginator := $page.Paginate $page.Data.Pages.ByDate.Reverse 10 }}
   <div class="res-cons">
     {{ range $index,$data := $paginator.Pages }}
       {{ if not .Params.hidden }}
@@ -26,7 +27,7 @@
         </article>
       {{ end }}
     {{ end }}
-    {{ partial "paginator" . }}
+    {{ partial "paginator" $page }}
   </div>
   {{ "<!-- ending of section.html -->" | safeHTML }}
 {{ end }}

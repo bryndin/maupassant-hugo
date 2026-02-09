@@ -3,9 +3,10 @@
     It groups all regular pages (blog posts) by year and lists them chronologically.
 */}}
 {{ define "content" }}
+  {{- $page := . -}}
   {{ "<!-- starting of archives/single.html -->" | safeHTML }}
   <div class="post-archive res-cons">
-    {{- range (where .Site.RegularPages "Type" .Site.Params.BlogType).GroupByDate "2006" }}
+    {{- range (where $page.Site.RegularPages "Type" $page.Site.Params.BlogType).GroupByDate "2006" }}
       <h2>{{ .Key }}</h2>
       <ul class="listing">
         {{- range .Pages }}

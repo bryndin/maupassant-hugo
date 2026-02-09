@@ -2,9 +2,10 @@
     This partial displays related posts.
     It uses Hugo's related content feature to show relevant articles.
 */}}
-{{ if not .Site.Params.relatedPosts.disable -}}
-  {{- $related := .Site.RegularPages.Related . | first .Site.Params.relatedPosts.Limit -}}
-  {{- $relatedPosts := where $related "Type" .Site.Params.relatedPosts.type -}}
+{{- $page := . -}}
+{{ if not $page.Site.Params.relatedPosts.disable -}}
+  {{- $related := $page.Site.RegularPages.Related $page | first $page.Site.Params.relatedPosts.Limit -}}
+  {{- $relatedPosts := where $related "Type" $page.Site.Params.relatedPosts.type -}}
   {{- with $relatedPosts }}
     <div class="related-posts">
       <h2>{{ i18n "related_posts" }}</h2>

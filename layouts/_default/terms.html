@@ -3,18 +3,19 @@
     It displays the count of terms and lists them with their post counts.
 */}}
 {{ define "content" }}
+  {{- $page := . -}}
   {{ "<!-- starting of terms.html -->" | safeHTML }}
   <header>
-    {{ if eq .Data.Singular "category" }}
-      <h1>{{ i18n "categories" 10 }}: {{ len .Data.Terms }}</h1>
-    {{ else if eq .Data.Singular "tag" }}
-      <h1>{{ i18n "tags" 10 }}: {{ len .Data.Terms }}</h1>
+    {{ if eq $page.Data.Singular "category" }}
+      <h1>{{ i18n "categories" 10 }}: {{ len $page.Data.Terms }}</h1>
+    {{ else if eq $page.Data.Singular "tag" }}
+      <h1>{{ i18n "tags" 10 }}: {{ len $page.Data.Terms }}</h1>
     {{ end }}
   </header>
   <div class="post-archive res-cons">
-    {{ range .Data.Terms.ByCount }}
+    {{ range $page.Data.Terms.ByCount }}
       <h2>
-        <a href="{{ path.Join $.Data.Plural .Term | urlize | absLangURL }}"
+        <a href="{{ path.Join $page.Data.Plural .Term | urlize | absLangURL }}"
           >{{ .Term }}</a
         >
         ({{ .Count }})

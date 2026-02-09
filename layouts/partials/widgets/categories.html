@@ -2,13 +2,14 @@
     This partial generates the Categories widget.
     It lists all categories and their post counts.
 */}}
-{{ if not .Site.Params.wCategories.disable }}
+{{- $page := . -}}
+{{ if not $page.Site.Params.wCategories.disable }}
   <section class="widget">
     <h3 class="widget-title">
       <a href="{{ "categories/" | relURL }}">{{ i18n "categories" 10 }}</a>
     </h3>
     <ul class="widget-list">
-      {{- range .Site.Taxonomies.categories }}
+      {{- range $page.Site.Taxonomies.categories }}
         <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a></li>
       {{- end }}
     </ul>

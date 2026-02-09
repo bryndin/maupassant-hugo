@@ -4,7 +4,8 @@
 
     TODO(DB): TBD if we need this.
 */}}
-{{ if or .Params.toc (and .Site.Params.toc (ne .Params.toc false)) -}}
+{{- $page := . -}}
+{{ if or $page.Params.toc (and $page.Site.Params.toc (ne $page.Params.toc false)) -}}
   <style type="text/css">
     .post-toc {
       position: fixed;
@@ -72,7 +73,7 @@
   <div class="post-toc" style="position: absolute; top: 188px;">
     <h2 class="post-toc-title">{{ i18n "toc" }}</h2>
     <div class="post-toc-content">
-      {{ .TableOfContents }}
+      {{ $page.TableOfContents }}
     </div>
   </div>
   <script>

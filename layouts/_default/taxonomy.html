@@ -3,23 +3,24 @@
     It displays the term name and a list of pages associated with that term.
 */}}
 {{ define "content" }}
+  {{- $page := . -}}
   {{ "<!-- starting of taxonomy.html -->" | safeHTML }}
   <div class="res-cons">
-    {{ if eq .Data.Singular "category" }}
+    {{ if eq $page.Data.Singular "category" }}
       <h3 class="archive-title">
         {{ i18n "categories" 1 }}
-        <span class="keyword">{{ .Data.Term }}</span>
+        <span class="keyword">{{ $page.Data.Term }}</span>
         {{ i18n "articles" 1 }}
       </h3>
-    {{ else if eq .Data.Singular "tag" }}
+    {{ else if eq $page.Data.Singular "tag" }}
       <h3 class="archive-title">
         {{ i18n "tags" 1 }}
-        <span class="keyword">{{ .Data.Term }}</span>
+        <span class="keyword">{{ $page.Data.Term }}</span>
         {{ i18n "articles" 1 }}
       </h3>
     {{ end }}
 
-    {{ range $index,$data := .Paginator.Pages }}
+    {{ range $index,$data := $page.Paginator.Pages }}
       <article class="post">
         <header>
           <h1 class="post-title">
@@ -37,7 +38,7 @@
         {{ end }}
       </article>
     {{ end }}
-    {{ partial "paginator" . }}
+    {{ partial "paginator" $page }}
   </div>
   {{ "<!-- ending of taxonomy.html -->" | safeHTML }}
 {{ end }}

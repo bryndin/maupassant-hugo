@@ -2,12 +2,13 @@
     This partial generates the "Latest Posts" widget.
     It lists the most recent posts.
 */}}
-{{ if not .Site.Params.wLatestPosts.disable }}
+{{- $page := . -}}
+{{ if not $page.Site.Params.wLatestPosts.disable }}
   <section class="widget">
     <h3 class="widget-title">{{ i18n "latest_posts" }}</h3>
     <ul class="widget-list">
-      {{- $posts := where .Site.RegularPages "Type" .Site.Params.wLatestPosts.type -}}
-      {{- range first .Site.Params.wLatestPosts.limit $posts }}
+      {{- $posts := where $page.Site.RegularPages "Type" $page.Site.Params.wLatestPosts.type -}}
+      {{- range first $page.Site.Params.wLatestPosts.limit $posts }}
         <li><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></li>
       {{- end }}
     </ul>

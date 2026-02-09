@@ -2,7 +2,8 @@
     This partial injects the Google Tag Manager iframe into the <body>.
 */}}
 {{ if not hugo.IsServer }}
-  {{ with .Site.Params.GoogleTagManager.GTMID }}
+  {{- $page := . -}}
+  {{ with $page.Site.Params.GoogleTagManager.GTMID }}
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe

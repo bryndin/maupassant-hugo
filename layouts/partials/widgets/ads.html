@@ -2,7 +2,8 @@
     This partial generates the Ads widget.
     It displays sidebar advertisements configured in config.toml.
 */}}
-{{ with .Site.Params.wAds }}
+{{- $page := . -}}
+{{ with $page.Site.Params.wAds }}
   <section class="widget">
     <h3 class="widget-title ad">{{ i18n "ads" }}</h3>
     <ul class="widget-list">

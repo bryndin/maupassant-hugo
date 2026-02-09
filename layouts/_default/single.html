@@ -19,7 +19,7 @@
 
       {{- partial "tags" $page -}}
 
-      {{ if eq $page.Type .Site.Params.BlogType -}}
+      {{ if eq $page.Type $page.Site.Params.BlogType -}}
         {{ partial "related" $page }}
       {{- end }}
     </article>

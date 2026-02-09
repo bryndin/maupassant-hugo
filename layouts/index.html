@@ -5,9 +5,10 @@
     displays a summary of each post.
 */}}
 {{ define "content" }}
+  {{- $page := . -}}
   {{ "<!-- starting of index.html -->" | safeHTML }}
   <div class="res-cons">
-    {{- $paginator := .Paginate (where .Site.RegularPages "Type" .Site.Params.BlogType) }}
+    {{- $paginator := $page.Paginate (where $page.Site.RegularPages "Type" $page.Site.Params.BlogType) }}
     {{- range $index,$data := $paginator.Pages }}
       {{- if not .Params.hiddenFromHomePage }}
         <article class="post">
@@ -28,7 +29,7 @@
         </article>
       {{ end }}
     {{- end }}
-    {{ partial "paginator" . }}
+    {{ partial "paginator" $page }}
   </div>
   {{ "<!-- ending of index.html -->" | safeHTML }}
 {{ end }}
