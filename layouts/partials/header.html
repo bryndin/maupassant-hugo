@@ -6,6 +6,6 @@
 {{ partial "gtm/body" $page }}
 <a class="header-sitename" href="{{ $page.Site.BaseURL | absURL }}">{{ $page.Site.Title }}</a>
 {{ with $subtitle := $page.Site.Params.subtitle -}}
-  <p class="header-description">{{ $subtitle }}</p>
+  <span class="header-description">{{ $subtitle }}</span>
 {{- end }}
 {{ partial "nav" $page }}
