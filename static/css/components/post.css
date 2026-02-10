@@ -1,10 +1,10 @@
-.post {
+/* .post {
   padding: var(--space-lg);
-}
+} */
 
 .post-title {
   font: var(--post-font-title);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 /* "read more" button */

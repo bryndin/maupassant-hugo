@@ -1,10 +1,9 @@
 .post-meta {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: left;
     /* Consistent gap between items */
     gap: var(--space-sm);
-    margin-top: var(--space-sm);
     margin-bottom: var(--space-lg);
     color: var(--color-muted);
     font: var(--post-font-meta);

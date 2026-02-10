@@ -1,5 +1,6 @@
 .page-header {
   padding-top: var(--space-xl);
+  padding-bottom: var(--space-lg);
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -7,10 +8,10 @@
 
 .header-sitename {
   font: var(--text-sitename);
+  margin-bottom: var(--space-sm);
 }
 
 .header-description {
-  margin: var(--space-sm) 0 0 0;
   font: var(--text-normal);
   color: var(--color-muted);
 }

@@ -1,24 +1,23 @@
 /* .sidebar { } Styles handled by grid */
 .sidebar {
   border-left: var(--border);
+  padding-top: var(--space-lg);
   padding-inline-start: var(--space-md);
-  margin-top: var(--space-lg);
-  padding-top: var(--space-xs);
   word-break: break-word;
 }
 
 /* Widget styles */
 .widget {
-  padding: var(--space-md);
-  margin-bottom: var(--space-md);
+  padding-left: var(--space-md);
+  margin-bottom: var(--space-xl);
 }
 
 .widget .widget-title {
-  font-size: 1rem;
   padding-bottom: var(--space-sm);
   border-bottom: var(--border);
   margin-bottom: var(--space-md);
   color: var(--color-muted);
+  font: var(--sidebar-widget-title);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
