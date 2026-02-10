@@ -1,0 +1,9 @@
+.related-posts {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: var(--border);
+}
+
+.related-posts li {
+  line-height: var(--line-height-large);
+}
