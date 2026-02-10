@@ -2,15 +2,14 @@
     This is the archives template.
     It groups all regular pages (blog posts) by year and lists them chronologically.
 */}}
-{{/* TODO(DB): add $page, to follow the pattern of the baseof.html */}}
 {{ define "content" }}
   {{- $page := . -}}
   {{ "<!-- starting of archives/single.html -->" | safeHTML }}
   <div class="post-archive">
-    {{- range (where $page.Site.RegularPages "Type" $page.Site.Params.BlogType).GroupByDate "2006" }}
-      <h2>{{ .Key }}</h2>
+    {{- range $posts := (where $page.Site.RegularPages "Type" $page.Site.Params.BlogType).GroupByDate "2006" }}
+      <h2>{{ $posts.Key }}</h2>
       <ul class="listing">
-        {{- range $post := .Pages }}
+        {{- range $post := $posts.Pages }}
           <li>
             <span class="date">{{ $post.Date.Format "2006/01/02" }}</span>
             <a class="title" href="{{ $post.Permalink }}" title="{{ $post.Title }}">{{ $post.Title }}</a>

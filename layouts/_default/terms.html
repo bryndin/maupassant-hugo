@@ -2,7 +2,6 @@
     This is the list template for all terms in a taxonomy (e.g., /tags/ or /categories/).
     It displays the count of terms and lists them with their post counts.
 */}}
-{{/* TODO(DB): add $page, to follow the pattern of the baseof.html */}}
 {{ define "content" }}
   {{- $page := . -}}
   {{ "<!-- starting of terms.html -->" | safeHTML }}
@@ -14,20 +13,16 @@
     {{ end }}
   </header>
   <div class="post-archive">
-    {{ range $page.Data.Terms.ByCount }}
+    {{ range $term := $page.Data.Terms.ByCount }}
       <h2>
-        <a href="{{ path.Join $page.Data.Plural .Term | urlize | absLangURL }}"
-          >{{ .Term }}</a
-        >
-        ({{ .Count }})
+        <a href="{{ path.Join $page.Data.Plural $term.Term | urlize | absLangURL }}">{{ $term.Term }}</a>
+        ({{ $term.Count }})
       </h2>
       <ul class="listing">
-        {{ range $post := .Pages }}
+        {{ range $post := $term.Pages }}
           <li>
             <span class="date">{{ $post.Date.Format "2006/01/02" }}</span>
-            <a class="title" href="{{ $post.Permalink }}" title="{{ $post.Title }}"
-              >{{ $post.Title }}</a
-            >
+            <a class="title" href="{{ $post.Permalink }}" title="{{ $post.Title }}" >{{ $post.Title }}</a>
           </li>
         {{ end }}
       </ul>

@@ -6,7 +6,7 @@
 */}}
 {{- $page := . -}}
 <!DOCTYPE html>
-<html lang="{{ with $page.Site.LanguageCode }}{{ . }}{{ else }}en{{ end }}">
+<html lang="{{ with $lang := $page.Site.LanguageCode }}{{ $lang }}{{ else }}en{{ end }}">
   <head>
     {{ partial "head" $page }}
   </head>
