@@ -1,0 +1,13 @@
+{{- $.Scratch.Add "searchIndex" slice -}}
+{{- range where .Site.RegularPages "Type" "posts" -}}
+  {{- $page := . -}}
+  {{- $pageData := dict
+    "title" $page.Title
+    "date" ($page.Date.Format "2006-01-02")
+    "permalink" $page.Permalink
+    "content" $page.Plain
+    "summary" $page.Summary
+  -}}
+  {{- $.Scratch.Add "searchIndex" $pageData -}}
+{{- end -}}
+{{- $.Scratch.Get "searchIndex" | jsonify -}}

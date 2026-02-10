@@ -204,3 +204,10 @@ titleCaseStyle = "none" # See https://gohugo.io/getting-started/configuration/#c
   # Code Block Highlighting, see https://gohugo.io/getting-started/configuration-markup/#highlight
   [markup.highlight]
     style = "github"
+
+[outputFormats.SearchIndex]
+  mediaType = "application/json"
+  baseName = "search"
+
+[outputs]
+  home = ["HTML", "RSS", "SearchIndex"]

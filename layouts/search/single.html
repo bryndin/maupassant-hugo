@@ -13,24 +13,26 @@
     {{ i18n "Search_results" }}
   </h3>
 
-  <article class="post">
-    <header>
-      <h1 class="post-title">
-        <a href="link">title</a>
-      </h1>
-    </header>
-    {{ if not $page.PublishDate.IsZero }}
-      <time
-        datetime="{{ $page.PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}"
-        class="post-meta meta-date dt-published"
-        >{{ time.Format $datetime_format $page.PublishDate }}</time
-      >
-    {{ end }}
-    <div class="post-content">
-      overview……
-      <p class="post-readmore"><a href="link">{{ i18n "continueReading" }}</a></p>
-    </div>
-  </article>
+  <div id="search-results">
+    <article class="post">
+      <header>
+        <h1 class="post-title">
+          <a href="link">title</a>
+        </h1>
+      </header>
+      {{ if not $page.PublishDate.IsZero }}
+        <time
+          datetime="{{ $page.PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}"
+          class="post-meta meta-date dt-published"
+          >{{ time.Format $datetime_format $page.PublishDate }}</time
+        >
+      {{ end }}
+      <div class="post-content">
+        overview……
+        <p class="post-readmore"><a href="link">{{ i18n "continueReading" }}</a></p>
+      </div>
+    </article>
+  </div>
 
   <script>
     var getUrlParameter = function getUrlParameter (sParam) {
@@ -51,25 +53,46 @@
     $(document).ready(function () {
       var q = getUrlParameter("q");
       $("span.keyword").text(q);
-      $("article.post").remove();
+      var resultsContainer = $("#search-results");
+      resultsContainer.empty();
       $.ajax({
-        url: '{{"index.xml"|absURL}}',
-        dataType: "xml",
+        url: '{{"search.json"|absURL}}',
+        dataType: "json",
         success: function (data) {
-          $(data).find("item").each(function () {
-            var item = $(this);
-            var title = item.find("title").text();
-            if (title.toLowerCase().indexOf(q.toLowerCase()) >= 0) {
-              var url = item.find("link").text();
-              var searchItem = `<article class="post"><header><h1 class="post-title"><a href="` + url + `">` + title + `</a></h1></header>`;
-              var pubDate = new Date(item.find("pubDate").text())
-              searchItem += `<time class="post-meta meta-date">` + pubDate.getFullYear() + `-` + (pubDate.getMonth() + 1) + `-` + pubDate.getDate() + `</time>`;
-              searchItem += `<div class="post-content">` + item.find("description").text() + `……<p class="post-readmore"><a href="` + url + `">` + "{{ i18n "continueReading" }}" + `</a></p></div></article>`;
+          var searchResults = [];
+          var queryLower = q.toLowerCase();
 
-              // TODO(DB): fix, as `res-cons` is no longer used. AFAIR it was used to limit the search scope to specific divs. Should the search only happen over the posts? About page? Anything else?
-              $("div.res-cons").append(searchItem);
-            }
+          $.each(data, function(index, item) {
+             var title = item.title;
+             var content = item.content;
+
+             if (title.toLowerCase().indexOf(queryLower) >= 0 || content.toLowerCase().indexOf(queryLower) >= 0) {
+               var url = item.permalink;
+               var pubDate = new Date(item.date);
+               var searchItem = `<article class="post"><header><h1 class="post-title"><a href="` + url + `">` + title + `</a></h1></header>`;
+               
+               // Only show date if it's valid (not epoch 0 or invalid)
+               if (!isNaN(pubDate.getTime()) && pubDate.getFullYear() > 1970) {
+                 var month = pubDate.getMonth() + 1;
+                 var day = pubDate.getDate();
+                 var formattedDate = pubDate.getFullYear() + '-' + (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
+                 searchItem += `<time class="post-meta meta-date">` + formattedDate + `</time>`;
+               }
+
+               // Use the pre-calculated summary from Hugo or truncate content if needed in JS (though Hugo summary is better)
+               var summary = item.summary;
+               // Fallback if summary is empty
+               if (!summary && content) {
+                 summary = content.substring(0, 300) + '...';
+               }
+               
+               searchItem += `<div class="post-content">` + summary + `……<p class="post-readmore"><a href="` + url + `">` + "{{ i18n "continueReading" }}" + `</a></p></div></article>`;
+               
+               searchResults.push(searchItem);
+             }
           });
+          
+          resultsContainer.append(searchResults.join(''));
         }
       });
     });
