@@ -33,46 +33,46 @@
   </article>
 
   <script>
-      var getUrlParameter = function getUrlParameter (sParam) {
-          var sPageURL = window.location.search.substring(1),
-              sURLVariables = sPageURL.split('&'),
-              sParameterName,
-              i;
+    var getUrlParameter = function getUrlParameter (sParam) {
+      var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
 
-          for (i = 0; i < sURLVariables.length; i++) {
-              sParameterName = sURLVariables[i].split('=');
+      for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
 
-              if (sParameterName[0] === sParam) {
-                  return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-              }
-          }
-      };
+        if (sParameterName[0] === sParam) {
+          return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+      }
+    };
 
-      $(document).ready(function () {
-          var q = getUrlParameter("q");
-          $("span.keyword").text(q);
-          $("article.post").remove();
-          $.ajax({
-              url: '{{"index.xml"|absURL}}',
-              dataType: "xml",
-              success: function (data) {
-                  $(data).find("item").each(function () {
-                      var item = $(this);
-                      var title = item.find("title").text();
-                      if (title.toLowerCase().indexOf(q.toLowerCase()) >= 0) {
-                          var url = item.find("link").text();
-                          var searchItem = `<article class="post"><header><h1 class="post-title"><a href="` + url + `">` + title + `</a></h1></header>`;
-                          var pubDate = new Date(item.find("pubDate").text())
-                          searchItem += `<time class="post-meta meta-date">` + pubDate.getFullYear() + `-` + (pubDate.getMonth() + 1) + `-` + pubDate.getDate() + `</time>`;
-                          searchItem += `<div class="post-content">` + item.find("description").text() + `……<p class="post-readmore"><a href="` + url + `">` + "{{ i18n "continueReading" }}" + `</a></p></div></article>`;
+    $(document).ready(function () {
+      var q = getUrlParameter("q");
+      $("span.keyword").text(q);
+      $("article.post").remove();
+      $.ajax({
+        url: '{{"index.xml"|absURL}}',
+        dataType: "xml",
+        success: function (data) {
+          $(data).find("item").each(function () {
+            var item = $(this);
+            var title = item.find("title").text();
+            if (title.toLowerCase().indexOf(q.toLowerCase()) >= 0) {
+              var url = item.find("link").text();
+              var searchItem = `<article class="post"><header><h1 class="post-title"><a href="` + url + `">` + title + `</a></h1></header>`;
+              var pubDate = new Date(item.find("pubDate").text())
+              searchItem += `<time class="post-meta meta-date">` + pubDate.getFullYear() + `-` + (pubDate.getMonth() + 1) + `-` + pubDate.getDate() + `</time>`;
+              searchItem += `<div class="post-content">` + item.find("description").text() + `……<p class="post-readmore"><a href="` + url + `">` + "{{ i18n "continueReading" }}" + `</a></p></div></article>`;
 
-                          // TODO(DB): fix, as `res-cons` is no longer used. AFAIR it was used to limit the search scope to specific divs. Should the search only happen over the posts? About page? Anything else?
-                          $("div.res-cons").append(searchItem);
-                      }
-                  });
-              }
+              // TODO(DB): fix, as `res-cons` is no longer used. AFAIR it was used to limit the search scope to specific divs. Should the search only happen over the posts? About page? Anything else?
+              $("div.res-cons").append(searchItem);
+            }
           });
+        }
       });
+    });
   </script>
   {{ "<!-- ending of search/single.html -->" | safeHTML }}
 {{ end }}
