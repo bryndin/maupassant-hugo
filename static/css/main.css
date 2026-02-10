@@ -15,6 +15,7 @@
 @import "components/sidebar.css" layer(components);
 @import "components/widgets/socials.css" layer(components);
 @import "components/widgets/search.css" layer(components);
+@import "components/widgets/tags.css" layer(components);
 @import "components/post.css" layer(components);
 @import "components/post-meta.css" layer(components);
 @import "components/tags.css" layer(components);

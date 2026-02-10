@@ -1,0 +1,6 @@
+/* Tag Cloud Widget */
+.widget-tags .tagcloud a {
+    font-size: var(--font-size-small);
+    display: inline;
+    margin-right: var(--space-xs);
+}
