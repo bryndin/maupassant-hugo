@@ -11,13 +11,13 @@
 @import "components/header.css" layer(components);
 @import "components/main.css" layer(components);
 @import "components/footer.css" layer(components);
-@import "components/content.css" layer(components);
 @import "components/sidebar.css" layer(components);
 @import "components/widgets/socials.css" layer(components);
 @import "components/widgets/search.css" layer(components);
 @import "components/widgets/tags.css" layer(components);
 @import "components/post.css" layer(components);
 @import "components/post-meta.css" layer(components);
+@import "components/post-content.css" layer(components);
 @import "components/tags.css" layer(components);
 @import "components/related.css" layer(components);
 @import "components/nav.css" layer(components);
