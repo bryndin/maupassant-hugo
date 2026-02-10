@@ -1,4 +1,4 @@
-#widget-search {
+.widget-search {
     position: relative;
     display: flex;
     background-color: var(--color-bg);
@@ -6,11 +6,11 @@
     transition: var(--transition-base);
 }
 
-#widget-search:focus-within {
+.widget-search:focus-within {
     border-color: var(--link-hover-color);
 }
 
-#widget-search input {
+.widget-search input {
     flex: 1;
     padding: calc(var(--search-height) / 5) var(--search-height) calc(var(--search-height) / 5) calc(var(--search-height) * 0.3);
     height: var(--search-height);
@@ -21,12 +21,12 @@
     outline: none;
 }
 
-#widget-search input::placeholder {
+.widget-search input::placeholder {
     color: var(--color-muted);
     opacity: 0.8;
 }
 
-.search-submit {
+.widget-search .search-submit {
     position: absolute;
     right: 0;
     top: 0;
@@ -39,16 +39,14 @@
     border: none;
     cursor: pointer;
     color: var(--color-muted);
-    /* TODO(DB): add transition to other link hovers */
-    transition: color 0.2s ease;
+    transition: color var(--link-transition);
 }
 
-.search-submit:hover {
-    /* TODO(DB): replace with global setting */
+.widget-search .search-submit:hover {
     color: var(--link-hover-color);
 }
 
-.search-submit svg {
+.widget-search .search-submit svg {
     width: var(--font-size-base);
     height: var(--font-size-base);
     fill: currentColor;
