@@ -2,7 +2,6 @@
     This is the list template for a specific taxonomy term (e.g., /tags/hugo/).
     It displays the term name and a list of pages associated with that term.
 */}}
-{{/* TODO(DB): add $page, to follow the pattern of the baseof.html */}}
 {{ define "content" }}
   {{- $page := . -}}
   {{ "<!-- starting of taxonomy.html -->" | safeHTML }}
@@ -21,20 +20,20 @@
       </h3>
     {{ end }}
 
-    {{ range $index,$data := $page.Paginator.Pages }}
+    {{ range $index, $post := $page.Paginator.Pages }}
       <article class="post">
         <header>
           <h1 class="post-title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            <a href="{{ $post.Permalink }}">{{ $post.Title }}</a>
           </h1>
         </header>
-        {{ partial "post-meta.html" . }}
+        {{ partial "post-meta.html" $post }}
         <div class="post-content">
-          {{ .Summary }}{{ if .Truncated }}……{{ end }}
+          {{ $post.Summary }}{{ if $post.Truncated }}……{{ end }}
         </div>
-        {{ if or .Truncated .Params.Summary }}
+        {{ if or $post.Truncated $post.Params.Summary }}
           <p class="post-readmore">
-            <a href="{{ .Permalink }}">{{ i18n "continueReading" }}</a>
+            <a href="{{ $post.Permalink }}">{{ i18n "continueReading" }}</a>
           </p>
         {{ end }}
       </article>
