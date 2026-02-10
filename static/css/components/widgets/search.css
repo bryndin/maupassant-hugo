@@ -1,7 +1,6 @@
 .widget-search {
     position: relative;
     display: flex;
-    background-color: var(--color-bg);
     border: var(--border);
     transition: var(--transition-base);
 }
@@ -12,13 +11,11 @@
 
 .widget-search input {
     flex: 1;
-    padding-block: calc(var(--search-height) / 5);
-    padding-inline: calc(var(--search-height) * 0.3) var(--search-height);
+    padding-inline: calc(var(--search-height) / 3) var(--search-height);
     height: var(--search-height);
-    font: var(--text-normal);
+    font-size: var(--font-size-small);
     color: var(--color-main);
     border: none;
-    background: transparent;
     outline: none;
 }
 
@@ -27,6 +24,7 @@
     opacity: 0.8;
 }
 
+/* Magnifying glass icon */
 .widget-search .search-submit {
     position: absolute;
     right: 0;

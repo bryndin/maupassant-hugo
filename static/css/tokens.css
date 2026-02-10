@@ -75,7 +75,6 @@
 
   /* Posts */
   --post-background-color: var(--color-white);
-  /* --post-font-title: bold calc(var(--font-size-base) * 1.5) var(--font-family-base); */
   --post-font-meta: normal var(--font-size-base) var(--font-family-base);
   --post-font-content: normal var(--font-size-base) var(--font-family-base);
 
@@ -84,7 +83,7 @@
 
   /* Widgets */
   /** Search **/
-  --search-height: calc(var(--font-size-base) * 2.5);
+  --search-height: calc(var(--font-size-small) * 2.5);
 }
 
 .theme-dark {
