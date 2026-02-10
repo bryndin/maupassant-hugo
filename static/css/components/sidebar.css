@@ -10,6 +10,15 @@
 .widget {
   padding-left: var(--space-md);
   margin-bottom: var(--space-xl);
+  color: var(--sidebar-text-color);
+}
+
+.widget a {
+  color: var(--sidebar-text-color);
+}
+
+.widget a:hover {
+  color: var(--link-hover-color);
 }
 
 .widget .widget-title {

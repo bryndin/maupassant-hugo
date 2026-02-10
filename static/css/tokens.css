@@ -77,6 +77,9 @@
   --post-font-meta: normal var(--font-size-base) var(--font-family-base);
   --post-font-content: normal var(--font-size-base) var(--font-family-base);
 
+  /* Sidebar */
+  --sidebar-text-color: var(--color-muted);
+
   /* Widgets */
   /** Search **/
   --search-height: calc(var(--font-size-base) * 2.5);
