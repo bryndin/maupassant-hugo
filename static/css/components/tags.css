@@ -1,4 +1,8 @@
 /* Post Meta Tags */
+.meta-tags {
+    margin-top: var(--space-xl);
+}
+
 .meta-tags ul {
     display: flex;
     flex-wrap: wrap;
