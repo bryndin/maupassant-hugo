@@ -5,6 +5,7 @@
 .post-content {
     line-height: var(--line-height-base);
     min-width: 0; /* Prevents grid blowout from wide content */
+    margin-bottom: var(--space-sm);
 }
 
 /* Content Link Style (Markdown generated) */
@@ -12,7 +13,12 @@
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
+    text-decoration-color: var(--link-decoration-color);
     transition: none;
+}
+
+.post-content a:hover {
+    text-decoration-color: var(--link-hover-decoration-color);
 }
 
 /* --- Code styling ----------------------------------------------------- */

@@ -29,27 +29,10 @@ a {
 
 a:hover {
   color: var(--link-hover-color);
-  /* text-decoration: none; explicitly no underline for UI links */
-  /* TODO(DB): TBD if I want this, probably not */
-  text-decoration: underline var(--color-accent);
+  text-decoration: underline var(--link-hover-decoration-color);
 }
 
 img {
   max-width: 100%;
   height: auto;
 }
-
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0;
-  margin-bottom: var(--space-md);
-} */
-
-/* p {
-  margin-top: 0;
-  margin-bottom: var(--space-md);
-} */
