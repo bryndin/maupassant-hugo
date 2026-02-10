@@ -3,7 +3,7 @@
 } */
 
 .post-title {
-  font: var(--post-font-title);
+  /* font: var(--post-font-title); */
   margin-bottom: var(--space-sm);
 }
 

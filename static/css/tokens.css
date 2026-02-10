@@ -69,11 +69,11 @@
   --transition-base: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 
   /* Menu */
-  --menu-height: calc(var(--font-size-base) * 2);
+  --menu-height: calc(var(--font-size-base) * 2.5);
 
   /* Posts */
   --post-background-color: var(--color-white);
-  --post-font-title: bold calc(var(--font-size-base) * 1.5) var(--font-family-base);
+  /* --post-font-title: bold calc(var(--font-size-base) * 1.5) var(--font-family-base); */
   --post-font-meta: normal var(--font-size-base) var(--font-family-base);
   --post-font-content: normal var(--font-size-base) var(--font-family-base);
 
