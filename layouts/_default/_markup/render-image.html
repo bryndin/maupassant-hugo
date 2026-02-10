@@ -2,32 +2,33 @@
     This is a render hook for images in Markdown.
     It overrides the default image rendering to support image processing, CDNs, and Fancybox.
 */}}
-{{- $img_destination := .Destination -}}
-{{- if (and .Page.Site.Params.image_cdn.enable (not .Page.Site.IsServer)) -}}
-    {{if hasPrefix .Destination "/" }}
-    {{ $img_destination = (print .Page.Site.Params.image_cdn.HOST .Destination) }}
-    {{ else if not (hasPrefix .Destination "http") }}
-    {{ $img_destination = (print .Page.Site.Params.image_cdn.HOST (path.Join .Page.RelPermalink .Destination)) }}
+{{- $ctx := . -}}
+{{- $img_destination := $ctx.Destination -}}
+{{- if (and $ctx.Page.Site.Params.image_cdn.enable (not $ctx.Page.Site.IsServer)) -}}
+    {{ if hasPrefix $ctx.Destination "/" }}
+        {{ $img_destination = (print $ctx.Page.Site.Params.image_cdn.HOST $ctx.Destination) }}
+    {{ else if not (hasPrefix $ctx.Destination "http") }}
+        {{ $img_destination = (print $ctx.Page.Site.Params.image_cdn.HOST (path.Join $ctx.Page.RelPermalink $ctx.Destination)) }}
     {{ end }}
 {{- end -}}
 
-{{- if .Title -}}
+{{- if $ctx.Title -}}
 <figure class="max-w-2xl mx-auto overflow-hidden">
-    {{if .Page.Site.Params.fancybox }}
-    <a data-fancybox="gallery" href="{{ $img_destination | safeURL }}">
-        <img alt="{{ $.Text }}" src="{{ $img_destination | safeURL }}" />
-    </a>
-    {{ else }}
-        <img alt="{{ $.Text }}" src="{{ $img_destination | safeURL }}" />
-    {{ end }}
-    <figcaption class="p-2 text-center">{{ with $title := $.Title | safeHTML }}{{ $title }}{{ end }}</figcaption>
-</figure>
-{{- else -}}
-    {{if .Page.Site.Params.fancybox }}
+    {{ if $ctx.Page.Site.Params.fancybox }}
         <a data-fancybox="gallery" href="{{ $img_destination | safeURL }}">
-            <img class="mx-auto" alt="{{ $.Text }}" src="{{ $img_destination | safeURL }}" />
+            <img alt="{{ $ctx.Text }}" src="{{ $img_destination | safeURL }}" />
         </a>
     {{ else }}
-        <img class="mx-auto" alt="{{ $.Text }}" src="{{ $img_destination | safeURL }}" />   
+        <img alt="{{ $ctx.Text }}" src="{{ $img_destination | safeURL }}" />
+    {{ end }}
+    <figcaption class="p-2 text-center">{{ with $title := $ctx.Title | safeHTML }}{{ $title }}{{ end }}</figcaption>
+</figure>
+{{- else -}}
+    {{ if $ctx.Page.Site.Params.fancybox }}
+        <a data-fancybox="gallery" href="{{ $img_destination | safeURL }}">
+            <img class="mx-auto" alt="{{ $ctx.Text }}" src="{{ $img_destination | safeURL }}" />
+        </a>
+    {{ else }}
+        <img class="mx-auto" alt="{{ $ctx.Text }}" src="{{ $img_destination | safeURL }}" />   
     {{ end }}
 {{- end -}}
