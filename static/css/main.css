@@ -2,7 +2,9 @@
     If a file isn’t imported here, it doesn’t exist.
 */
 
-@layer tokens, base, utilities, components, overrides;
+@layer reset, tokens, base, utilities, components, overrides;
+
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" layer(reset);
 
 @import "tokens.css" layer(tokens);
 @import "base.css" layer(base);
