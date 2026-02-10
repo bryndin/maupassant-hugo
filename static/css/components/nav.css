@@ -13,14 +13,14 @@
 }
 
 .nav-menu a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 0 var(--space-md);
     height: var(--menu-height);
-    /* TODO(DB): menu is a oneliner, why do I need to set the line-height here? */
-    line-height: var(--menu-height);
+    /* Transparent border prevents active tab baseline shift */
+    border: var(--border-width) solid transparent;
     border-bottom: var(--border);
-    /* Prevents active tab baseline shift (due to missing border-top) */
-    border-top: var(--border-width) solid transparent;
 }
 
 .nav-menu a.current {
