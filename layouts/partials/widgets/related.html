@@ -1,0 +1,21 @@
+{{/*
+    This partial generates the "Related Posts" sidebar widget.
+    It only renders on single blog post pages when related posts exist.
+*/}}
+{{- $page := . -}}
+{{- if not $page.Site.Params.relatedPosts.disable -}}
+  {{- if eq $page.Type $page.Site.Params.BlogType -}}
+    {{- $related := $page.Site.RegularPages.Related $page | first $page.Site.Params.relatedPosts.Limit -}}
+    {{- $relatedPosts := where $related "Type" $page.Site.Params.relatedPosts.type -}}
+    {{- with $posts := $relatedPosts }}
+      <section class="widget widget-related">
+        <h3 class="widget-title">{{ i18n "related_posts" }}</h3>
+        <ul class="widget-list">
+          {{- range $post := $posts }}
+            <li><a href="{{ $post.RelPermalink }}" title="{{ $post.Title }}">{{ $post.Title }}</a></li>
+          {{- end }}
+        </ul>
+      </section>
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

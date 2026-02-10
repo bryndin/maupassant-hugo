@@ -7,3 +7,10 @@
 .related-posts li {
   line-height: var(--line-height-large);
 }
+
+/* Hide mobile fallback when sidebar is visible */
+/* @media screen and (min-width: 1024px) {
+  .related-posts-mobile {
+    display: none;
+  }
+} */

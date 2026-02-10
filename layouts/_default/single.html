@@ -1,7 +1,7 @@
 {{/*
     This is the template for displaying a single page content (a blog post).
     It renders the post title, metadata, table of contents, main content, tags,
-    related posts, and comments.
+    and comments.
 */}}
 {{ define "content" }}
   {{- $page := . }}
@@ -15,12 +15,7 @@
       <div class="post-content">
         {{ $page.Content }}
       </div>
-
       {{- partial "tags" $page -}}
-
-      {{ if eq $page.Type $page.Site.Params.BlogType -}}
-        {{ partial "related" $page }}
-      {{- end }}
     </article>
     {{ partial "comments" $page }}
 
