@@ -12,7 +12,8 @@
 
 .widget-search input {
     flex: 1;
-    padding: calc(var(--search-height) / 5) var(--search-height) calc(var(--search-height) / 5) calc(var(--search-height) * 0.3);
+    padding-block: calc(var(--search-height) / 5);
+    padding-inline: calc(var(--search-height) * 0.3) var(--search-height);
     height: var(--search-height);
     font: var(--text-normal);
     color: var(--color-main);

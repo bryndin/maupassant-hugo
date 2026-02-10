@@ -1,6 +1,6 @@
 .related-posts {
   margin-top: var(--space-xl);
-  padding-top: var(--space-md);
+  padding-block-start: var(--space-md);
   border-top: var(--border);
 }
 

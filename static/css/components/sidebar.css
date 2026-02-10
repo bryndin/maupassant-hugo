@@ -1,14 +1,14 @@
 /* .sidebar { } Styles handled by grid */
 .sidebar {
   border-left: var(--border);
-  padding-top: var(--space-lg);
+  padding-block-start: var(--space-lg);
   padding-inline-start: var(--space-md);
   word-break: break-word;
 }
 
 /* Widget styles */
 .widget {
-  padding-left: var(--space-md);
+  padding-inline-start: var(--space-md);
   margin-bottom: var(--space-xl);
   color: var(--sidebar-text-color);
 }
@@ -22,7 +22,7 @@
 }
 
 .widget .widget-title {
-  padding-bottom: var(--space-sm);
+  padding-block-end: var(--space-sm);
   border-bottom: var(--border);
   margin-bottom: var(--space-md);
   color: var(--color-muted);

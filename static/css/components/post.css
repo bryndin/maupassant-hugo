@@ -1,5 +1,6 @@
 /* .post {
-  padding: var(--space-lg);
+  padding-block: var(--space-lg);
+  padding-inline: var(--space-lg);
 } */
 
 .post-title {
@@ -13,7 +14,8 @@
 /* "read more" button */
 .post-readmore a {
   font-size: var(--font-size-small);
-  padding: var(--space-xs) var(--space-md);
+  padding-block: var(--space-xs);
+  padding-inline: var(--space-md);
   border: var(--border);
   float: right;
   background-color: var(--color-bg);

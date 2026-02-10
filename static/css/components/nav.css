@@ -14,7 +14,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0 var(--space-md);
+    padding-block: 0;
+    padding-inline: var(--space-md);
     height: var(--menu-height);
     /* Transparent border prevents active tab baseline shift */
     border: var(--border-width) solid transparent;

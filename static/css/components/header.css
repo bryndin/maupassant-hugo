@@ -1,6 +1,6 @@
 .page-header {
-  padding-top: var(--space-xl);
-  padding-bottom: var(--space-lg);
+  padding-block-start: var(--space-xl);
+  padding-block-end: var(--space-lg);
   display: flex;
   flex-direction: column;
   align-items: stretch;
