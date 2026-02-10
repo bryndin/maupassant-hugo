@@ -3,77 +3,77 @@
     It displays links to previous, next, and specific pages.
 */}}
 {{- $page := . -}}
-{{ with $page.Paginator }}
-  {{ if gt .TotalPages 10 }}
+{{ with $paginator := $page.Paginator }}
+  {{ if gt $paginator.TotalPages 10 }}
     <ol class="page-navigator">
-      {{ if .HasPrev }}
+      {{ if $paginator.HasPrev }}
         <li class="prev">
-          <a href="{{ .Prev.URL | absLangURL }}">{{ i18n "previous" }}</a>
+          <a href="{{ $paginator.Prev.URL | absLangURL }}">{{ i18n "previous" }}</a>
         </li>
       {{ end }}
 
       {{ $dynamicPages := slice 1 }}
 
-      {{ if eq .PageNumber 1 }}
+      {{ if eq $paginator.PageNumber 1 }}
         {{ $dynamicPages = $dynamicPages|append 2 3 -1 }}
-      {{ else if eq .PageNumber 2 }}
+      {{ else if eq $paginator.PageNumber 2 }}
         {{ $dynamicPages = $dynamicPages|append 2 3 4 -1 }}
-      {{ else if eq .PageNumber 3 }}
+      {{ else if eq $paginator.PageNumber 3 }}
         {{ $dynamicPages = $dynamicPages|append 2 3 4 5 -1 }}
-      {{ else if eq .PageNumber (sub .TotalPages 2) }}
+      {{ else if eq $paginator.PageNumber (sub $paginator.TotalPages 2) }}
         {{ $dynamicPages = $dynamicPages|append -1 }}
-        {{ $dynamicPages = $dynamicPages|append (sub .PageNumber 2) (sub .PageNumber 1) .PageNumber (add .PageNumber 1) }}
-      {{ else if eq .PageNumber (sub .TotalPages 1) }}
+        {{ $dynamicPages = $dynamicPages|append (sub $paginator.PageNumber 2) (sub $paginator.PageNumber 1) $paginator.PageNumber (add $paginator.PageNumber 1) }}
+      {{ else if eq $paginator.PageNumber (sub $paginator.TotalPages 1) }}
         {{ $dynamicPages = $dynamicPages|append -1 }}
-        {{ $dynamicPages = $dynamicPages|append (sub .PageNumber 2) (sub .PageNumber 1) .PageNumber }}
-      {{ else if eq .PageNumber .TotalPages }}
+        {{ $dynamicPages = $dynamicPages|append (sub $paginator.PageNumber 2) (sub $paginator.PageNumber 1) $paginator.PageNumber }}
+      {{ else if eq $paginator.PageNumber $paginator.TotalPages }}
         {{ $dynamicPages = $dynamicPages|append -1 }}
-        {{ $dynamicPages = $dynamicPages|append (sub .PageNumber 2) (sub .PageNumber 1) }}
+        {{ $dynamicPages = $dynamicPages|append (sub $paginator.PageNumber 2) (sub $paginator.PageNumber 1) }}
       {{ else }}
         {{ $dynamicPages = $dynamicPages|append -1 }}
-        {{ $dynamicPages = $dynamicPages|append (sub .PageNumber 2) (sub .PageNumber 1) .PageNumber (add .PageNumber 1) (add .PageNumber 2) -1 }}
+        {{ $dynamicPages = $dynamicPages|append (sub $paginator.PageNumber 2) (sub $paginator.PageNumber 1) $paginator.PageNumber (add $paginator.PageNumber 1) (add $paginator.PageNumber 2) -1 }}
       {{ end }}
-      {{ $dynamicPages = $dynamicPages|append .TotalPages }}
+      {{ $dynamicPages = $dynamicPages|append $paginator.TotalPages }}
 
-      {{ range $dynamicPages }}
-        {{ if eq -1 . }}
+      {{ range $p := $dynamicPages }}
+        {{ if eq -1 $p }}
           <li>
             <span>...</span>
           </li>
         {{ else }}
-          {{ $pager:=index $page.Paginator.Pagers (sub . 1) }}
-          <li {{ if eq . $page.Paginator.PageNumber }}class="current"{{ end }}>
+          {{ $pager:=index $paginator.Pagers (sub $p 1) }}
+          <li {{ if eq $p $paginator.PageNumber }}class="current"{{ end }}>
             <a href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
           </li>
         {{ end }}
       {{ end }}
 
-      {{ if .HasNext }}
+      {{ if $paginator.HasNext }}
 
         <li class="next">
-          <a href="{{ .Next.URL | absLangURL }}">{{ i18n "next" }}</a>
+          <a href="{{ $paginator.Next.URL | absLangURL }}">{{ i18n "next" }}</a>
         </li>
       {{ end }}
     </ol>
-  {{ else if gt .TotalPages 1 }}
+  {{ else if gt $paginator.TotalPages 1 }}
     <ol class="page-navigator">
-      {{ if .HasPrev }}
+      {{ if $paginator.HasPrev }}
         <li class="prev">
-          <a href="{{ .Prev.URL | absLangURL }}">{{ i18n "previous" }}</a>
+          <a href="{{ $paginator.Prev.URL | absLangURL }}">{{ i18n "previous" }}</a>
         </li>
       {{ end }}
 
-      {{ range .Pagers }}
+      {{ range $pager := $paginator.Pagers }}
         <li
-          {{ if eq .PageNumber $page.Paginator.PageNumber }}class="current"{{ end }}
+          {{ if eq $pager.PageNumber $paginator.PageNumber }}class="current"{{ end }}
         >
-          <a href="{{ .URL | absLangURL }}">{{ .PageNumber }}</a>
+          <a href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
         </li>
       {{ end }}
 
-      {{ if .HasNext }}
+      {{ if $paginator.HasNext }}
         <li class="next">
-          <a href="{{ .Next.URL | absLangURL }}">{{ i18n "next" }}</a>
+          <a href="{{ $paginator.Next.URL | absLangURL }}">{{ i18n "next" }}</a>
         </li>
       {{ end }}
     </ol>

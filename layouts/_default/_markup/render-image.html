@@ -20,7 +20,7 @@
     {{ else }}
         <img alt="{{ $.Text }}" src="{{ $img_destination | safeURL }}" />
     {{ end }}
-    <figcaption class="p-2 text-center">{{ with $.Title | safeHTML }}{{ . }}{{ end }}</figcaption>
+    <figcaption class="p-2 text-center">{{ with $title := $.Title | safeHTML }}{{ $title }}{{ end }}</figcaption>
 </figure>
 {{- else -}}
     {{if .Page.Site.Params.fancybox }}

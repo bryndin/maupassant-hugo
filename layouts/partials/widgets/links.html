@@ -3,13 +3,13 @@
     It lists external links configured in config.toml.
 */}}
 {{- $page := . -}}
-{{ with $page.Site.Params.wLinks }}
+{{ with $links := $page.Site.Params.wLinks }}
   <section class="widget">
     <h3 class="widget-title">{{ i18n "links" }}</h3>
     <ul class="widget-list">
-      {{ range . }}
+      {{ range $link := $links }}
         <li>
-          <a href="{{ .url }}" title="{{ .title }}">{{ .name }}</a>
+          <a href="{{ $link.url }}" title="{{ $link.title }}">{{ $link.name }}</a>
         </li>
       {{ end }}
     </ul>

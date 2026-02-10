@@ -30,7 +30,7 @@
 <!-- if title is not set explicitly then we need to beautify the link
      if length of link is more than 32 chars, we will cut it off by 32 and then drop everything after the last / if any and put it in into title -->
 
-{{ with $.Scratch.Get "bl_title" }}
+{{ with $title := $.Scratch.Get "bl_title" }}
   <!-- do nothing -->
 {{ else }}
   {{ with $.Scratch.Get "bl_link" }}    <!-- if link is given -->
@@ -68,13 +68,13 @@
         <cite>
           <a href="{{ . }}" title="{{ . }}">{{ $.Scratch.Get "bl_title" }}</a> <!-- can't have new lines here -->
         </cite>
-      {{ else }}
+    {{ else }}
         {{ with $.Scratch.Get "bl_title" }}
           <cite>
             {{ $.Scratch.Get "bl_title" }}</a>
           </cite>
         {{ end }}
-      {{ end }}
+    {{ end }}
     {{ end }}
   </footer>
 </blockquote>

@@ -16,7 +16,7 @@
             <a href="{{ $post.Permalink }}" title="{{ $post.Title }}">{{ $post.Title }}</a>
           </h1>
         </header>
-        {{ partial "post-meta.html" . }}
+        {{ partial "post-meta.html" $post }}
         <div class="post-content">
           {{ $post.Summary }}{{ if $post.Truncated }}……{{ end }}
         </div>

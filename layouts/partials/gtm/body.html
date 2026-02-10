@@ -3,11 +3,11 @@
 */}}
 {{ if not hugo.IsServer }}
   {{- $page := . -}}
-  {{ with $page.Site.Params.GoogleTagManager.GTMID }}
+  {{ with $gtmId := $page.Site.Params.GoogleTagManager.GTMID }}
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
-        src="https://www.googletagmanager.com/ns.html?id={{ . }}"
+        src="https://www.googletagmanager.com/ns.html?id={{ $gtmId }}"
         height="0"
         width="0"
         style="display:none;visibility:hidden"

@@ -16,14 +16,14 @@
 
 {{ if .IsNamedParams }}
   {{ $.Scratch.Set "wp_tag" (.Get "tag") }}
-  {{ with .Get "lang" }}
-    {{ $.Scratch.Set "wp_lang" . }}
+  {{ with $lang := .Get "lang" }}
+    {{ $.Scratch.Set "wp_lang" $lang }}
   {{ else }}
     {{ $.Scratch.Set "wp_lang" "en" }}
   {{ end }}
 
-  {{ with .Get "title" }}
-    {{ $.Scratch.Set "wp_title" . }}
+  {{ with $title := .Get "title" }}
+    {{ $.Scratch.Set "wp_title" $title }}
   {{ else }}
     {{ $.Scratch.Set "wp_title" (.Get "tag") }}
   {{ end }}
