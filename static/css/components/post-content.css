@@ -26,10 +26,6 @@
 .post-content code {
     padding-block: 2px;
     padding-inline: 4px;
-    /* TODO(DB): TBD if I want to use the surface-muted background color here */
-    /* background-color: rgba(27, 31, 35, 0.05); */
-    /* border-radius: 3px; */
-    /* font-size: 0.9em; */
 }
 
 /* Code block specifics */
@@ -44,11 +40,43 @@
 }
 
 .post-content pre {
-    background-color: var(--color-surface-muted);
-    border: var(--border);
-    /* border-radius: 4px; */
     margin-bottom: var(--space-md);
     overflow-x: auto; /* Allow horizontal scroll for long code lines */
+    background-color: var(--color-surface-muted);
+}
+
+/* --- Highlighted code styling (different from the regular code block) --- */
+/* TODO(DB): add dark theme */
+/* TODO(DB): Figure why it can't be scaled to content (comment background-color to debug) */
+.highlight {
+    background-color: var(--color-surface-muted);
+}
+
+.chroma {
+    /* Override default background color in the highlighting style file */
+    background-color: transparent !important;
+}
+
+/* Remove extra spacing set for code block above */
+.post-content .chroma pre {
+    margin-block: 0;
+    margin-inline: 0;
+    padding-block: 0;
+    padding-inline: 0;
+}
+
+/* User highlighted code lines */
+.chroma .hl {
+    /* Add extra opacity background to the highlighted lines */
+    background-color: var(--color-surface-muted) !important;
+}
+
+/* Reset styling for the table */
+.post-content .lntable th,
+.post-content .lntable td {
+    padding-inline: 0;
+    padding-block: 0;
+    border: none;
 }
 
 /* --- Table styling ---------------------------------------------------- */

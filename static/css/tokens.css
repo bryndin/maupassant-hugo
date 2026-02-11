@@ -14,7 +14,7 @@
   --color-primary-hover: #0056b3;
   --color-border: #ddd;
   --color-white: #ffffff;
-  --color-surface-muted: rgba(0, 0, 0, 0.02);
+  --color-surface-muted: rgba(0, 0, 0, 0.06);
 
   /* Global Spacing */
   --space-xs: 0.25rem;

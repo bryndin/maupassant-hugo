@@ -203,7 +203,7 @@ titleCaseStyle = "none" # See https://gohugo.io/getting-started/configuration/#c
 [markup]
   # Code Block Highlighting, see https://gohugo.io/getting-started/configuration-markup/#highlight
   [markup.highlight]
-    style = "github"
+    noClasses = false       # we use a custom theme based on `github` style
 
 [outputFormats.SearchIndex]
   mediaType = "application/json"
