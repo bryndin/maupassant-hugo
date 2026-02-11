@@ -1,6 +1,7 @@
 /* Mobile First: Stacked layout, Sidebar Hidden */
 .page-main {
   display: block;
+  padding-block-end: var(--space-xl);
 }
 
 .page-main .sidebar {
