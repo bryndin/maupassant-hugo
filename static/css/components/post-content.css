@@ -71,7 +71,8 @@
 }
 
 .post-content th {
-    background-color: var(--color-bg);
+    /* TODO(DB): Decide if I want to use some background color here. Remember about dark theme! */
+    /* background-color: var(--color-bg); */
     font-weight: bold;
 }
 

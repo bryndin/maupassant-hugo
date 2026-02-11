@@ -15,6 +15,7 @@
     height: var(--search-height);
     font-size: var(--font-size-small);
     color: var(--color-main);
+    background-color: transparent;
     border: none;
     outline: none;
 }

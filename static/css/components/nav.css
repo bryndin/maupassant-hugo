@@ -25,5 +25,4 @@
 .nav-menu a.current {
     border: var(--border);
     border-bottom: none;
-    background-color: var(--color-bg);
 }
