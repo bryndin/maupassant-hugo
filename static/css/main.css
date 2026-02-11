@@ -10,9 +10,9 @@
 @import "base.css" layer(base);
 @import "utilities.css" layer(utilities);
 
-@import "components/header.css" layer(components);
-@import "components/main.css" layer(components);
-@import "components/footer.css" layer(components);
+@import "components/page-header.css" layer(components);
+@import "components/page-main.css" layer(components);
+@import "components/page-footer.css" layer(components);
 @import "components/sidebar.css" layer(components);
 @import "components/widgets/socials.css" layer(components);
 @import "components/widgets/search.css" layer(components);
