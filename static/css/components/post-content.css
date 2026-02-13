@@ -22,17 +22,11 @@
 }
 
 /* --- Code styling ----------------------------------------------------- */
-/* Inline and block code styling */
-.post-content code {
-    padding-block: 2px;
-    padding-inline: 4px;
-}
-
 /* Code block specifics */
 .post-content pre code {
     display: block;
     padding-block: var(--space-sm);
-    padding-inline: var(--space-sm);
+    padding-inline-start: var(--space-md);
     overflow-x: auto;
     /* Prevent wrapping to trigger overflow */
     white-space: pre;
@@ -63,6 +57,7 @@
     margin-inline: 0;
     padding-block: 0;
     padding-inline: 0;
+    border: none;
 }
 
 /* User highlighted code lines */
@@ -71,12 +66,43 @@
     background-color: var(--color-surface-muted) !important;
 }
 
+/* Specific styling for line number tables to ensure full width */
+.post-content .chroma .lntable {
+    width: 100%;
+    display: table;
+}
+
+/* Ensure the line number column shrinks to fit its content */
+.post-content .chroma .lntable td:first-child {
+    width: 1%; /* Force minimum width */
+    white-space: nowrap; /* Prevent numbers from wrapping */
+}
+
+/* Code lines are flexed, ensure the line numbers are flexed as well */
+.post-content .chroma .lntable td:first-child span {
+    display: flex;
+}
+
+/* Ensure the code column takes up the remaining space */
+.post-content .chroma .lntable td:last-child {
+    width: 100%;
+}
+
+/* Reset padding set for the non-highlighted code block */
+.post-content .chroma .lntable td:last-child code {
+    padding-inline-start: 0;
+}
+
+/* Add padding to the line column instead to properly handle line highlighting */
+.post-content .chroma .lntable td:last-child .line {
+    padding-inline-start: var(--space-md);
+}
+
 /* Reset styling for the table */
-.post-content .lntable th,
-.post-content .lntable td {
+.post-content .chroma .lntable th,
+.post-content .chroma .lntable td {
     padding-inline: 0;
     padding-block: 0;
-    border: none;
 }
 
 /* --- Table styling ---------------------------------------------------- */
