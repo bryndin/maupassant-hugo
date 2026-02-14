@@ -8,9 +8,6 @@ categories: [Intro]
 
 draft: false
 ---
-
-## Welcome to the Maupassant IC Demo Blog
-
 Bonjour and welcome to the Maupassant IC demo blog! We're thrilled to introduce you to this beautiful and minimalistic Hugo theme, designed specifically for bloggers who value simplicity, readability, and flexibility.
 
 This demo site is designed to showcase the features and capabilities of Maupassant IC, a free and open-source theme that's perfect for writers, journalists, and anyone who wants to share their thoughts and ideas with the world.
