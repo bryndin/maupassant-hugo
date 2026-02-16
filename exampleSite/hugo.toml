@@ -40,13 +40,18 @@ titleCaseStyle = "none" # See https://gohugo.io/getting-started/configuration/#c
   # Here you can put list of custom JS/CSS files you want to be loaded
   customCSS = []
   customJS = []
-
+ 
   # Enables comments. After enabling, you have to configure one of the comment systems below.
   comments = false
 
   # Global table of contents switch. For non-blog posts pages, consider turning it off in `front matter`
   # ToC is currently broken, keep it off for now
   toc = false
+
+  # [params.text]
+  #   # Customize the truncation indicator (ellipsis) for auto-generated summaries.
+  #   # Default is " …" (non-breaking space + unicode ellipsis).
+  #   truncated = " ..."
 
 # Google Tag Manager (GTM)
 [params.googletagmanager]

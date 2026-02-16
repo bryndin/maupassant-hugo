@@ -6,7 +6,7 @@
     "date" ($page.Date.Format "2006-01-02")
     "permalink" $page.Permalink
     "content" $page.Plain
-    "summary" $page.Summary
+    "summary" (partial "summary.html" $page)
   -}}
   {{- $.Scratch.Add "searchIndex" $pageData -}}
 {{- end -}}

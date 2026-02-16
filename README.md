@@ -76,6 +76,23 @@ Follow the comments in sample [`hugo.toml`](https://github.com/bryndin/maupassan
 Most of the theme features, e.g. comments, categories, tags, etc. by default only apply to the *blog post* pages. What page is *blog post* is configured via required `blogType` parameter in the `[params]` section of `hugo.toml`.
 
 `blogType` is a directory name of your blog content (e.g. `posts`, for `content/posts` directory). To mark any other page a *blog post*, set e.g. `type: posts` in front matter.
+ 
+### Post Summaries
+
+The theme handles post summaries in three ways, in order of precedence:
+
+1.  **Front Matter (`summary`)**: If you define `summary: "your text"` in the front matter, it will be used. Markdown is supported.
+2.  **Manual Separator (`<!--more-->`)**: Use this separator in your content to explicitly define where the summary ends.
+3.  **Auto-generated**: If neither of the above is found, Hugo automatically generates a summary from the beginning of your content.
+
+#### Customizing the Truncation Indicator
+
+For auto-generated summaries, you can customize the truncation indicator (default is ` …`) by adding the following to your `hugo.toml`:
+
+```toml
+[params.text]
+  truncated = " ..." # Your custom indicator
+```
 
 ### Enabling comments
 

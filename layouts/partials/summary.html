@@ -1,0 +1,38 @@
+{{/*
+    This partial handles post summary rendering.
+    It supports front-matter 'summary' (Markdown), '<!--more-->' manual separators,
+    and auto-generated summaries with smart ellipsis truncation.
+*/}}
+{{- $page := . -}}
+{{- $content := "" -}}
+{{- $is_manual := false -}}
+
+{{- if $page.Params.summary -}}
+    {{- /* Case A: Front-matter summary (User-provided) - Render as Markdown */ -}}
+    {{- $content = $page.Params.summary | markdownify -}}
+    {{- $is_manual = true -}}
+{{- else if findRE "(?i)<!--\\s*more\\s*-->" $page.RawContent -}}
+  {{- /* Case B: Manual summary via divider */ -}}
+  {{- $content = $page.Summary -}}
+  {{- $is_manual = true -}}
+{{- else -}}
+    {{- /* Case C: Auto-generated summary */ -}}
+    {{- $content = $page.Summary -}}
+{{- end -}}
+
+{{- /* Apply truncation logic only if it's NOT a manual summary and IS truncated */ -}}
+{{- if and $page.Truncated (not $is_manual) -}}
+    {{- $ellipsis := " …" -}}
+    {{- if and $page.Site.Params.text $page.Site.Params.text.truncated -}}
+        {{- $ellipsis = $page.Site.Params.text.truncated -}}
+    {{- end -}}
+
+    {{- /* Smart ellipsis injection */ -}}
+    {{- if findRE "</(p|div|section|article)>\\s*$" $content -}}
+        {{- $content = $content | replaceRE "([.!?\\s]*)</(p|div|section|article)>\\s*$" (printf "%s</$2>" $ellipsis) -}}
+    {{- else -}}
+        {{- $content = printf "%s%s" ($content | replaceRE "[.!?\\s]*$" "") $ellipsis -}}
+    {{- end -}}
+{{- end -}}
+
+{{- $content | safeHTML -}}
