@@ -1,10 +1,13 @@
 {{/*
     This partial generates the pagination controls.
     It displays links to previous, next, and specific pages.
+    When total pages exceed $compactThreshold, it switches to a compact
+    view with ellipsis (e.g. 1 ... 4 5 6 ... 20).
 */}}
 {{- $page := . -}}
+{{- $compactThreshold := 10 -}}
 {{ with $paginator := $page.Paginator }}
-  {{ if gt $paginator.TotalPages 10 }}
+  {{ if gt $paginator.TotalPages 1 }}
     <ol class="page-navigator">
       {{ if $paginator.HasPrev }}
         <li class="prev">
@@ -12,63 +15,52 @@
         </li>
       {{ end }}
 
-      {{ $dynamicPages := slice 1 }}
+      {{ if gt $paginator.TotalPages $compactThreshold }}
+        {{/* Compact view: show first, last, current ±2, with ellipsis */}}
+        {{ $dynamicPages := slice 1 }}
 
-      {{ if eq $paginator.PageNumber 1 }}
-        {{ $dynamicPages = $dynamicPages|append 2 3 -1 }}
-      {{ else if eq $paginator.PageNumber 2 }}
-        {{ $dynamicPages = $dynamicPages|append 2 3 4 -1 }}
-      {{ else if eq $paginator.PageNumber 3 }}
-        {{ $dynamicPages = $dynamicPages|append 2 3 4 5 -1 }}
-      {{ else if eq $paginator.PageNumber (sub $paginator.TotalPages 2) }}
-        {{ $dynamicPages = $dynamicPages|append -1 }}
-        {{ $dynamicPages = $dynamicPages|append (sub $paginator.PageNumber 2) (sub $paginator.PageNumber 1) $paginator.PageNumber (add $paginator.PageNumber 1) }}
-      {{ else if eq $paginator.PageNumber (sub $paginator.TotalPages 1) }}
-        {{ $dynamicPages = $dynamicPages|append -1 }}
-        {{ $dynamicPages = $dynamicPages|append (sub $paginator.PageNumber 2) (sub $paginator.PageNumber 1) $paginator.PageNumber }}
-      {{ else if eq $paginator.PageNumber $paginator.TotalPages }}
-        {{ $dynamicPages = $dynamicPages|append -1 }}
-        {{ $dynamicPages = $dynamicPages|append (sub $paginator.PageNumber 2) (sub $paginator.PageNumber 1) }}
-      {{ else }}
-        {{ $dynamicPages = $dynamicPages|append -1 }}
-        {{ $dynamicPages = $dynamicPages|append (sub $paginator.PageNumber 2) (sub $paginator.PageNumber 1) $paginator.PageNumber (add $paginator.PageNumber 1) (add $paginator.PageNumber 2) -1 }}
-      {{ end }}
-      {{ $dynamicPages = $dynamicPages|append $paginator.TotalPages }}
-
-      {{ range $p := $dynamicPages }}
-        {{ if eq -1 $p }}
-          <li>
-            <span>...</span>
-          </li>
+        {{ if eq $paginator.PageNumber 1 }}
+          {{ $dynamicPages = $dynamicPages|append 2 3 -1 }}
+        {{ else if eq $paginator.PageNumber 2 }}
+          {{ $dynamicPages = $dynamicPages|append 2 3 4 -1 }}
+        {{ else if eq $paginator.PageNumber 3 }}
+          {{ $dynamicPages = $dynamicPages|append 2 3 4 5 -1 }}
+        {{ else if eq $paginator.PageNumber (sub $paginator.TotalPages 2) }}
+          {{ $dynamicPages = $dynamicPages|append -1 }}
+          {{ $dynamicPages = $dynamicPages|append (sub $paginator.PageNumber 2) (sub $paginator.PageNumber 1) $paginator.PageNumber (add $paginator.PageNumber 1) }}
+        {{ else if eq $paginator.PageNumber (sub $paginator.TotalPages 1) }}
+          {{ $dynamicPages = $dynamicPages|append -1 }}
+          {{ $dynamicPages = $dynamicPages|append (sub $paginator.PageNumber 2) (sub $paginator.PageNumber 1) $paginator.PageNumber }}
+        {{ else if eq $paginator.PageNumber $paginator.TotalPages }}
+          {{ $dynamicPages = $dynamicPages|append -1 }}
+          {{ $dynamicPages = $dynamicPages|append (sub $paginator.PageNumber 2) (sub $paginator.PageNumber 1) }}
         {{ else }}
-          {{ $pager:=index $paginator.Pagers (sub $p 1) }}
-          <li {{ if eq $p $paginator.PageNumber }}class="current"{{ end }}>
+          {{ $dynamicPages = $dynamicPages|append -1 }}
+          {{ $dynamicPages = $dynamicPages|append (sub $paginator.PageNumber 2) (sub $paginator.PageNumber 1) $paginator.PageNumber (add $paginator.PageNumber 1) (add $paginator.PageNumber 2) -1 }}
+        {{ end }}
+        {{ $dynamicPages = $dynamicPages|append $paginator.TotalPages }}
+
+        {{ range $p := $dynamicPages }}
+          {{ if eq -1 $p }}
+            <li>
+              <span>...</span>
+            </li>
+          {{ else }}
+            {{ $pager:=index $paginator.Pagers (sub $p 1) }}
+            <li {{ if eq $p $paginator.PageNumber }}class="current"{{ end }}>
+              <a href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
+            </li>
+          {{ end }}
+        {{ end }}
+      {{ else }}
+        {{/* Simple view: show all page numbers */}}
+        {{ range $pager := $paginator.Pagers }}
+          <li
+            {{ if eq $pager.PageNumber $paginator.PageNumber }}class="current"{{ end }}
+          >
             <a href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
           </li>
         {{ end }}
-      {{ end }}
-
-      {{ if $paginator.HasNext }}
-
-        <li class="next">
-          <a href="{{ $paginator.Next.URL | absLangURL }}">{{ i18n "next" }}</a>
-        </li>
-      {{ end }}
-    </ol>
-  {{ else if gt $paginator.TotalPages 1 }}
-    <ol class="page-navigator">
-      {{ if $paginator.HasPrev }}
-        <li class="prev">
-          <a href="{{ $paginator.Prev.URL | absLangURL }}">{{ i18n "previous" }}</a>
-        </li>
-      {{ end }}
-
-      {{ range $pager := $paginator.Pagers }}
-        <li
-          {{ if eq $pager.PageNumber $paginator.PageNumber }}class="current"{{ end }}
-        >
-          <a href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
-        </li>
       {{ end }}
 
       {{ if $paginator.HasNext }}
@@ -78,5 +70,4 @@
       {{ end }}
     </ol>
   {{ end }}
-
 {{ end }}

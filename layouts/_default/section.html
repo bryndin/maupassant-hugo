@@ -5,8 +5,8 @@
 {{ define "content" }}
   {{- $page := . -}}
   {{ "<!-- starting of section.html -->" | safeHTML }}
-  {{- $page.Paginate $page.Data.Pages.ByDate.Reverse }}
-  {{ partial "post-list.html" $page.Paginator }}
+  {{- $paginator := $page.Paginate $page.Data.Pages }}
+  {{ partial "post-list.html" $paginator }}
   {{ partial "paginator" $page }}
   {{ "<!-- ending of section.html -->" | safeHTML }}
 {{ end }}

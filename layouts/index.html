@@ -7,8 +7,8 @@
 {{ define "content" }}
   {{- $page := . -}}
   {{ "<!-- starting of index.html -->" | safeHTML }}
-  {{- $page.Paginate (where $page.Site.RegularPages "Type" $page.Site.Params.BlogType) }}
-  {{ partial "post-list.html" $page.Paginator }}
+  {{- $paginator := $page.Paginate (where $page.Site.RegularPages "Type" $page.Site.Params.BlogType) -}}
+  {{ partial "post-list.html" $paginator }}
   {{ partial "paginator" $page }}
   {{ "<!-- ending of index.html -->" | safeHTML }}
 {{ end }}
