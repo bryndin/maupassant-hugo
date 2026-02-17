@@ -9,11 +9,11 @@
     font: var(--post-font-meta);
 }
 
-.post-meta a {
+.post-meta-link {
     color: inherit;
 }
 
-.post-meta a:hover {
+.post-meta-link:hover {
     color: var(--link-hover-color);
 }
 
@@ -34,7 +34,7 @@
 }
 
 /* Category list formatting */
-.meta-category ul {
+.meta-category-list {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
@@ -45,10 +45,10 @@
     gap: var(--space-xs);
 }
 
-.meta-category li {
+.meta-category-item {
     display: flex;
 }
 
-.meta-category li:not(:last-child)::after {
+.meta-category-item:not(:last-child)::after {
     content: ",";
 }

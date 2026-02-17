@@ -4,7 +4,7 @@
   border-top: var(--border);
 }
 
-.related-posts li {
+.related-posts-item {
   line-height: var(--line-height-large);
 }
 

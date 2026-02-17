@@ -1,6 +1,7 @@
 /* Tag Cloud Widget */
-.widget-tags .tagcloud a {
+.tagcloud-link {
     font-size: var(--font-size-small);
+    color: var(--color-muted);
     display: inline;
     margin-right: var(--space-xs);
 }

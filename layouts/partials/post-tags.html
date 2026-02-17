@@ -4,9 +4,9 @@
 <div class="post-meta meta-tags">
   {{- $page := . -}}
   {{- if and (isset $page.Params "tags") $page.Params.tags }}
-    <ul>
+    <ul class="post-tags-list">
       {{- range $tag := $page.Params.Tags }}
-        <li><a href="{{ "tags/" | relURL }}{{ $tag | urlize }}">{{ $tag }}</a></li>
+        <li class="post-tags-item"><a class="post-tag" href="{{ "tags/" | relURL }}{{ $tag | urlize }}">{{ $tag }}</a></li>
       {{- end }}
     </ul>
   {{- else -}}

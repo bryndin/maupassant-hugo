@@ -3,7 +3,7 @@
     margin-top: var(--space-xl);
 }
 
-.meta-tags ul {
+.post-tags-list {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-sm);
@@ -12,14 +12,14 @@
     margin: 0;
 }
 
-.meta-tags ul li {
+.post-tags-item {
     position: relative;
 }
 
-.meta-tags ul li a::before {
+.post-tag::before {
     content: "#";
 }
 
-.meta-tags ul li a {
-    color: inherit;
+.post-tag {
+    font-style: italic;
 }

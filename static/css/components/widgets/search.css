@@ -9,7 +9,7 @@
     border-color: var(--link-hover-color);
 }
 
-.widget-search input {
+.search-input {
     flex: 1;
     padding-inline: calc(var(--search-height) / 3) var(--search-height);
     height: var(--search-height);
@@ -20,13 +20,13 @@
     outline: none;
 }
 
-.widget-search input::placeholder {
+.search-input::placeholder {
     color: var(--color-muted);
     opacity: 0.8;
 }
 
 /* Magnifying glass icon */
-.widget-search .search-submit {
+.search-submit {
     position: absolute;
     right: 0;
     top: 0;
@@ -42,11 +42,11 @@
     transition: color var(--link-transition);
 }
 
-.widget-search .search-submit:hover {
+.search-submit:hover {
     color: var(--link-hover-color);
 }
 
-.widget-search .search-submit svg {
+.search-submit-icon {
     width: var(--font-size-base);
     height: var(--font-size-base);
     fill: currentColor;

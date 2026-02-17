@@ -1,24 +1,16 @@
-/* Mobile First: Stacked layout, Sidebar Hidden */
+/* Mobile First: Stacked layout */
 .page-main {
   display: block;
   padding-block-end: var(--space-xl);
 }
 
-.page-main .sidebar {
-  display: none;
-}
-
-/* Tablet / Desktop: Sidebar visible, Grid enabled */
+/* Tablet / Desktop: Grid enabled */
 @media screen and (min-width: 1024px) { /* 1024px corresponds to --bp-tablet */
   .page-main {
     display: grid;
     grid-template-columns: minmax(0, 1fr) var(--width-sidebar-medium);
     gap: var(--gap-grid);
     align-items: start;
-  }
-
-  .page-main .sidebar {
-    display: block;
   }
 }
 

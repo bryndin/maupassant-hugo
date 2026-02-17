@@ -8,8 +8,8 @@
     <h3 class="widget-title">{{ i18n "links" }}</h3>
     <ul class="widget-list">
       {{ range $link := $links }}
-        <li>
-          <a href="{{ $link.url }}" title="{{ $link.title }}">{{ $link.name }}</a>
+        <li class="widget-item">
+          <a class="widget-link" href="{{ $link.url }}" title="{{ $link.title }}">{{ $link.name }}</a>
         </li>
       {{ end }}
     </ul>

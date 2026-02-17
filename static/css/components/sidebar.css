@@ -1,9 +1,21 @@
 /* .sidebar { } Styles handled by grid */
 .sidebar {
+  display: none;
+  /* Hidden by default on mobile */
   border-left: var(--border);
   padding-block-start: var(--space-lg);
   padding-inline-start: var(--space-md);
   word-break: break-word;
+
+  /* Local variables for container-based styling.
+     Ensures sidebar links inherit the muted aesthetic by default. */
+  --link-color: var(--sidebar-text-color);
+}
+
+@media screen and (min-width: 1024px) {
+  .sidebar {
+    display: block;
+  }
 }
 
 /* Widget styles */
@@ -13,37 +25,43 @@
   color: var(--sidebar-text-color);
 }
 
-.widget a {
-  color: var(--sidebar-text-color);
-}
-
-.widget a:hover {
-  color: var(--link-hover-color);
-}
-
 .widget .widget-title {
   padding-block-end: var(--space-sm);
   border-bottom: var(--border);
   margin-bottom: var(--space-md);
   color: var(--color-muted);
   font: var(--sidebar-widget-title);
+  /* TODO(DB): Decide if I want uppercase and letter-spacing */
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.widget ul {
+.widget-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.widget-link {
+  color: var(--sidebar-text-color);
+}
+
+.widget-link:hover {
+  color: var(--link-hover-color);
+}
+
+.widget-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.widget ul li {
+.widget-item {
   margin-bottom: var(--space-sm);
 }
 
 /* TODO(DB): Decide if I want this  */
 /* .widget a:hover { */
-  /* transform: translateX(4px); */
-  /* Required for transform on inline elements */
-  /* display: inline-block; */
+/* transform: translateX(4px); */
+/* Required for transform on inline elements */
+/* display: inline-block; */
 /* } */

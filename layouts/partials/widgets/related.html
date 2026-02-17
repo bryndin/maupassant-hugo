@@ -5,14 +5,16 @@
 {{- $page := . -}}
 {{- if not $page.Site.Params.relatedPosts.disable -}}
   {{- if eq $page.Type $page.Site.Params.BlogType -}}
-    {{- $related := $page.Site.RegularPages.Related $page | first $page.Site.Params.relatedPosts.Limit -}}
-    {{- $relatedPosts := where $related "Type" $page.Site.Params.relatedPosts.type -}}
+    {{- $limit := or $page.Site.Params.relatedPosts.Limit 5 -}}
+    {{- $related := $page.Site.RegularPages.Related $page | first $limit -}}
+    {{- $type := or $page.Site.Params.relatedPosts.type "posts" -}}
+    {{- $relatedPosts := where $related "Type" $type -}}
     {{- with $posts := $relatedPosts }}
       <section class="widget widget-related">
         <h3 class="widget-title">{{ i18n "related_posts" }}</h3>
         <ul class="widget-list">
           {{- range $post := $posts }}
-            <li><a href="{{ $post.RelPermalink }}" title="{{ $post.Title }}">{{ $post.Title }}</a></li>
+            <li class="related-posts-item"><a class="widget-link" href="{{ $post.RelPermalink }}" title="{{ $post.Title }}">{{ $post.Title }}</a></li>
           {{- end }}
         </ul>
       </section>

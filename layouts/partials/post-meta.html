@@ -13,10 +13,10 @@
   {{ end -}}
   {{ with $categories := $page.Params.Categories }}
     <div class="meta-category">
-      <ul>
+      <ul class="meta-category-list">
         {{- range $category:= $categories }}
-          <li>
-            <a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
+          <li class="meta-category-item">
+            <a class="post-meta-link" href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
           </li>
         {{- end }}
       </ul>

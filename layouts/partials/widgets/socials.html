@@ -7,12 +7,13 @@
   <section class="widget widget-socials">
     <h3 class="widget-title"><!-- Social Networks --></h3>
     {{- /* SVG Icons from https://icons.getbootstrap.com/ */}}
-    <ul>
+    <ul class="socials-list">
       {{- range $social := $socials }}
-        <li>
-          <a title="{{ $social.title }}" href="{{ $social.url }}">
+        <li class="socials-item">
+          <a class="socials-link" title="{{ $social.title }}" href="{{ $social.url }}">
             {{ $svg := printf "static/%s" $social.img | readFile -}}
-            {{ $svg | safeHTML }}
+            {{/* Inject class into SVG tag */}}
+            {{ replace $svg "<svg" "<svg class=\"socials-icon\"" | safeHTML }}
           </a>
         </li>
       {{- end }}

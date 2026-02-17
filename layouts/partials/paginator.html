@@ -10,8 +10,8 @@
   {{ if gt $paginator.TotalPages 1 }}
     <ol class="page-paginator">
       {{ if $paginator.HasPrev }}
-        <li class="paginator-prev">
-          <a href="{{ $paginator.Prev.URL | absLangURL }}">&lt;</a>
+        <li class="paginator-item">
+          <a class="paginator-link is-prev" href="{{ $paginator.Prev.URL | absLangURL }}">&lt;</a>
         </li>
       {{ end }}
 
@@ -42,30 +42,28 @@
 
         {{ range $p := $dynamicPages }}
           {{ if eq -1 $p }}
-            <li>
-              <span>...</span>
+            <li class="paginator-item">
+              <span class="paginator-ellipsis">...</span>
             </li>
           {{ else }}
             {{ $pager:=index $paginator.Pagers (sub $p 1) }}
-            <li {{ if eq $p $paginator.PageNumber }}class="current"{{ end }}>
-              <a href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
+            <li class="paginator-item">
+              <a class="paginator-link{{ if eq $p $paginator.PageNumber }} is-current{{ end }}" href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
             </li>
           {{ end }}
         {{ end }}
       {{ else }}
         {{/* Simple view: show all page numbers */}}
         {{ range $pager := $paginator.Pagers }}
-          <li
-            {{ if eq $pager.PageNumber $paginator.PageNumber }}class="current"{{ end }}
-          >
-            <a href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
+          <li class="paginator-item">
+            <a class="paginator-link{{ if eq $pager.PageNumber $paginator.PageNumber }} is-current{{ end }}" href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
           </li>
         {{ end }}
       {{ end }}
 
       {{ if $paginator.HasNext }}
-        <li class="paginator-next">
-          <a href="{{ $paginator.Next.URL | absLangURL }}">&gt;</a>
+        <li class="paginator-item">
+          <a class="paginator-link is-next" href="{{ $paginator.Next.URL | absLangURL }}">&gt;</a>
         </li>
       {{ end }}
     </ol>

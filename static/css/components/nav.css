@@ -1,16 +1,16 @@
-.nav-menu {
+.nav {
     display: flex;
     align-items: flex-end;
 }
 
 /* Tab row track with border-bottom to the left of the tabs */
-.nav-menu::before {
+.nav::before {
     content: "";
     flex: 1;
     border-bottom: var(--border);
 }
 
-.nav-menu a {
+.nav-item {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -22,7 +22,7 @@
     border-bottom: var(--border);
 }
 
-.nav-menu a.current {
+.nav-current {
     border: var(--border);
     border-bottom: none;
 }

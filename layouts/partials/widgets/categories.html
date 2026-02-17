@@ -6,11 +6,13 @@
 {{ if not $page.Site.Params.wCategories.disable }}
   <section class="widget">
     <h3 class="widget-title">
-      <a href="{{ "categories/" | relURL }}">{{ i18n "categories" 10 }}</a>
+      <a class="widget-title-link" href="{{ "categories/" | relURL }}">{{ i18n "categories" 10 }}</a>
     </h3>
     <ul class="widget-list">
       {{- range $category := $page.Site.Taxonomies.categories }}
-        <li><a href="{{ $category.Page.Permalink }}">{{ $category.Page.Title }} ({{ $category.Count }})</a></li>
+        <li class="widget-item">
+          <a class="widget-link" href="{{ $category.Page.Permalink }}">{{ $category.Page.Title }} ({{ $category.Count }})</a>
+        </li>
       {{- end }}
     </ul>
   </section>

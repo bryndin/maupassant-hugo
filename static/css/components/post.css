@@ -18,7 +18,7 @@
   margin-bottom: var(--space-sm);
 }
 
-.post-readmore a {
+.post-readmore-link {
   display: inline-flex;
   font-size: var(--font-size-small);
   padding-block: var(--space-xs);
@@ -26,6 +26,6 @@
   border: var(--border);
 }
 
-.post-readmore a:hover {
+.post-readmore-link:hover {
   border-color: var(--border-color);
 }
