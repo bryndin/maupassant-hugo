@@ -23,12 +23,6 @@ other = ""
 [continueReading]
 other = "Plus"
 
-[next]
-other = "Suivant"
-
-[previous]
-other = "Précédent"
-
 [toc]
 other = "Table des matières"
 

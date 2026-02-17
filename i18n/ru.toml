@@ -23,12 +23,6 @@ other = ""
 [continueReading]
 other = "Далее"
 
-[next]
-other = "Следующая"
-
-[previous]
-other = "Предыдущая"
-
 [toc]
 other = "Содержание"
 

@@ -23,6 +23,7 @@
 @import "components/tags.css" layer(components);
 @import "components/related.css" layer(components);
 @import "components/nav.css" layer(components);
+@import "components/paginator.css" layer(components);
 @import "components/code-highlight-github.css" layer(components);
 /* TODO(DB): add dark theme */
 @import "components/code-copy.css" layer(components);

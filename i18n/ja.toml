@@ -23,12 +23,6 @@ other = "記事です"
 [continueReading]
 other = "もっと"
 
-[next]
-other = "次へ"
-
-[previous]
-other = "前の"
-
 [toc]
 other = "目次"
 

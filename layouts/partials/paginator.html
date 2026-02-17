@@ -8,10 +8,10 @@
 {{- $compactThreshold := 10 -}}
 {{ with $paginator := $page.Paginator }}
   {{ if gt $paginator.TotalPages 1 }}
-    <ol class="page-navigator">
+    <ol class="page-paginator">
       {{ if $paginator.HasPrev }}
-        <li class="prev">
-          <a href="{{ $paginator.Prev.URL | absLangURL }}">{{ i18n "previous" }}</a>
+        <li class="paginator-prev">
+          <a href="{{ $paginator.Prev.URL | absLangURL }}">&lt;</a>
         </li>
       {{ end }}
 
@@ -64,8 +64,8 @@
       {{ end }}
 
       {{ if $paginator.HasNext }}
-        <li class="next">
-          <a href="{{ $paginator.Next.URL | absLangURL }}">{{ i18n "next" }}</a>
+        <li class="paginator-next">
+          <a href="{{ $paginator.Next.URL | absLangURL }}">&gt;</a>
         </li>
       {{ end }}
     </ol>

@@ -22,12 +22,6 @@ other = "中的文章"
 [continueReading]
 other = "更多"
 
-[next]
-other = "下一頁"
-
-[previous]
-other = "上一頁"
-
 [toc]
 other = "文章目錄"
 

@@ -1,0 +1,63 @@
+/*
+    Paginator Component
+    Handles styling for the post list pagination.
+*/
+
+.page-paginator {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    list-style: none;
+    padding-inline: 0;
+    padding-block-start: var(--space-lg);
+    margin-block-start: var(--space-lg);
+    border-block-start: var(--border);
+    font-size: var(--font-size-base);
+    text-align: center;
+}
+
+.page-paginator li {
+    display: inline-flex;
+}
+
+.page-paginator a {
+    --link-color: var(--color-muted);
+}
+
+.page-paginator a,
+.page-paginator span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: var(--space-sm);
+    transition: var(--link-transition);
+}
+
+.page-paginator span {
+    color: var(--color-muted);
+}
+
+.page-paginator .current a {
+    color: var(--color-main);
+    font-weight: bold;
+    border-bottom: calc(var(--font-size-base) / 8) solid var(--color-accent);
+}
+
+.paginator-prev a,
+.paginator-next a {
+    padding-inline: var(--space-md);
+}
+
+@media screen and (max-width: 680px) {
+    .page-paginator {
+        padding-block-start: var(--space-md);
+        margin-block-start: var(--space-md);
+    }
+
+    .page-paginator a,
+    .page-paginator span {
+        padding-inline: var(--space-xs);
+        font-size: var(--font-size-small);
+    }
+}
