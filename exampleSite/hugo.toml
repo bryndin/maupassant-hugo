@@ -16,6 +16,10 @@ timeZone = "America/Los_Angeles"
 # Post excerpt, content summary length for post list
 summaryLength = 140   # see https://gohugo.io/content-management/excerpts/
 
+# Number of posts per page in list views (homepage, section, taxonomy)
+[pagination]
+  pagerSize = 2  # Hugo default is 10. See https://gohugo.io/getting-started/configuration/#pagination
+
 # Auto-detect Chinese/Japanese/Korean Languages in the content, for word counts and summaries to work correctly.
 hasCJKLanguage = true # see: https://gohugo.io/getting-started/configuration/#hascjklanguage
 

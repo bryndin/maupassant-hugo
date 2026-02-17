@@ -6,8 +6,7 @@ date: 2024-01-01T12:00:00+00:00
 tags: [markdown, post]
 categories: [Design]
 # toc: true
-# hiddenFromHomePage: false
-
+# hidden: false
 draft: false
 ---
 # Headers

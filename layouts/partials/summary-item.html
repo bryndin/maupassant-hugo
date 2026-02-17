@@ -1,0 +1,23 @@
+{{/*
+    This partial renders a single post summary item in a list.
+    It includes the post title, meta information, summary, and a "More" link.
+    Posts with `hidden: true` in front matter are automatically excluded.
+*/}}
+{{- $post := . -}}
+{{- if $post.Params.hidden }}{{ return }}{{ end -}}
+<article class="post">
+    <header>
+      <h1 class="post-title">
+        <a href="{{ $post.Permalink }}" title="{{ $post.Title }}">{{ $post.Title }}</a>
+      </h1>
+    </header>
+    {{ partial "post-meta.html" $post }}
+    <div class="post-content">
+      {{ partial "summary.html" $post }}
+    </div>
+    {{ if or $post.Truncated $post.Params.Summary }}
+      <p class="post-readmore">
+        <a href="{{ $post.Permalink }}">{{ i18n "continueReading" }}</a>
+      </p>
+    {{ end }}
+</article>

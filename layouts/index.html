@@ -7,27 +7,8 @@
 {{ define "content" }}
   {{- $page := . -}}
   {{ "<!-- starting of index.html -->" | safeHTML }}
-  {{- $paginator := $page.Paginate (where $page.Site.RegularPages "Type" $page.Site.Params.BlogType) }}
-  {{- range $index, $post := $paginator.Pages }}
-    {{- if not $post.Params.hiddenFromHomePage }}
-      <article class="post">
-        <header>
-          <h1 class="post-title">
-            <a href="{{ $post.Permalink }}" title="{{ $post.Title }}">{{ $post.Title }}</a>
-          </h1>
-        </header>
-        {{ partial "post-meta.html" $post }}
-        <div class="post-content">
-          {{ partial "summary.html" $post }}
-        </div>
-        {{- if or $post.Truncated $post.Params.Summary }}
-          <p class="post-readmore">
-            <a href="{{ $post.Permalink }}">{{ i18n "continueReading" }}</a>
-          </p>
-        {{- end }}
-      </article>
-    {{ end }}
-  {{- end }}
+  {{- $page.Paginate (where $page.Site.RegularPages "Type" $page.Site.Params.BlogType) }}
+  {{ partial "post-list.html" $page.Paginator }}
   {{ partial "paginator" $page }}
   {{ "<!-- ending of index.html -->" | safeHTML }}
 {{ end }}

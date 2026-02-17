@@ -32,9 +32,9 @@ Maupassant IC is a free, minimalistic, light, and responsive Hugo theme designed
 
 ## Requirements
 
-- Hugo >= 0.127.0
+- Hugo >= 0.128.0
 
-The theme was developed and tested with v0.127.0. If this version is not available for your default package manager, try one from [Snap](https://snapcraft.io/hugo).
+The theme was developed and tested with v0.128.0. If this version is not available for your default package manager, try one from [Snap](https://snapcraft.io/hugo).
 
 ## Installation
 
@@ -93,6 +93,28 @@ For auto-generated summaries, you can customize the truncation indicator (defaul
 [params.text]
   truncated = " ..." # Your custom indicator
 ```
+
+### Pagination
+
+By default, Hugo displays 10 posts per page in list views (homepage, section, taxonomy). To change this, add the `[pagination]` section to your `hugo.toml`:
+
+```toml
+[pagination]
+  pagerSize = 20
+```
+
+### Hiding Posts
+
+To hide a post from all list views (homepage, section pages, and taxonomy pages), add `hidden: true` to its front matter:
+
+```yaml
+---
+title: "My Hidden Post"
+hidden: true
+---
+```
+
+The post remains accessible via its direct URL and will still appear in search results.
 
 ### Enabling comments
 

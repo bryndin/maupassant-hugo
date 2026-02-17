@@ -4,7 +4,7 @@ date: 2023-01-01T13:10:00+07:00
 tags: [MaupassantIC, post]
 categories: [Intro]
 # toc: true
-# hiddenFromHomePage: false
+# hidden: false
 
 draft: false
 ---

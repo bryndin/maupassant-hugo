@@ -1,0 +1,8 @@
+{{/*
+    This partial renders a paginated list of posts using the summary-item partial.
+    It receives a Paginator object as its context.
+*/}}
+{{- $paginator := . -}}
+{{ range $paginator.Pages }}
+  {{ partial "summary-item.html" . }}
+{{ end }}

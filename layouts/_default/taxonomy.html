@@ -5,40 +5,21 @@
 {{ define "content" }}
   {{- $page := . -}}
   {{ "<!-- starting of taxonomy.html -->" | safeHTML }}
-  <div class="res-cons">
-    {{ if eq $page.Data.Singular "category" }}
-      <h3 class="archive-title">
-        {{ i18n "categories" 1 }}
-        <span class="keyword">{{ $page.Data.Term }}</span>
-        {{ i18n "articles" 1 }}
-      </h3>
-    {{ else if eq $page.Data.Singular "tag" }}
-      <h3 class="archive-title">
-        {{ i18n "tags" 1 }}
-        <span class="keyword">{{ $page.Data.Term }}</span>
-        {{ i18n "articles" 1 }}
-      </h3>
-    {{ end }}
+  {{ if eq $page.Data.Singular "category" }}
+    <h3 class="archive-title">
+      {{ i18n "categories" 1 }}
+      <span class="keyword">{{ $page.Data.Term }}</span>
+      {{ i18n "articles" 1 }}
+    </h3>
+  {{ else if eq $page.Data.Singular "tag" }}
+    <h3 class="archive-title">
+      {{ i18n "tags" 1 }}
+      <span class="keyword">{{ $page.Data.Term }}</span>
+      {{ i18n "articles" 1 }}
+    </h3>
+  {{ end }}
 
-    {{ range $index, $post := $page.Paginator.Pages }}
-      <article class="post">
-        <header>
-          <h1 class="post-title">
-            <a href="{{ $post.Permalink }}">{{ $post.Title }}</a>
-          </h1>
-        </header>
-        {{ partial "post-meta.html" $post }}
-        <div class="post-content">
-          {{ partial "summary.html" $post }}
-        </div>
-        {{ if or $post.Truncated $post.Params.Summary }}
-          <p class="post-readmore">
-            <a href="{{ $post.Permalink }}">{{ i18n "continueReading" }}</a>
-          </p>
-        {{ end }}
-      </article>
-    {{ end }}
-    {{ partial "paginator" $page }}
-  </div>
+  {{ partial "post-list.html" $page.Paginator }}
+  {{ partial "paginator" $page }}
   {{ "<!-- ending of taxonomy.html -->" | safeHTML }}
 {{ end }}

@@ -5,8 +5,7 @@ tags: [design, post]
 categories: [Design]
 author: Joe Designer
 # toc: true
-# hiddenFromHomePage: false
-
+# hidden: false
 draft: false
 ---
 
