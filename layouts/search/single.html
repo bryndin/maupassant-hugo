@@ -14,102 +14,107 @@
   </h3>
 
   <div id="search-results">
+  </div>
+
+  {{/* Template for search results */}}
+  <template id="search-result-template">
     <article class="post">
       <header>
         <h1 class="post-title">
-          <a href="link">title</a>
+          <a class="post-link"></a>
         </h1>
       </header>
-      {{ if not $page.PublishDate.IsZero }}
-        <time
-          datetime="{{ $page.PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}"
-          class="post-meta meta-date dt-published"
-          >{{ time.Format $datetime_format $page.PublishDate }}</time
-        >
-      {{ end }}
+      <time class="post-meta meta-date dt-published"></time>
       <div class="post-content">
-        overview
-        <p class="post-readmore"><a href="link">{{ i18n "continueReading" }}</a></p>
+        <span class="post-summary"></span>
+        <p class="post-readmore"><a class="post-readmore-link">{{ i18n "continueReading" }}</a></p>
       </div>
     </article>
-  </div>
+  </template>
 
   <script>
-    var getUrlParameter = function getUrlParameter(sParam) {
-      var sPageURL = window.location.search.substring(1),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
+    const datetimeFormat = {{ $datetime_format }}; // Passed from Hugo
 
-      for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
-
-        if (sParameterName[0] === sParam) {
-          return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-        }
-      }
+    const getUrlParameter = (sParam) => {
+      const urlParams = new URL(window.location.href).searchParams;
+      return urlParams.get(sParam);
     };
 
     $(document).ready(function () {
-      var q = getUrlParameter("q");
+      const q = getUrlParameter("q");
       $("span.keyword").text(q);
-      var resultsContainer = $("#search-results");
-      resultsContainer.empty();
+      const $resultsContainer = $("#search-results");
+      const $status = $('<p id="search-status">{{ i18n "Searching" | default "Searching..." }}</p>');
 
       if (!q) {
-        resultsContainer.append('<p>{{ i18n "Search_no_query" | default "Please enter a search query." }}</p>');
+        $resultsContainer.append($('<p>').text('{{ i18n "Search_no_query" | default "Please enter a search query." }}'));
         return;
       }
 
-      resultsContainer.append('<p id="search-status">{{ i18n "Searching" | default "Searching..." }}</p>');
+      $resultsContainer.append($status);
 
       $.ajax({
         url: '{{"search.json"|absURL}}',
         dataType: "json",
         success: function (data) {
-          $("#search-status").remove();
-          var searchResults = [];
-          var queryLower = q.toLowerCase();
-
-          $.each(data, function (index, item) {
-            var title = item.title;
-            var content = item.content;
-
-            if (title.toLowerCase().indexOf(queryLower) >= 0 || content.toLowerCase().indexOf(queryLower) >= 0) {
-              var url = item.permalink;
-              var pubDate = new Date(item.date);
-              var searchItem = `<article class="post"><header><h1 class="post-title"><a href="` + url + `">` + title + `</a></h1></header>`;
-
-              // Only show date if it's valid (not epoch 0 or invalid)
-              if (!isNaN(pubDate.getTime()) && pubDate.getFullYear() > 1970) {
-                var month = pubDate.getMonth() + 1;
-                var day = pubDate.getDate();
-                var formattedDate = pubDate.getFullYear() + '-' + (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
-                searchItem += `<time class="post-meta meta-date">` + formattedDate + `</time>`;
-              }
-
-              // Use the pre-calculated summary from Hugo
-              var summary = item.summary;
-              // Fallback if summary is empty
-              if (!summary && content) {
-                summary = content.substring(0, 300) + '...';
-              }
-
-              searchItem += `<div class="post-content">` + summary + `<p class="post-readmore"><a href="` + url + `">` + "{{ i18n "continueReading" }}" + `</a></p></div></article>`;
-
-              searchResults.push(searchItem);
-            }
+          $status.remove();
+          
+          const queryLower = q.toLowerCase();
+          const searchResults = data.filter(item => {
+            const title = item.title ? item.title.toLowerCase() : '';
+            const content = item.content ? item.content.toLowerCase() : '';
+            return title.includes(queryLower) || content.includes(queryLower);
           });
 
           if (searchResults.length > 0) {
-            resultsContainer.append(searchResults.join(''));
+            const template = document.getElementById('search-result-template');
+            
+            searchResults.forEach(item => {
+              const clone = template.content.cloneNode(true);
+              
+              const link = clone.querySelector('.post-link');
+              link.href = item.permalink;
+              link.textContent = item.title;
+
+              const readmoreLink = clone.querySelector('.post-readmore-link');
+              readmoreLink.href = item.permalink;
+
+              const pubDate = new Date(item.date);
+              const timeEl = clone.querySelector('time');
+              if (!isNaN(pubDate.getTime()) && pubDate.getFullYear() > 1970) {
+                  // Basic formatting yyyy-mm-dd to match previous behavior or use simplified localestring
+                  // Previous: yyyy-mm-dd
+                  const yyyy = pubDate.getFullYear();
+                  const mm = String(pubDate.getMonth() + 1).padStart(2, '0');
+                  const dd = String(pubDate.getDate()).padStart(2, '0');
+                  timeEl.textContent = `${yyyy}-${mm}-${dd}`;
+                  timeEl.setAttribute('datetime', pubDate.toISOString());
+              } else {
+                  timeEl.remove();
+              }
+
+              let summary = item.summary;
+              if (!summary && item.content) {
+                summary = item.content.substring(0, 300) + '...';
+              }
+              // summary is likely HTML-safe from Hugo, but if we want to be super safe we should textContent it
+              // However, summaries often contain HTML. 
+              // The previous code utilized string concatenation which treated summary as HTML.
+              // We will use .innerHTML for summary to preserve formatting if it exists, 
+              // BUT we must trust the source (search.json build process).
+              // If search.json is trusted, this is fine.
+              clone.querySelector('.post-summary').innerHTML = summary;
+
+              $resultsContainer.append(clone);
+            });
           } else {
-            resultsContainer.append('<p>{{ i18n "No_results_found" | default "No results found for \"" }}' + q + '{{ i18n "No_results_found_end" | default "\"" }}</p>');
+             const noResultsMsg = '{{ i18n "No_results_found" | default "No results found for" }} "' + q + '" {{ i18n "No_results_found_end" | default "" }}';
+             $resultsContainer.append($('<p>').text(noResultsMsg));
           }
         },
         error: function () {
-          $("#search-status").remove();
-          resultsContainer.append('<p>{{ i18n "Search_error" | default "Error loading search index. Please try again later." }}</p>');
+          $status.remove();
+          $resultsContainer.append($('<p>').text('{{ i18n "Search_error" | default "Error loading search index. Please try again later." }}'));
         }
       });
     });
