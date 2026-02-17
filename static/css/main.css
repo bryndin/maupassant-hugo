@@ -20,7 +20,7 @@
 @import "components/post.css" layer(components);
 @import "components/post-meta.css" layer(components);
 @import "components/post-content.css" layer(components);
-@import "components/tags.css" layer(components);
+@import "components/post-tags.css" layer(components);
 @import "components/related.css" layer(components);
 @import "components/nav.css" layer(components);
 @import "components/paginator.css" layer(components);
