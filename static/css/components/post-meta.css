@@ -5,16 +5,13 @@
     /* Consistent gap between items */
     gap: var(--space-sm);
     margin-bottom: var(--space-lg);
-    color: var(--color-muted);
     font: var(--post-font-meta);
-}
 
-.post-meta-link {
-    color: inherit;
-}
+    /* Override text and link colors for all children */
+    --text-color: var(--post-meta-text-color);
+    --link-color: var(--text-color);
 
-.post-meta-link:hover {
-    color: var(--link-hover-color);
+    color: var(--text-color);
 }
 
 /*

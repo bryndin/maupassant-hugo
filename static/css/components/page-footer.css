@@ -1,8 +1,13 @@
 .page-footer {
   padding-block: var(--space-lg);
   border-top: var(--border);
-  color: var(--color-muted);
   text-align: left;
+
+  /* Override text and link colors for all children */
+  --text-color: var(--page-footer-text-color);
+  --link-color: var(--text-color);
+
+  color: var(--text-color);
 }
 
 .footer-copyright {

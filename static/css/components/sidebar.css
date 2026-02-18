@@ -1,7 +1,7 @@
 /* .sidebar { } Styles handled by grid */
 .sidebar {
-  display: none;
   /* Hidden by default on mobile */
+  display: none;
   border-left: var(--border);
   padding-block-start: var(--space-lg);
   padding-inline-start: var(--space-md);
@@ -9,7 +9,10 @@
 
   /* Local variables for container-based styling.
      Ensures sidebar links inherit the muted aesthetic by default. */
-  --link-color: var(--sidebar-text-color);
+  --text-color: var(--sidebar-text-color);
+  --link-color: var(--text-color);
+
+  color: var(--text-color);
 }
 
 @media screen and (min-width: 1024px) {
@@ -22,31 +25,16 @@
 .widget {
   padding-inline-start: var(--space-md);
   margin-bottom: var(--space-xl);
-  color: var(--sidebar-text-color);
 }
 
-.widget .widget-title {
+.widget-title {
   padding-block-end: var(--space-sm);
   border-bottom: var(--border);
   margin-bottom: var(--space-md);
-  color: var(--color-muted);
   font: var(--sidebar-widget-title);
   /* TODO(DB): Decide if I want uppercase and letter-spacing */
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-
-.widget-title-link {
-  color: inherit;
-  text-decoration: none;
-}
-
-.widget-link {
-  color: var(--sidebar-text-color);
-}
-
-.widget-link:hover {
-  color: var(--link-hover-color);
 }
 
 .widget-list {

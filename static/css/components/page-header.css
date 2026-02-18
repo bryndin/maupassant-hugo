@@ -4,15 +4,22 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
+
+  /* Override text and link colors for all children */
+  --text-color: var(--page-header-text-color);
+  --link-color: var(--text-color);
+
+  color: var(--text-color);
+
 }
 
 .header-sitename {
   font: var(--text-sitename);
   margin-bottom: var(--space-sm);
+  color: var(--page-header-title-color);
 }
 
 .header-description {
   font: var(--text-normal);
-  color: var(--color-muted);
   margin-bottom: var(--space-sm);
 }

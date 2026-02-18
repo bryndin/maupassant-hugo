@@ -53,12 +53,13 @@
   --border-color: var(--color-border);
   --border: var(--border-width) var(--border-style) var(--border-color);
 
-  /* Fonts - Order: [weight] [size] [family] */
+  /* Typography - Order: [weight] [size] [family] */
   --text-normal: normal var(--font-size-base) var(--font-family-base);
   --text-post-header: bold calc(var(--font-size-base) * 1.5) var(--font-family-base);
   --sidebar-widget-title: bold var(--font-size-base) var(--font-family-base);
   --text-menu-item: normal calc(var(--font-size-base) * 0.75) var(--font-family-base);
   --text-sitename: bold calc(var(--font-size-base) * 2.5) var(--font-family-base);
+  --text-color: var(--color-main);
 
   /* Links */
   --link-color: var(--color-main);
@@ -78,13 +79,31 @@
   --post-font-meta: normal var(--font-size-base) var(--font-family-base);
   --post-font-content: normal var(--font-size-base) var(--font-family-base);
 
+  /* Post Meta */
+  --post-meta-text-color: var(--color-muted);
+
+  /* Post Tags */
+  --post-tag-text-color: var(--color-muted);
+
   /* Sidebar */
   --sidebar-text-color: var(--color-muted);
 
   /* Widgets */
   /** Search **/
   --search-height: calc(var(--font-size-small) * 2.5);
+
+  /* Page Header */
+  --page-header-title-color: var(--color-main);
+  --page-header-text-color: var(--color-muted);
+
+  /* Page Footer */
+  --page-footer-text-color: var(--color-muted);
+
+  /* Paginator */
+  --page-paginator-text-color: var(--color-muted);
+  --page-paginator-current-color: var(--color-intense);
 }
+
 
 .theme-dark {
   --color-bg: #212529;

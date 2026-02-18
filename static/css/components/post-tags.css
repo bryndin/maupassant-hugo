@@ -1,6 +1,12 @@
 /* Post Meta Tags */
 .meta-tags {
     margin-top: var(--space-xl);
+
+    /* Override text and link colors for all children */
+    --text-color: var(--post-tag-text-color);
+    --link-color: var(--text-color);
+
+    color: var(--text-color);
 }
 
 .post-tags-list {

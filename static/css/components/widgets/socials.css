@@ -2,20 +2,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-sm);
-    list-style: none; /* Add list-style none as it was implicitly widget ul */
+    list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.socials-link {
-    display: inline-flex;
-    color: var(--sidebar-text-color);
-    transition: var(--transition-base);
-}
-
-.socials-link:hover {
-    color: var(--link-hover-color);
-    transform: scale(1.1);
 }
 
 .socials-icon {

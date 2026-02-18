@@ -15,6 +15,12 @@
     border-block-start: var(--border);
     font-size: var(--font-size-base);
     text-align: center;
+
+    /* Override text and link colors for all children */
+    --text-color: var(--page-paginator-text-color);
+    --link-color: var(--text-color);
+
+    color: var(--text-color);
 }
 
 .paginator-item {
@@ -22,7 +28,6 @@
 }
 
 .paginator-link {
-    --link-color: var(--color-muted);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +36,6 @@
 }
 
 .paginator-ellipsis {
-    color: var(--color-muted);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -39,7 +43,7 @@
 }
 
 .paginator-link.is-current {
-    color: var(--color-main);
+    color: var(--page-paginator-current-color);
     font-weight: bold;
     border-bottom: calc(var(--font-size-base) / 8) solid var(--color-accent);
 }

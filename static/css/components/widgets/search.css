@@ -14,14 +14,14 @@
     padding-inline: calc(var(--search-height) / 3) var(--search-height);
     height: var(--search-height);
     font-size: var(--font-size-small);
-    color: var(--color-main);
+    color: var(--text-color);
     background-color: transparent;
     border: none;
     outline: none;
 }
 
 .search-input::placeholder {
-    color: var(--color-muted);
+    color: var(--text-color);
     opacity: 0.8;
 }
 
@@ -38,7 +38,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--color-muted);
+    color: var(--link-color);
     transition: color var(--link-transition);
 }
 

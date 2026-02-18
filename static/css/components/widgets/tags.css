@@ -1,7 +1,6 @@
 /* Tag Cloud Widget */
 .tagcloud-link {
     font-size: var(--font-size-small);
-    color: var(--color-muted);
     display: inline;
     margin-right: var(--space-xs);
 }
