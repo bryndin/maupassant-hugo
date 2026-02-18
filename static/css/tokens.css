@@ -76,8 +76,6 @@
 
   /* Posts */
   --post-background-color: var(--color-white);
-  --post-font-meta: normal var(--font-size-base) var(--font-family-base);
-  --post-font-content: normal var(--font-size-base) var(--font-family-base);
 
   /* Post Meta */
   --post-meta-text-color: var(--color-muted);

@@ -5,7 +5,6 @@
     /* Consistent gap between items */
     gap: var(--space-sm);
     margin-bottom: var(--space-lg);
-    font: var(--post-font-meta);
 
     /* Override text and link colors for all children */
     --text-color: var(--post-meta-text-color);
