@@ -7,11 +7,11 @@
   {{- $page := . -}}
   {{ "<!-- starting of search/single.html -->" | safeHTML }}
   {{- $datetime_format := i18n "Datetime_format" -}}
-  <h3 class="archive-title">
+  <h2 class="archive-title">
     {{ i18n "Search" }}
-    <span class="keyword">{{ i18n "Search_keyword" }}</span>
+    <span class="search-keyword">{{ i18n "Search_keyword" }}</span>
     {{ i18n "Search_results" }}
-  </h3>
+  </h2>
 
   <div id="search-results">
   </div>
@@ -42,7 +42,7 @@
 
     $(document).ready(function () {
       const q = getUrlParameter("q");
-      $("span.keyword").text(q);
+      $("span.search-keyword").text(q);
       const $resultsContainer = $("#search-results");
       const $status = $('<p id="search-status">{{ i18n "Searching" | default "Searching..." }}</p>');
 
