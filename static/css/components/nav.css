@@ -22,7 +22,7 @@
     border-bottom: var(--border);
 }
 
-.nav-current {
+.nav-active {
     border: var(--border);
     border-bottom: none;
 }

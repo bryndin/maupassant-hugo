@@ -12,11 +12,11 @@
   {{- end -}}
 
   {{/* Home link */}}
-  <a class="nav-item{{- if not $found }} nav-current{{- end -}}" href="{{ $page.Site.BaseURL | absURL }}" title="{{ i18n "home" }}">{{ i18n "home" }}</a>
+  <a class="nav-item{{- if not $found }} nav-active{{- end -}}" href="{{ $page.Site.BaseURL | absURL }}" title="{{ i18n "home" }}">{{ i18n "home" }}</a>
   
   {{/* Rest of menu links */}}
   {{- range $item := $page.Site.Menus.main }}
     {{- $name := i18n $item.Name | default $item.Name -}}
-    <a class="nav-item{{- if eq $item.URL $page.RelPermalink }} nav-current{{- end -}}" href="{{ $item.URL }}" title="{{ $name }}">{{ $name }}</a>
+    <a class="nav-item{{- if eq $item.URL $page.RelPermalink }} nav-active{{- end -}}" href="{{ $item.URL }}" title="{{ $name }}">{{ $name }}</a>
   {{ end }}
 </nav>

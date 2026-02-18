@@ -48,7 +48,7 @@
           {{ else }}
             {{ $pager:=index $paginator.Pagers (sub $p 1) }}
             <li class="paginator-item">
-              <a class="paginator-link{{ if eq $p $paginator.PageNumber }} is-current{{ end }}" href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
+              <a class="paginator-link{{ if eq $p $paginator.PageNumber }} is-active{{ end }}" href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
             </li>
           {{ end }}
         {{ end }}
@@ -56,7 +56,7 @@
         {{/* Simple view: show all page numbers */}}
         {{ range $pager := $paginator.Pagers }}
           <li class="paginator-item">
-            <a class="paginator-link{{ if eq $pager.PageNumber $paginator.PageNumber }} is-current{{ end }}" href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
+            <a class="paginator-link{{ if eq $pager.PageNumber $paginator.PageNumber }} is-active{{ end }}" href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
           </li>
         {{ end }}
       {{ end }}
