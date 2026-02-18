@@ -101,7 +101,8 @@
 
   /* Paginator */
   --page-paginator-text-color: var(--color-muted);
-  --page-paginator-active-color: var(--color-intense);
+  --page-paginator-active-color: var(--color-main);
+  --page-paginator-active-border: calc(var(--font-size-base) / 8) solid var(--color-accent);
 }
 
 

@@ -42,14 +42,14 @@
     padding-inline: var(--space-sm);
 }
 
-.paginator-link.is-active {
+.paginator-active {
     color: var(--page-paginator-active-color);
     font-weight: bold;
-    border-bottom: calc(var(--font-size-base) / 8) solid var(--color-accent);
+    border-bottom: var(--page-paginator-active-border);
 }
 
-.paginator-link.is-prev,
-.paginator-link.is-next {
+.paginator-prev,
+.paginator-next {
     padding-inline: var(--space-md);
 }
 
