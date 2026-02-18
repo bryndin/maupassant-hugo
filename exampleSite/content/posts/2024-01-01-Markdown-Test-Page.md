@@ -337,6 +337,7 @@ Inline `code` has `back-ticks around` it.
 
 Inline `code` has `back-ticks around` it.
 
+### C#
 ```c#
 using System.IO.Compression;
 
@@ -356,6 +357,7 @@ namespace MyApplication
 }
 ```
 
+### CSS
 ```css
 @font-face {
   font-family: Chunkfive; src: url('Chunkfive.otf');
@@ -374,6 +376,7 @@ body, .usertext {
 }
 ```
 
+### JavaScript
 ```javascript
 function $initHighlight(block, cls) {
   try {
@@ -392,6 +395,7 @@ function $initHighlight(block, cls) {
 export  $initHighlight;
 ```
 
+### PHP
 ```php
 require_once 'Zend/Uri/Http.php';
 
