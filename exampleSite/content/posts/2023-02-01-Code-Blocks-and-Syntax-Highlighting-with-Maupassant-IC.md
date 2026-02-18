@@ -9,7 +9,7 @@ categories: [Code, Design]
 draft: false
 ---
 
-["&lt;!&#45;&#45;more&#45;&#45;>" controls summary] One of the essential features of any blogging theme is code blocks and syntax highlighting. As a blogger, you want to share your code with your audience in a clear and readable format. Maupassant IC has got you covered!<!--more-->
+One of the essential features of any blogging theme is code blocks and syntax highlighting. As a blogger, you want to share your code with your audience in a clear and readable format. Maupassant IC has got you covered!<!--more-->
 
 ## Supported Languages
 

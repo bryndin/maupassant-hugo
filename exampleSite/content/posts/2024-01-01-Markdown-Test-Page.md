@@ -1,7 +1,7 @@
 ---
 title: 'Markdown Test Page'
 description: "This is a test page to check Markdown rendering."
-summary: "[Author's Summary, see `.md` file header] A comprehensive Markdown rendering test page showcasing various elements like headers, lists, code blocks with syntax highlighting, tables, and nested components. It serves as a visual benchmark for theme styling and Markdown compliance."
+summary: "A comprehensive Markdown rendering test page showcasing various elements like headers, lists, code blocks with syntax highlighting, tables, and nested components. It serves as a visual benchmark for theme styling and Markdown compliance."
 date: 2024-01-01T12:00:00+00:00
 tags: [markdown, post]
 categories: [Design]
