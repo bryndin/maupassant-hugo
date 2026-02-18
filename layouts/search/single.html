@@ -61,12 +61,21 @@
         dataType: "json",
         success: function (data) {
           $status.remove();
+          $resultsContainer.empty();
           
           const queryLower = q.toLowerCase();
+          const seenPermalinks = new Set();
           const searchResults = data.filter(item => {
+            if (seenPermalinks.has(item.permalink)) return false;
+            
             const title = item.title ? item.title.toLowerCase() : '';
             const content = item.content ? item.content.toLowerCase() : '';
-            return title.includes(queryLower) || content.includes(queryLower);
+            const isMatch = title.includes(queryLower) || content.includes(queryLower);
+            
+            if (isMatch) {
+              seenPermalinks.add(item.permalink);
+            }
+            return isMatch;
           });
 
           if (searchResults.length > 0) {

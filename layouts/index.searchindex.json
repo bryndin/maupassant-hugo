@@ -1,4 +1,4 @@
-{{- $.Scratch.Add "searchIndex" slice -}}
+{{- $.Scratch.Set "searchIndex" slice -}}
 {{- range where .Site.RegularPages "Type" "posts" -}}
   {{- $page := . -}}
   {{- $pageData := dict
