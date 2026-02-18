@@ -25,4 +25,5 @@
 .nav-active {
     border: var(--border);
     border-bottom: transparent;
+    /* border-bottom: calc(var(--font-size-base) / 4) solid var(--color-accent); */
 }
