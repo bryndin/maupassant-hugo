@@ -7,4 +7,4 @@ tags: ["summary"]
 
 This is a *very short* post.
 
-It is shorter than the summary limit. Our partial should display the full content without an ellipsis.
+It is shorter than the summary limit. Our template should display the full content without an ellipsis or a button.
