@@ -101,6 +101,9 @@
   --page-paginator-text-color: var(--color-muted);
   --page-paginator-active-color: var(--color-main);
   --page-paginator-active-border: calc(var(--font-size-base) / 8) solid var(--color-accent);
+
+  /* Search Results */
+  --search-keyword-border-color: calc(var(--font-size-base) / 4) solid var(--color-accent);
 }
 
 

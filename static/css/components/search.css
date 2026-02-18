@@ -3,6 +3,5 @@
 */
 
 .search-keyword {
-    color: var(--color-accent);
-    font-weight: bold;
+    border-bottom: var(--search-keyword-border-color);
 }
