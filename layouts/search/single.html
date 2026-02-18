@@ -24,11 +24,14 @@
           <a class="post-link"></a>
         </h1>
       </header>
-      <time class="post-meta meta-date dt-published"></time>
-      <div class="post-content">
-        <span class="post-summary"></span>
-        <p class="post-readmore"><a class="post-readmore-link">{{ i18n "continueReading" }}</a></p>
+      <div class="post-meta">
+        <time class="meta-date dt-published"></time>
       </div>
+      <div class="post-content">
+      </div>
+      <p class="post-readmore">
+        <a class="post-readmore-link">{{ i18n "continueReading" }}</a>
+      </p>
     </article>
   </template>
 
@@ -75,6 +78,7 @@
               const link = clone.querySelector('.post-link');
               link.href = item.permalink;
               link.textContent = item.title;
+              link.title = item.title;
 
               const readmoreLink = clone.querySelector('.post-readmore-link');
               readmoreLink.href = item.permalink;
@@ -82,28 +86,20 @@
               const pubDate = new Date(item.date);
               const timeEl = clone.querySelector('time');
               if (!isNaN(pubDate.getTime()) && pubDate.getFullYear() > 1970) {
-                  // Basic formatting yyyy-mm-dd to match previous behavior or use simplified localestring
-                  // Previous: yyyy-mm-dd
                   const yyyy = pubDate.getFullYear();
                   const mm = String(pubDate.getMonth() + 1).padStart(2, '0');
                   const dd = String(pubDate.getDate()).padStart(2, '0');
                   timeEl.textContent = `${yyyy}-${mm}-${dd}`;
                   timeEl.setAttribute('datetime', pubDate.toISOString());
               } else {
-                  timeEl.remove();
+                  clone.querySelector('.post-meta').remove();
               }
 
               let summary = item.summary;
               if (!summary && item.content) {
                 summary = item.content.substring(0, 300) + '...';
               }
-              // summary is likely HTML-safe from Hugo, but if we want to be super safe we should textContent it
-              // However, summaries often contain HTML. 
-              // The previous code utilized string concatenation which treated summary as HTML.
-              // We will use .innerHTML for summary to preserve formatting if it exists, 
-              // BUT we must trust the source (search.json build process).
-              // If search.json is trusted, this is fine.
-              clone.querySelector('.post-summary').innerHTML = summary;
+              clone.querySelector('.post-content').innerHTML = summary;
 
               $resultsContainer.append(clone);
             });
