@@ -1,0 +1,46 @@
+/* Widget styles */
+.widget {
+    padding-inline-start: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.widget-active .widget-title {
+    position: relative;
+}
+
+.widget-active .widget-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    inset-inline-start: calc(var(--space-md) * -1);
+    width: var(--menu-active-border-height);
+    background-color: var(--menu-active-border-color);
+}
+
+.widget-title {
+    padding-block-end: var(--space-sm);
+    border-bottom: var(--border);
+    margin-bottom: var(--space-md);
+    font: var(--sidebar-widget-title);
+    /* TODO(DB): Decide if I want uppercase and letter-spacing */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget-item {
+    margin-bottom: var(--space-sm);
+}
+
+/* TODO(DB): Decide if I want this  */
+/* .widget a:hover { */
+/* transform: translateX(4px); */
+/* Required for transform on inline elements */
+/* display: inline-block; */
+/* } */
