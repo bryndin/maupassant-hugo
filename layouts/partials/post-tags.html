@@ -1,12 +1,12 @@
 {{/*
     This partial displays the tags for a specific post.
 */}}
-<div class="post-meta meta-tags">
+<div class="post-tags">
   {{- $page := . -}}
   {{- if and (isset $page.Params "tags") $page.Params.tags }}
-    <ul class="post-tags-list">
+    <ul class="post-tags__list">
       {{- range $tag := $page.Params.Tags }}
-        <li class="post-tags-item"><a class="post-tag" href="{{ "tags/" | relURL }}{{ $tag | urlize }}">{{ $tag }}</a></li>
+        <li class="post-tags__item"><a class="post-tags__link" href="{{ "tags/" | relURL }}{{ $tag | urlize }}">{{ $tag }}</a></li>
       {{- end }}
     </ul>
   {{- else -}}

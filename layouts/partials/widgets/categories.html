@@ -4,14 +4,14 @@
 */}}
 {{- $page := . -}}
 {{ if not $page.Site.Params.wCategories.disable }}
-  <section class="widget{{ if eq $page.Type "categories" }} widget-active{{ end }}">
-    <h3 class="widget-title">
-      <a class="widget-title-link" href="{{ "categories/" | relURL }}">{{ i18n "categories" 10 }}</a>
+  <section class="widget{{ if eq $page.Type "categories" }} widget--active{{ end }}">
+    <h3 class="widget__title">
+      <a class="widget__title-link" href="{{ "categories/" | relURL }}">{{ i18n "categories" 10 }}</a>
     </h3>
-    <ul class="widget-list">
+    <ul class="widget__list">
       {{- range $category := $page.Site.Taxonomies.categories }}
-        <li class="widget-item">
-          <a class="widget-link" href="{{ $category.Page.Permalink }}">{{ $category.Page.Title }} ({{ $category.Count }})</a>
+        <li class="widget__item">
+          <a class="widget__link" href="{{ $category.Page.Permalink }}">{{ $category.Page.Title }} ({{ $category.Count }})</a>
         </li>
       {{- end }}
     </ul>

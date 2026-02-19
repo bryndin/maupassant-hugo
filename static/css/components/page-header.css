@@ -12,13 +12,13 @@
   color: var(--text-color);
 }
 
-.header-sitename {
+.page-header__sitename {
   font: var(--text-sitename);
   margin-bottom: var(--space-sm);
   color: var(--page-header-title-color);
 }
 
-.header-description {
+.page-header__description {
   font: var(--text-normal);
   margin-bottom: var(--space-sm);
 }

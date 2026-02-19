@@ -6,17 +6,17 @@
 <div class="post-meta">
   {{ if not $page.PublishDate.IsZero -}}
     {{- $datetime_format := i18n "Datetime_format" -}}
-    <time datetime="{{ $page.PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="meta-date dt-published">{{ time.Format $datetime_format $page.PublishDate }}</time>
+    <time datetime="{{ $page.PublishDate.UTC.Format "2006-01-02T15:04:05Z07:00" }}" class="post-meta__date dt-published">{{ time.Format $datetime_format $page.PublishDate }}</time>
   {{ end -}}
   {{ with $author := $page.Params.Author -}}
-    <span class="meta-author">{{ i18n "by" }} {{ $author }}</span>
+    <span class="post-meta__author">{{ i18n "by" }} {{ $author }}</span>
   {{ end -}}
   {{ with $categories := $page.Params.Categories }}
-    <div class="meta-category">
-      <ul class="meta-category-list">
+    <div class="post-meta__category">
+      <ul class="post-meta__category-list">
         {{- range $category:= $categories }}
-          <li class="meta-category-item">
-            <a class="post-meta-link" href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
+          <li class="post-meta__category-item">
+            <a class="post-meta__category-link" href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
           </li>
         {{- end }}
       </ul>

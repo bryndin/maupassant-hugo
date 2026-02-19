@@ -10,6 +10,6 @@
   color: var(--text-color);
 }
 
-.footer-copyright {
+.page-footer__copyright {
   font-size: var(--font-size-small);
 }

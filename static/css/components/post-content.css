@@ -2,14 +2,14 @@
     Post content generated from Markdown.
 */
 
-.post-content {
+.post__content {
     line-height: var(--line-height-base);
     min-width: 0; /* Prevents grid blowout from wide content */
     margin-bottom: var(--space-sm);
 }
 
 /* Content Link Style (Markdown generated) */
-.post-content a {
+.post__content a {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
@@ -17,13 +17,13 @@
     transition: none;
 }
 
-.post-content a:hover {
+.post__content a:hover {
     text-decoration-color: var(--link-hover-decoration-color);
 }
 
 /* --- Code styling ----------------------------------------------------- */
 /* Code block specifics */
-.post-content pre code {
+.post__content pre code {
     display: block;
     padding-block: var(--space-sm);
     padding-inline-start: var(--space-md);
@@ -33,7 +33,7 @@
     background-color: transparent; /* Reset background as pre usually handles it */
 }
 
-.post-content pre {
+.post__content pre {
     margin-bottom: var(--space-md);
     overflow-x: auto; /* Allow horizontal scroll for long code lines */
     background-color: var(--color-surface-muted);
@@ -52,7 +52,7 @@
 }
 
 /* Remove extra spacing set for code block above */
-.post-content .chroma pre {
+.post__content .chroma pre {
     margin-block: 0;
     margin-inline: 0;
     padding-block: 0;
@@ -67,46 +67,46 @@
 }
 
 /* Specific styling for line number tables to ensure full width */
-.post-content .chroma .lntable {
+.post__content .chroma .lntable {
     width: 100%;
     display: table;
 }
 
 /* Ensure the line number column shrinks to fit its content */
-.post-content .chroma .lntable td:first-child {
+.post__content .chroma .lntable td:first-child {
     width: 1%; /* Force minimum width */
     white-space: nowrap; /* Prevent numbers from wrapping */
 }
 
 /* Code lines are flexed, ensure the line numbers are flexed as well */
-.post-content .chroma .lntable td:first-child span {
+.post__content .chroma .lntable td:first-child span {
     display: flex;
 }
 
 /* Ensure the code column takes up the remaining space */
-.post-content .chroma .lntable td:last-child {
+.post__content .chroma .lntable td:last-child {
     width: 100%;
 }
 
 /* Reset padding set for the non-highlighted code block */
-.post-content .chroma .lntable td:last-child code {
+.post__content .chroma .lntable td:last-child code {
     padding-inline-start: 0;
 }
 
 /* Add padding to the line column instead to properly handle line highlighting */
-.post-content .chroma .lntable td:last-child .line {
+.post__content .chroma .lntable td:last-child .line {
     padding-inline-start: var(--space-md);
 }
 
 /* Reset styling for the table */
-.post-content .chroma .lntable th,
-.post-content .chroma .lntable td {
+.post__content .chroma .lntable th,
+.post__content .chroma .lntable td {
     padding-inline: 0;
     padding-block: 0;
 }
 
 /* --- Table styling ---------------------------------------------------- */
-.post-content table {
+.post__content table {
     width: auto;           /* Size to content, not container */
     max-width: 100%;       /* Don't exceed container */
     display: block;        /* Required for overflow-x to work */
@@ -116,26 +116,26 @@
     border: none;          /* No outer border - cell borders provide structure */
 }
 
-.post-content th,
-.post-content td {
+.post__content th,
+.post__content td {
     padding-block: var(--space-sm);
     padding-inline: var(--space-sm);
     border: var(--border);
     text-align: left;
 }
 
-.post-content th {
+.post__content th {
     background-color: var(--color-surface-muted);
     font-weight: bold;
 }
 
 /* TODO(DB): TBD if I want to use zebra striping for tables, (I don't think so)
-/* .post-content tr:nth-child(even) {
+/* .post__content tr:nth-child(even) {
     background-color: var(--color-surface-muted);
 } */
 
 /* --- Blockquote styling ----------------------------------------------- */
-.post-content blockquote {
+.post__content blockquote {
     margin: 0 0 var(--space-md) 0;
     padding-block: var(--space-sm);
     padding-inline: var(--space-md);
@@ -145,12 +145,12 @@
     background-color: var(--color-surface-muted);
 }
 
-.post-content blockquote p:last-child {
+.post__content blockquote p:last-child {
     margin: 0;
 }
 
 /* Nested blockquotes */
-.post-content blockquote blockquote {
+.post__content blockquote blockquote {
     margin: 0;
     padding-right: 0;
 }

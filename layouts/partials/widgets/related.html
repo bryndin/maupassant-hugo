@@ -10,11 +10,11 @@
     {{- $type := or $page.Site.Params.relatedPosts.type "posts" -}}
     {{- $relatedPosts := where $related "Type" $type -}}
     {{- with $posts := $relatedPosts }}
-      <section class="widget widget-related">
-        <h3 class="widget-title">{{ i18n "related_posts" }}</h3>
-        <ul class="widget-list">
+      <section class="widget widget--related">
+        <h3 class="widget__title">{{ i18n "related_posts" }}</h3>
+        <ul class="widget__list">
           {{- range $post := $posts }}
-            <li class="widget-item"><a class="widget-link" href="{{ $post.RelPermalink }}" title="{{ $post.Title }}">{{ $post.Title }}</a></li>
+            <li class="widget__item"><a class="widget__link" href="{{ $post.RelPermalink }}" title="{{ $post.Title }}">{{ $post.Title }}</a></li>
           {{- end }}
         </ul>
       </section>

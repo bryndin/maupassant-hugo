@@ -1,5 +1,9 @@
 /* Post Meta Tags */
-.meta-tags {
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-sm);
     margin-top: var(--space-xl);
 
     /* Override text and link colors for all children */
@@ -9,7 +13,7 @@
     color: var(--text-color);
 }
 
-.post-tags-list {
+.post-tags__list {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-sm);
@@ -18,14 +22,14 @@
     margin: 0;
 }
 
-.post-tags-item {
+.post-tags__item {
     position: relative;
 }
 
-.post-tag::before {
+.post-tags__link::before {
     content: "#";
 }
 
-.post-tag {
+.post-tags__link {
     font-style: italic;
 }

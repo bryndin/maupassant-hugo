@@ -3,7 +3,7 @@
   padding-inline: var(--space-lg);
 } */
 
-.post-title {
+.post__title {
   /* Reset margin and padding to override reset layer (normalize.css) */
   margin: 0;
   padding: 0;

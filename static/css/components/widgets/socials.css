@@ -1,4 +1,4 @@
-.socials-list {
+.widget-socials__list {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-sm);
@@ -7,7 +7,7 @@
     margin: 0;
 }
 
-.socials-icon {
+.widget-socials__icon {
     width: var(--font-size-base);
     height: var(--font-size-base);
     fill: currentColor;

@@ -4,11 +4,11 @@
     margin-bottom: var(--space-xl);
 }
 
-.widget-active .widget-title {
+.widget--active .widget__title {
     position: relative;
 }
 
-.widget-active .widget-title::before {
+.widget--active .widget__title::before {
     content: '';
     position: absolute;
     top: 0;
@@ -18,7 +18,7 @@
     background-color: var(--menu-active-border-color);
 }
 
-.widget-title {
+.widget__title {
     padding-block-end: var(--space-sm);
     border-bottom: var(--border);
     margin-bottom: var(--space-md);
@@ -28,13 +28,13 @@
     letter-spacing: 1px;
 }
 
-.widget-list {
+.widget__list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.widget-item {
+.widget__item {
     margin-bottom: var(--space-sm);
 }
 

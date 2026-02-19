@@ -4,16 +4,16 @@
 */ -}}
 {{- $page := . -}}
 {{ with $socials := $page.Site.Params.wSocials }}
-  <section class="widget widget-socials">
-    <h3 class="widget-title"><!-- Social Networks --></h3>
+  <section class="widget widget--socials">
+    <h3 class="widget__title"><!-- Social Networks --></h3>
     {{- /* SVG Icons from https://icons.getbootstrap.com/ */}}
-    <ul class="socials-list">
+    <ul class="widget-socials__list">
       {{- range $social := $socials }}
-        <li class="socials-item">
-          <a class="socials-link" title="{{ $social.title }}" href="{{ $social.url }}">
+        <li class="widget-socials__item">
+          <a class="widget-socials__link" title="{{ $social.title }}" href="{{ $social.url }}">
             {{ $svg := printf "static/%s" $social.img | readFile -}}
             {{/* Inject class into SVG tag */}}
-            {{ replace $svg "<svg" "<svg class=\"socials-icon\"" | safeHTML }}
+            {{ replace $svg "<svg" "<svg class=\"widget-socials__icon\"" | safeHTML }}
           </a>
         </li>
       {{- end }}

@@ -6,14 +6,14 @@
 {{- $defaultLimit := 10 -}}
 {{ if not $page.Site.Params.wLatestPosts.disable }}
   <section class="widget">
-    <h3 class="widget-title">{{ i18n "latest_posts" }}</h3>
-    <ul class="widget-list">
+    <h3 class="widget__title">{{ i18n "latest_posts" }}</h3>
+    <ul class="widget__list">
       {{- $type := or $page.Site.Params.wLatestPosts.type "posts" -}}
       {{- $limit := or $page.Site.Params.wLatestPosts.limit $defaultLimit -}}
       {{- $posts := where $page.Site.RegularPages "Type" $type -}}
       {{- range $post := first $limit $posts }}
-        <li class="widget-item">
-          <a class="widget-link" href="{{ $post.Permalink }}" title="{{ $post.Title }}">{{ $post.Title }}</a>
+        <li class="widget__item">
+          <a class="widget__link" href="{{ $post.Permalink }}" title="{{ $post.Title }}">{{ $post.Title }}</a>
         </li>
       {{- end }}
     </ul>

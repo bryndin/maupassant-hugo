@@ -20,14 +20,14 @@
   <template id="search-result-template">
     <article class="post">
       <header>
-        <h1 class="post-title">
-          <a class="post-link"></a>
+        <h1 class="post__title">
+          <a class="post__link"></a>
         </h1>
       </header>
       <div class="post-meta">
-        <time class="meta-date dt-published"></time>
+        <time class="post-meta__date dt-published"></time>
       </div>
-      <div class="post-content">
+      <div class="post__content">
       </div>
     </article>
   </template>
@@ -81,7 +81,7 @@
             searchResults.forEach(item => {
               const clone = template.content.cloneNode(true);
               
-              const link = clone.querySelector('.post-link');
+              const link = clone.querySelector('.post__link');
               link.href = item.permalink;
               link.textContent = item.title;
               link.title = item.title;
@@ -102,7 +102,7 @@
               if (!summary && item.content) {
                 summary = item.content.substring(0, 300) + '...';
               }
-              clone.querySelector('.post-content').innerHTML = summary;
+              clone.querySelector('.post__content').innerHTML = summary;
 
               $resultsContainer.append(clone);
             });

@@ -1,5 +1,5 @@
 /* Tag Cloud Widget */
-.tagcloud-link {
+.widget-tagcloud__link {
     font-size: var(--font-size-small);
     display: inline;
     margin-right: var(--space-xs);

@@ -8,10 +8,10 @@
 {{- $compactThreshold := 10 -}}
 {{ with $paginator := $page.Paginator }}
   {{ if gt $paginator.TotalPages 1 }}
-    <ol class="page-paginator">
+    <ol class="paginator">
       {{ if $paginator.HasPrev }}
-        <li class="paginator-item">
-          <a class="paginator-link paginator-prev" href="{{ $paginator.Prev.URL | absLangURL }}">&lt;</a>
+        <li class="paginator__item">
+          <a class="paginator__link paginator__link--prev" href="{{ $paginator.Prev.URL | absLangURL }}">&lt;</a>
         </li>
       {{ end }}
 
@@ -42,28 +42,28 @@
 
         {{ range $p := $dynamicPages }}
           {{ if eq -1 $p }}
-            <li class="paginator-item">
-              <span class="paginator-ellipsis">...</span>
+            <li class="paginator__item">
+              <span class="paginator__ellipsis">...</span>
             </li>
           {{ else }}
             {{ $pager:=index $paginator.Pagers (sub $p 1) }}
-            <li class="paginator-item">
-              <a class="paginator-link{{ if eq $p $paginator.PageNumber }} paginator-active{{ end }}" href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
+            <li class="paginator__item">
+              <a class="paginator__link{{ if eq $p $paginator.PageNumber }} paginator__link--active{{ end }}" href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
             </li>
           {{ end }}
         {{ end }}
       {{ else }}
         {{/* Simple view: show all page numbers */}}
         {{ range $pager := $paginator.Pagers }}
-          <li class="paginator-item">
-            <a class="paginator-link{{ if eq $pager.PageNumber $paginator.PageNumber }} paginator-active{{ end }}" href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
+          <li class="paginator__item">
+            <a class="paginator__link{{ if eq $pager.PageNumber $paginator.PageNumber }} paginator__link--active{{ end }}" href="{{ $pager.URL | absLangURL }}">{{ $pager.PageNumber }}</a>
           </li>
         {{ end }}
       {{ end }}
 
       {{ if $paginator.HasNext }}
-        <li class="paginator-item">
-          <a class="paginator-link paginator-next" href="{{ $paginator.Next.URL | absLangURL }}">&gt;</a>
+        <li class="paginator__item">
+          <a class="paginator__link paginator__link--next" href="{{ $paginator.Next.URL | absLangURL }}">&gt;</a>
         </li>
       {{ end }}
     </ol>

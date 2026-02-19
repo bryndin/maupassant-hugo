@@ -3,7 +3,7 @@
     Handles styling for the post list pagination.
 */
 
-.page-paginator {
+.paginator {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -23,11 +23,11 @@
     color: var(--text-color);
 }
 
-.paginator-item {
+.paginator__item {
     display: inline-flex;
 }
 
-.paginator-link {
+.paginator__link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -35,32 +35,32 @@
     transition: var(--link-transition);
 }
 
-.paginator-ellipsis {
+.paginator__ellipsis {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding-inline: var(--space-sm);
 }
 
-.paginator-active {
+.paginator__link--active {
     color: var(--page-paginator-active-color);
     font-weight: bold;
     border-bottom: var(--page-paginator-active-border);
 }
 
-.paginator-prev,
-.paginator-next {
+.paginator__link--prev,
+.paginator__link--next {
     padding-inline: var(--space-md);
 }
 
 @media screen and (max-width: 680px) {
-    .page-paginator {
+    .paginator {
         padding-block-start: var(--space-md);
         margin-block-start: var(--space-md);
     }
 
-    .paginator-link,
-    .paginator-ellipsis {
+    .paginator__link,
+    .paginator__ellipsis {
         padding-inline: var(--space-xs);
         font-size: var(--font-size-small);
     }
