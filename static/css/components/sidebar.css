@@ -2,7 +2,7 @@
 .sidebar {
   /* Hidden by default on mobile */
   display: none;
-  border-left: var(--border);
+  border-inline-start: var(--border);
   padding-block-start: var(--space-lg);
   padding-inline-start: var(--space-md);
   word-break: break-word;
@@ -25,6 +25,24 @@
 .widget {
   padding-inline-start: var(--space-md);
   margin-bottom: var(--space-xl);
+}
+
+.widget-active .widget-title {
+  position: relative;
+}
+
+.widget-active .widget-title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  inset-inline-start: calc(var(--space-md) * -1);
+  width: var(--menu-active-border-height);
+  background-color: var(--menu-active-border-color);
+}
+
+html[dir="rtl"] .sidebar {
+  text-align: right;
 }
 
 .widget-title {

@@ -4,7 +4,7 @@
 */}}
 {{- $page := . -}}
 {{ if not $page.Site.Params.wCategories.disable }}
-  <section class="widget">
+  <section class="widget{{ if eq $page.Type "categories" }} widget-active{{ end }}">
     <h3 class="widget-title">
       <a class="widget-title-link" href="{{ "categories/" | relURL }}">{{ i18n "categories" 10 }}</a>
     </h3>
