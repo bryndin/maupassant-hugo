@@ -20,9 +20,6 @@ other = "标签"
 [articles]
 other = "中的文章"
 
-[continueReading]
-other = "更多"
-
 [toc]
 other = "文章目录"
 

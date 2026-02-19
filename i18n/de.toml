@@ -20,9 +20,6 @@ other = "Schlagwörter"
 [articles] # Eng translation is empty on purpose
 other = ""
 
-[continueReading]
-other = "Mehr"
-
 [toc]
 other = "Inhaltsverzeichnis"
 

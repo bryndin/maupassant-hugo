@@ -29,9 +29,6 @@
       </div>
       <div class="post-content">
       </div>
-      <p class="post-readmore">
-        <a class="post-readmore-link">{{ i18n "continueReading" }}</a>
-      </p>
     </article>
   </template>
 
@@ -88,9 +85,6 @@
               link.href = item.permalink;
               link.textContent = item.title;
               link.title = item.title;
-
-              const readmoreLink = clone.querySelector('.post-readmore-link');
-              readmoreLink.href = item.permalink;
 
               const pubDate = new Date(item.date);
               const timeEl = clone.querySelector('time');

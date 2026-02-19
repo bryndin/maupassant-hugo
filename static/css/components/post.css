@@ -9,23 +9,3 @@
   padding: 0;
   margin-bottom: var(--space-xs);
 }
-
-/* "read more" button */
-.post-readmore {
-  display: flex;
-  justify-content: flex-end;
-  margin: 0;
-  margin-bottom: var(--space-sm);
-}
-
-.post-readmore-link {
-  display: inline-flex;
-  font-size: var(--font-size-small);
-  padding-block: var(--space-xs);
-  padding-inline: var(--space-md);
-  border: var(--border);
-}
-
-.post-readmore-link:hover {
-  border-color: var(--border-color);
-}

@@ -20,9 +20,6 @@ other = "Etiquetas"
 [articles] # Eng translation is empty on purpose
 other = ""
 
-[continueReading]
-other = "Más"
-
 [toc]
 other = "Tabla de contenidos"
 

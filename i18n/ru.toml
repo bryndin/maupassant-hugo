@@ -20,9 +20,6 @@ other = "Теги"
 [articles] # Eng translation is empty on purpose
 other = ""
 
-[continueReading]
-other = "Далее"
-
 [toc]
 other = "Содержание"
 
