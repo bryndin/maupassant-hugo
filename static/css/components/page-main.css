@@ -1,7 +1,7 @@
 /* Mobile First: Stacked layout */
 .page-main {
   display: block;
-  padding-block-end: var(--space-xl);
+  padding-block: var(--space-xl) var(--space-xl);
 }
 
 /* Tablet / Desktop: Grid enabled */

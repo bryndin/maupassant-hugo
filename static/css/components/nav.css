@@ -1,32 +1,24 @@
 .nav {
     display: flex;
     align-items: flex-end;
+    justify-content: flex-end;
 }
 
-/* Tab row track with border-bottom to the left of the tabs */
-.nav::before {
-    content: "";
-    flex: 1;
-    border-bottom: var(--border);
+/* Handle right-to-left and left-to-right languages */
+html[dir="rtl"] .nav {
+    justify-content: flex-start;
 }
 
 .nav-item {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding-block: 0;
+    padding-block: var(--space-xs);
     padding-inline: var(--space-md);
-    height: var(--menu-height);
-    /* Transparent border prevents active tab baseline shift */
-    border: var(--border-width) solid transparent;
-    border-bottom: var(--border);
-    /* text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold; */
+    /* Set a transparent border to prevent layout jump on active */
+    border-bottom: var(--menu-active-border-height) solid transparent;
 }
 
 .nav-active {
-    border: var(--border);
-    border-bottom: transparent;
-    /* border-bottom: calc(var(--font-size-base) / 4) solid var(--color-accent); */
+    border-bottom-color: var(--menu-active-border-color);
 }

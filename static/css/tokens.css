@@ -73,6 +73,8 @@
 
   /* Menu */
   --menu-height: calc(var(--font-size-base) * 2.5);
+  --menu-active-border-height: calc(var(--font-size-base) / 4);
+  --menu-active-border-color: var(--color-accent);
 
   /* Posts */
   --post-background-color: var(--color-white);

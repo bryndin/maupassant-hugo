@@ -1,16 +1,15 @@
 .page-header {
-  padding-block-start: var(--space-xl);
-  padding-block-end: var(--space-lg);
+  padding-block: var(--space-xl) 0;
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  border-bottom: var(--border);
 
   /* Override text and link colors for all children */
   --text-color: var(--page-header-text-color);
   --link-color: var(--text-color);
 
   color: var(--text-color);
-
 }
 
 .header-sitename {
