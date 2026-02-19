@@ -1,4 +1,10 @@
 /* Sample custom CSS file*/
 .widget-ads__image {
     filter: grayscale(100%);
+    opacity: 0.3;
+}
+
+.widget-ads__image:hover {
+    filter: grayscale(0%);
+    opacity: 1;
 }

@@ -76,10 +76,10 @@ titleCaseStyle = "none" # See https://gohugo.io/getting-started/configuration/#c
 
 ### Ads Widget.  Removing all entries disables the widget.
 # If `img` is not specified, the text in `title` will be used instead
-[[params.wAds]]
-  img = "https://gohugo.io/images/hugo-logo-wide.svg"
-  title = "Hugo, framework for building websites"
-  url = "https://gohugo.io/"
+[[params.wAds]] 
+  img = "/images/maupassant_signature.png"
+  title = "Guy de Maupassant signature"
+  url = "https://en.wikipedia.org/wiki/Guy_de_Maupassant"
 
 ### Categories Widget
 [params.wCategories]
