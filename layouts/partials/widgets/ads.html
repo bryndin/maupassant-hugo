@@ -4,14 +4,14 @@
 */}}
 {{- $page := . -}}
 {{ with $ads := $page.Site.Params.wAds }}
-  <section class="widget">
-    <h3 class="widget-title ad">{{ i18n "ads" }}</h3>
-    <ul class="widget-list">
+  <section class="widget widget-ads">
+    <h3 class="widget-title widget-ads__title">{{ i18n "ads" }}</h3>
+    <ul class="widget-list widget-ads__list">
       {{ range $ad := $ads }}
-        <li>
-          <a class="ad" href="{{ $ad.url }}" title="{{ $ad.title }}">
+        <li class="widget-item widget-ads__item">
+          <a class="widget-ads__link" href="{{ $ad.url }}" title="{{ $ad.title }}">
             {{ if $ad.img }}
-              <img src="{{ $ad.img }}" />
+              <img class="widget-ads__image" src="{{ $ad.img }}" alt="{{ $ad.title }}" />
             {{ else }}
               {{ $ad.title }}
             {{ end }}
