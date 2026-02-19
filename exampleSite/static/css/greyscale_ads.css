@@ -1,0 +1,4 @@
+/* Sample custom CSS file*/
+.widget-ads__image {
+    filter: grayscale(100%);
+}

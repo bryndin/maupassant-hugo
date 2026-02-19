@@ -42,7 +42,7 @@ titleCaseStyle = "none" # See https://gohugo.io/getting-started/configuration/#c
   description = "Maupassant is a free and open-source Hugo theme designed for bloggers. It features a clean, minimal aesthetic inspired by the works of Guy de Maupassant, perfect for showcasing your writing."
 
   # Here you can put list of custom JS/CSS files you want to be loaded
-  customCSS = []
+  customCSS = ["greyscale_ads.css"]
   customJS = []
  
   # Enables comments. After enabling, you have to configure one of the comment systems below.
