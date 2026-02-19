@@ -20,6 +20,9 @@
     /* Transparent border prevents active tab baseline shift */
     border: var(--border-width) solid transparent;
     border-bottom: var(--border);
+    /* text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold; */
 }
 
 .nav-active {
