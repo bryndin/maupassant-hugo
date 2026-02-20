@@ -64,7 +64,7 @@ titleCaseStyle = "none" # See https://gohugo.io/getting-started/configuration/#c
 #---- Side Column Widgets ----------------------------------------------------
 
 ### Site Search Widget
-[params.search]
+[params.wSearch]
   disable = false # Disables and hides the widget
   localSearch = true # Use local search (true), or Google Search over your domain (false)
 

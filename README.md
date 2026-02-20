@@ -158,7 +158,7 @@ Local search is based on RSS (`index.html` file). If you don't see the list of r
 - Check local search is enabled in `hugo.toml`
 
     ```toml
-    [params.search]
+    [params.wSearch]
       disable = false
       localSearch = true
     ```

@@ -3,9 +3,9 @@
     It allows users to search the site via Google or local search.
 */}}
 {{- $page := . -}}
-{{ if not $page.Site.Params.Search.disable }}
+{{ if not $page.Site.Params.wSearch.disable }}
   <section class="widget widget--search">
-    <form class="widget-search__form" action="{{ if $page.Site.Params.Search.localSearch }}{{ "search"| absURL }}{{ else }}//www.google.com/search{{ end }}" method="get" accept-charset="utf-8">
+    <form class="widget-search__form" action="{{ if $page.Site.Params.wSearch.localSearch }}{{ "search"| absURL }}{{ else }}//www.google.com/search{{ end }}" method="get" accept-charset="utf-8">
       <input class="widget-search__input" type="text" name="q" placeholder="Search" />
       <input type="hidden" name="sitesearch" value="{{ $page.Site.BaseURL }}" />
       <button type="submit" class="widget-search__submit">
