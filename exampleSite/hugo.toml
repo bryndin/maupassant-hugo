@@ -68,6 +68,13 @@ titleCaseStyle = "none" # See https://gohugo.io/getting-started/configuration/#c
   disable = false # Disables and hides the widget
   localSearch = true # Use local search (true), or Google Search over your domain (false)
 
+### Related Posts Widget
+# See https://gohugo.io/content-management/related/
+[params.wRelatedPosts]
+  disable = false # Disables and hides the widget
+  limit = 5 # Max number of entries to show
+  type = "posts" # Only show entries from this type. See https://gohugo.io/methods/page/type/
+
 ### Latest Posts Widget
 [params.wLatestPosts]
   disable = false # Disables and hides the widget
@@ -156,15 +163,6 @@ titleCaseStyle = "none" # See https://gohugo.io/getting-started/configuration/#c
   title="RSS"
   url="index.xml"
   img="images/socials/rss.svg"
-
-#---- Page Features ----------------------------------------------------------
-
-### Related Posts.  At the bottom of the post page, show links to related posts.
-# See https://gohugo.io/content-management/related/
-[params.relatedPosts]
-  disable = false # Disables and hides the widget
-  limit = 5 # Max number of entries to show
-  type = "posts" # Only show entries from this type. See https://gohugo.io/methods/page/type/
 
 #---- Alternative comments services ------------------------------------------
 

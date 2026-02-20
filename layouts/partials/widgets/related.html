@@ -3,11 +3,11 @@
     It only renders on single blog post pages when related posts exist.
 */}}
 {{- $page := . -}}
-{{- if not $page.Site.Params.relatedPosts.disable -}}
+{{- if not $page.Site.Params.wRelatedPosts.disable -}}
   {{- if eq $page.Type $page.Site.Params.BlogType -}}
-    {{- $limit := or $page.Site.Params.relatedPosts.Limit 5 -}}
+    {{- $limit := or $page.Site.Params.wRelatedPosts.Limit 5 -}}
     {{- $related := $page.Site.RegularPages.Related $page | first $limit -}}
-    {{- $type := or $page.Site.Params.relatedPosts.type "posts" -}}
+    {{- $type := or $page.Site.Params.wRelatedPosts.type "posts" -}}
     {{- $relatedPosts := where $related "Type" $type -}}
     {{- with $posts := $relatedPosts }}
       <section class="widget widget--related">
