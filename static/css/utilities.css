@@ -7,10 +7,3 @@
   margin-inline: auto;
   padding-inline: clamp(20px, 3vw, 40px);
 }
-
-
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
-}
