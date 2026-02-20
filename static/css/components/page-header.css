@@ -6,16 +6,16 @@
   border-bottom: var(--border);
 
   /* Override text and link colors for all children */
-  --text-color: var(--page-header-text-color);
+  --text-color: var(--header-title-color);
   --link-color: var(--text-color);
 
   color: var(--text-color);
 }
 
 .page-header__title-heading {
-  font: var(--text-sitename);
+  font: var(--header-title-font);
+  color: var(--header-title-color);
   margin-bottom: var(--space-sm);
-  color: var(--page-header-title-color);
 }
 
 .page-header__description {

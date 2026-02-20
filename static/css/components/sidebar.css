@@ -9,10 +9,11 @@
 
   /* Local variables for container-based styling.
      Ensures sidebar links inherit the muted aesthetic by default. */
-  --text-color: var(--sidebar-text-color);
+  --text-color: var(--sidebar-color);
   --link-color: var(--text-color);
 
   color: var(--text-color);
+  font: var(--sidebar-font);
 }
 
 @media screen and (min-width: 1024px) {

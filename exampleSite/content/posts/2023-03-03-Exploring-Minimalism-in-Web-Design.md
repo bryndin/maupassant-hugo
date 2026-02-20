@@ -6,6 +6,7 @@ categories: [Design]
 author: Joe Designer
 # toc: true
 # hidden: false
+weight: 10
 draft: false
 ---
 

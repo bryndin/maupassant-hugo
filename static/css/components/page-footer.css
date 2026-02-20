@@ -4,12 +4,9 @@
   text-align: left;
 
   /* Override text and link colors for all children */
-  --text-color: var(--page-footer-text-color);
+  --text-color: var(--page-footer-color);
   --link-color: var(--text-color);
 
   color: var(--text-color);
-}
-
-.page-footer__copyright {
-  font-size: var(--font-size-small);
+  font: var(--page-footer-font);
 }

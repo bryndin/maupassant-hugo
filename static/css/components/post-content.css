@@ -3,9 +3,11 @@
 */
 
 .post__content {
-    line-height: var(--line-height-base);
-    min-width: 0; /* Prevents grid blowout from wide content */
+    /* Prevents grid blowout from wide content */
+    min-width: 0;
     margin-bottom: var(--space-sm);
+    font: var(--post-content-font);
+    color: var(--post-content-color);
 }
 
 /* Content Link Style (Markdown generated) */

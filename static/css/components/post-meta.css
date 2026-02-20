@@ -7,10 +7,11 @@
     margin-bottom: var(--space-lg);
 
     /* Override text and link colors for all children */
-    --text-color: var(--post-meta-text-color);
+    --text-color: var(--post-meta-color);
     --link-color: var(--text-color);
 
     color: var(--text-color);
+    font: var(--post-meta-font);
 }
 
 /*

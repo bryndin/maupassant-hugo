@@ -49,6 +49,11 @@
   /* --font-family-base: "Source Sans 3", sans-serif; */
   /* --font-family-base: "Manrope", sans-serif; */
   /* --font-family-base: "Wix Madefor Text", sans-serif; */
+  --font-family-base: serif;
+
+  --font-weight-light: 400;
+  --font-weight-normal: 500;
+  --font-weight-bold: 800;
 
   --font-size-base: 1rem;
   --font-size-small: 0.875rem;
@@ -59,6 +64,11 @@
   --border-style: solid;
   --border-color: var(--color-border);
   --border: var(--border-width) var(--border-style) var(--border-color);
+
+  /* Active border */
+  --active-border-height-normal: calc(var(--font-size-base) / 4);
+  --active-border-height-small: calc(var(--font-size-base) / 8);
+  --active-border-color: var(--color-accent);
 
   /* Typography - Order: [weight] [size] [family] */
   --text-normal: normal var(--font-size-base) var(--font-family-base);
@@ -78,41 +88,62 @@
   /* Global Transitions */
   --transition-base: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 
+  /* Header */
+  --header-title-font: var(--font-weight-bold) calc(var(--font-size-base) * 2.5) var(--font-family-base);
+  --header-title-color: var(--color-main);
+  --header-description-font: var(--font-weight-normal) var(--font-size-base) var(--font-family-base);
+  --header-description-color: var(--color-muted);
+
   /* Menu */
   --menu-height: calc(var(--font-size-base) * 2.5);
-  --menu-active-border-height: calc(var(--font-size-base) / 4);
-  --menu-active-border-color: var(--color-accent);
+  --menu-font: var(--font-weight-bold) var(--font-size-base) var(--font-family-base);
+  --menu-color: var(--color-main);
+  --menu-active-border-height: var(--active-border-height-normal);
+  --menu-active-border-color: var(--active-border-color);
+  --menu-text-transform: none;
+  --menu-letter-spacing: 0;
 
   /* Posts */
   --post-background-color: var(--color-white);
 
+  /* Post Content */
+  --post-content-font: var(--font-weight-normal) var(--font-size-base)/var(--line-height-base) var(--font-family-base);   
+  --post-content-color: var(--color-main);
+
   /* Post Meta */
-  --post-meta-text-color: var(--color-muted);
+  --post-meta-font: var(--font-weight-light) var(--font-size-base) var(--font-family-base);
+  --post-meta-color: var(--color-muted);
 
   /* Post Tags */
-  --post-tag-text-color: var(--color-muted);
+  --post-tag-font: italic var(--font-weight-light) var(--font-size-base) var(--font-family-base);
+  --post-tag-color: var(--color-muted);
 
   /* Sidebar */
-  --sidebar-text-color: var(--color-muted);
+  --sidebar-font: var(--font-weight-light) var(--font-size-base) var(--font-family-base);
+  --sidebar-color: var(--color-muted);
 
   /* Widgets */
+  --widget-active-border-height: var(--active-border-height-normal);
+  --widget-active-border-color: var(--active-border-color);
+  --widget-text-transform: uppercase;
+  --widget-letter-spacing: 1px;
+
   /** Search **/
   --search-height: calc(var(--font-size-small) * 2.5);
 
-  /* Page Header */
-  --page-header-title-color: var(--color-main);
-  --page-header-text-color: var(--color-muted);
-
   /* Page Footer */
-  --page-footer-text-color: var(--color-muted);
+  --page-footer-font: var(--font-weight-light) var(--font-size-small) var(--font-family-base);
+  --page-footer-color: var(--color-muted);
 
   /* Paginator */
-  --page-paginator-text-color: var(--color-muted);
+  --page-paginator-font: var(--font-weight-light) var(--font-size-base) var(--font-family-base);
+  --page-paginator-color: var(--color-muted);
+  --page-paginator-active-font: var(--font-weight-bold) var(--font-size-base) var(--font-family-base);
   --page-paginator-active-color: var(--color-main);
-  --page-paginator-active-border: calc(var(--font-size-base) / 8) solid var(--color-accent);
+  --page-paginator-active-border: var(--active-border-height-small) solid var(--color-accent);
 
   /* Search Results */
-  --search-keyword-border-color: calc(var(--font-size-base) / 4) solid var(--color-accent);
+  --search-keyword-border-color: var(--active-border-height-normal) solid var(--color-accent);
 }
 
 
@@ -125,4 +156,18 @@
   --color-border: #495057;
   --color-white: #343a40;
   --color-surface-muted: rgba(255, 255, 255, 0.03);
+}
+
+.font-bellota-text {
+  --font-family-base: "Bellota Text", sans-serif;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+}
+
+.font-wix-madefor-text {
+  --font-family-base: "Wix Madefor Text", sans-serif;
+  --font-weight-light: 400;
+  --font-weight-normal: 500;
+  --font-weight-bold: 800;
 }

@@ -17,6 +17,8 @@ html[dir="rtl"] .nav {
     padding-inline: var(--space-md);
     /* Set a transparent border to prevent layout jump on active */
     border-bottom: var(--menu-active-border-height) solid transparent;
+    text-transform: var(--menu-text-transform);
+    letter-spacing: var(--menu-letter-spacing);
 }
 
 .nav__item--active {

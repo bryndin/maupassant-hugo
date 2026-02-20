@@ -13,14 +13,14 @@
     padding-block-start: var(--space-lg);
     margin-block-start: var(--space-lg);
     border-block-start: var(--border);
-    font-size: var(--font-size-base);
     text-align: center;
 
     /* Override text and link colors for all children */
-    --text-color: var(--page-paginator-text-color);
+    --text-color: var(--page-paginator-color);
     --link-color: var(--text-color);
 
     color: var(--text-color);
+    font: var(--page-paginator-font);
 }
 
 .paginator__item {
@@ -43,8 +43,8 @@
 }
 
 .paginator__link--active {
+    font: var(--page-paginator-active-font);
     color: var(--page-paginator-active-color);
-    font-weight: bold;
     border-bottom: var(--page-paginator-active-border);
 }
 
@@ -62,6 +62,7 @@
     .paginator__link,
     .paginator__ellipsis {
         padding-inline: var(--space-xs);
+        /* TODO(DB): check how does small font looks like, standardize to normal instead? */
         font-size: var(--font-size-small);
     }
 }

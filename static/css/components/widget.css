@@ -8,14 +8,15 @@
     position: relative;
 }
 
+/* TODO(DB): Can this be done with border-inline-start? */
 .widget--active .widget__title::before {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
     inset-inline-start: calc(var(--space-md) * -1);
-    width: var(--menu-active-border-height);
-    background-color: var(--menu-active-border-color);
+    width: var(--widget-active-border-height);
+    background-color: var(--widget-active-border-color);
 }
 
 .widget__title {
@@ -23,9 +24,8 @@
     border-bottom: var(--border);
     margin-bottom: var(--space-md);
     font: var(--sidebar-widget-title);
-    /* TODO(DB): Decide if I want uppercase and letter-spacing */
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    text-transform: var(--widget-text-transform);
+    letter-spacing: var(--widget-letter-spacing);
 }
 
 .widget__list {

@@ -7,10 +7,11 @@
     margin-top: var(--space-xl);
 
     /* Override text and link colors for all children */
-    --text-color: var(--post-tag-text-color);
+    --text-color: var(--post-tag-color);
     --link-color: var(--text-color);
 
     color: var(--text-color);
+    font: var(--post-tag-font);
 }
 
 .post-tags__list {
@@ -28,8 +29,4 @@
 
 .post-tags__link::before {
     content: "#";
-}
-
-.post-tags__link {
-    font-style: italic;
 }
