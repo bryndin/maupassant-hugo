@@ -4,7 +4,9 @@
 */}}
 {{- $page := . -}}
 {{ partial "gtm/body" $page }}
-<a class="page-header__sitename" href="{{ $page.Site.BaseURL | absURL }}">{{ $page.Site.Title }}</a>
+<h1 class="page-header__title-heading">
+  <a class="page-header__title-link" href="{{ $page.Site.BaseURL | absURL }}">{{ $page.Site.Title }}</a>
+</h1>
 {{ with $subtitle := $page.Site.Params.subtitle -}}
   <span class="page-header__description">{{ $subtitle }}</span>
 {{- end }}

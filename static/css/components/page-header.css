@@ -12,7 +12,7 @@
   color: var(--text-color);
 }
 
-.page-header__sitename {
+.page-header__title-heading {
   font: var(--text-sitename);
   margin-bottom: var(--space-sm);
   color: var(--page-header-title-color);
