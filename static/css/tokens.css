@@ -39,10 +39,17 @@
   --bp-tablet: 1024px;
 
   /* Global Typography */
-  --font-family-base: "Iowan Old Style", "Ovo", "Hoefler Text", Georgia,
-    "Times New Roman", "TIBch", "Source Han Sans", "PingFangSC-Regular",
-    "Hiragino Sans GB", "STHeiti", "Microsoft Yahei", "Droid Sans Fallback",
-    "WenQuanYi Micro Hei", sans-serif;
+  /* --font-family-base: "Inter", system-ui, -apple-system, sans-serif; */
+  /* --font-family-base: "Bellota Text", system-ui, -apple-system, sans-serif; */
+  /* --font-family-base: "Bellota", system-ui, -apple-system, sans-serif; */
+  /* --font-family-base: "Roboto", sans-serif; */
+  /* --font-family-base: "Bitter", sans-serif; */
+  /* --font-family-base: "Roboto Serif", sans-serif; */
+  /* --font-family-base: "Zen Maru Gothic", sans-serif; */
+  /* --font-family-base: "Source Sans 3", sans-serif; */
+  /* --font-family-base: "Manrope", sans-serif; */
+  /* --font-family-base: "Wix Madefor Text", sans-serif; */
+
   --font-size-base: 1rem;
   --font-size-small: 0.875rem;
   --line-height-base: 1.5;
