@@ -12,21 +12,10 @@
     background: transparent;
     cursor: pointer;
     transition: var(--transition-base);
+    height: calc(var(--font-size-base) * 1);
+    width: calc(var(--font-size-base) * 1);
 }
 
 .theme-toggle:hover {
     color: var(--link-hover-color);
-}
-
-.theme-toggle:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
-}
-
-.theme-toggle svg {
-    height: calc(var(--font-size-base) * 1);
-    width: calc(var(--font-size-base) * 1);
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
 }
