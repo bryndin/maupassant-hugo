@@ -4,6 +4,8 @@
 */
 
 :root {
+  color-scheme: light;
+
   /* Global Colors */
   --color-bg: #fff;
   --color-main: #555;
@@ -107,7 +109,7 @@
   --post-background-color: var(--color-white);
 
   /* Post Content */
-  --post-content-font: var(--font-weight-normal) var(--font-size-base)/var(--line-height-base) var(--font-family-base);   
+  --post-content-font: var(--font-weight-normal) var(--font-size-base)/var(--line-height-base) var(--font-family-base);
   --post-content-color: var(--color-main);
 
   /* Post Meta */
@@ -146,17 +148,38 @@
   --search-keyword-border-color: var(--active-border-height-normal) solid var(--color-accent);
 }
 
+html.theme-dark {
+    color-scheme: dark;
 
-.theme-dark {
-  --color-bg: #212529;
-  --color-main: #f8f9fa;
-  --color-muted: #adb5bd;
-  --color-primary: #375a7f;
-  --color-primary-hover: #2b4764;
-  --color-border: #495057;
-  --color-white: #343a40;
-  --color-surface-muted: rgba(255, 255, 255, 0.03);
+    --color-bg: #121212;
+    --color-main: #e0e0e0;
+    --color-muted: #9e9e9e;
+    --color-intense: #ffffff;
+    --color-accent: #ff6b4a;
+    --color-primary: #4da3ff;
+    --color-primary-hover: #1c7ed6;
+    --color-border: #333;
+    --color-white: #1e1e1e;
+    --color-surface-muted: rgba(255, 255, 255, 0.08);
 }
+
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light):not(.theme-dark) {
+    color-scheme: dark;
+
+    --color-bg: #121212;
+    --color-main: #e0e0e0;
+    --color-muted: #9e9e9e;
+    --color-intense: #ffffff;
+    --color-accent: #ff6b4a;
+    --color-primary: #4da3ff;
+    --color-primary-hover: #1c7ed6;
+    --color-border: #333;
+    --color-white: #1e1e1e;
+    --color-surface-muted: rgba(255, 255, 255, 0.08);
+  }
+}
+
 
 .font-bellota-text {
   --font-family-base: "Bellota Text", sans-serif;

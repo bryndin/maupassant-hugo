@@ -10,4 +10,5 @@
 {{ with $subtitle := $page.Site.Params.subtitle -}}
   <span class="page-header__description">{{ $subtitle }}</span>
 {{- end }}
+{{ partial "theme-switcher" }}
 {{ partial "nav" $page }}

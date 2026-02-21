@@ -42,7 +42,6 @@
 }
 
 /* --- Highlighted code styling (different from the regular code block) --- */
-/* TODO(DB): add dark theme */
 /* TODO(DB): Figure why it can't be scaled to content (comment background-color to debug) */
 .highlight {
     background-color: var(--color-surface-muted);

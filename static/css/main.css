@@ -26,8 +26,9 @@
 @import "components/nav.css" layer(components);
 @import "components/search.css" layer(components);
 @import "components/paginator.css" layer(components);
-@import "components/code-highlight-github.css" layer(components);
-/* TODO(DB): add dark theme */
+@import "components/syntax-highlight/code-highlight-github.css" layer(components);
+@import "components/syntax-highlight/code-highlight-github-dark.css" layer(components);
+@import "components/theme-switcher.css" layer(components);
 @import "components/code-copy.css" layer(components);
 
 @import "overrides.css" layer(overrides);
