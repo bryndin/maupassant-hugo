@@ -8,3 +8,16 @@
     filter: grayscale(0%);
     opacity: 1;
 }
+
+
+html.theme-dark {
+    .widget-ads__image {
+        filter: grayscale(100%) invert(100%);
+        opacity: 0.3;
+    }
+
+    .widget-ads__image:hover {
+        filter: grayscale(0%) invert(100%);
+        opacity: 1;
+    }
+}
