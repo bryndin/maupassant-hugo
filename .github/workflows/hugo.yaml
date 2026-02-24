@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - master
+      - draft
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -56,6 +57,19 @@ jobs:
       # Since website is under exampleSite subdirectory of the theme, we need to copy it to the root
       - name: Copy exampleSite contents
         run: cp -r themes/maupassant/exampleSite/* .
+
+      - name: Build Draft with Hugo
+        env:
+          HUGO_ENVIRONMENT: development
+          HUGO_ENV: development
+          TZ: America/Los_Angeles
+        run: |
+          hugo \
+            --gc \
+            --buildDrafts \
+            --buildFuture \
+            --baseURL "${{ steps.pages.outputs.base_url }}/tmp-draft/" \
+            -d public/tmp-draft
 
       - name: Inject GTM ID into hugo.toml
         run: |
