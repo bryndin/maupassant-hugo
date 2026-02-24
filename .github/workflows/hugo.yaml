@@ -58,6 +58,10 @@ jobs:
       - name: Copy exampleSite contents
         run: cp -r themes/maupassant/exampleSite/* .
 
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+
       - name: Build Draft with Hugo
         env:
           HUGO_ENVIRONMENT: development
@@ -74,10 +78,6 @@ jobs:
       - name: Inject GTM ID into hugo.toml
         run: |
           sed -i 's/gtmid = ""/gtmid = "${{ secrets.GTM_ID }}"/' hugo.toml
-
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v4
 
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
